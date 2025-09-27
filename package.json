@@ -1,0 +1,23 @@
+{
+  "name": "opensearch-blog-jp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkykenmt/opensearch-blog-jp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tkykenmt/opensearch-blog-jp/issues"
+  },
+  "homepage": "https://github.com/tkykenmt/opensearch-blog-jp#readme",
+  "dependencies": {
+    "zenn-cli": "^0.2.3"
+  }
+}
