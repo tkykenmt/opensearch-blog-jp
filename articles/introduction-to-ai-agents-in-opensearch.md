@@ -1,6 +1,6 @@
 ---
 publication_name: "opensearch"
-title: "[翻訳] OpenSearchにおけるAIエージェント入門：シンプルなフローエージェントから高度なReActマルチエージェントシステムまで"
+title: "[翻訳] OpenSearch における AI エージェント入門：シンプルなフローエージェントから高度な ReAct マルチエージェントシステムまで"
 emoji: "✨"
 type: "tech"
 topics:
@@ -8,7 +8,7 @@ topics:
 published: false
 ---
 
-本記事は OpenSearch Project に投稿された [Announcing OpenSearch 3.0](https://opensearch.org/blog/introduction-to-ai-agents-in-opensearch-from-simple-flow-agents-to-advanced-react-multi-agent-systems/) の日本語訳版です。
+本記事は OpenSearch Project に投稿された [Introduction to AI agents in OpenSearch: From simple flow agents to advanced ReAct multi-agent systems](https://opensearch.org/blog/introduction-to-ai-agents-in-opensearch-from-simple-flow-agents-to-advanced-react-multi-agent-systems/) の日本語訳版です。
 
 AI エージェント（または単にエージェント）とは、大規模言語モデル（LLM）を活用して問題を解決する調整役です。LLM が推論を行い、取るべき行動を決定した後、エージェントはその行動の実行を調整します。
 
@@ -83,7 +83,7 @@ OpenSearch は、[MCP コネクタ](https://docs.opensearch.org/latest/ml-common
 
 どちらのソリューションも、エージェントが検索データに安全かつリアルタイムでアクセスできるようにし、OpenSearch ツールを他の MCP サーバーや外部ツールと連携させることで、高度な分析処理を可能にします。具体的な実装例や活用事例については、こちらの[記事](https://opensearch.org/blog/unlocking-agentic-ai-experiences-with-opensearch/)をご覧ください。
 
-## 概要
+## まとめ
 OpenSearchでは、さまざまな AI タスクに対応する多様なエージェントを提供しています。これらのエージェントは、固定されたワークフローから動的なワークフローまで幅広く、簡潔で焦点を絞ったロジック処理から、長時間にわたる探索的プロセスまで、あらゆるタスクに対応しています。
 
 OpenSearch でエージェントを使い始めるには、[チュートリアル](https://docs.opensearch.org/latest/ml-commons-plugin/agents-tools/agents-tools-tutorial/)に記載されている段階的なセットアップ手順に従ってください。
