@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/tkykenmt/opensearch-blog-jp#readme",
   "dependencies": {
-    "zenn-cli": "^0.2.3"
+    "zenn-cli": "^0.2.9"
   }
 }
