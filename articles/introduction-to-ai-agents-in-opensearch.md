@@ -5,7 +5,7 @@ emoji: "✨"
 type: "tech"
 topics:
   - "opensearch"
-published: false
+published: true
 ---
 
 本記事は OpenSearch Project に投稿された [Introduction to AI agents in OpenSearch: From simple flow agents to advanced ReAct multi-agent systems](https://opensearch.org/blog/introduction-to-ai-agents-in-opensearch-from-simple-flow-agents-to-advanced-react-multi-agent-systems/) の日本語訳版です。
