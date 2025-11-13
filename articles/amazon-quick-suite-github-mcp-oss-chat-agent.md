@@ -4,19 +4,18 @@ emoji: "🤖"
 type: "tech"
 publication_name: "aws_japan"
 topics: ["quicksuite", "AWS", "github", awsaiagentblogfes"]
-published: false
+published: true
 ---
 
 ## はじめに
 
 こんにちは！ AWS のソリューションアーキテクトの榎本です。普段は OpenSearch や Kafka のサポートを中心に活動しています。
 
-本ブログは AWS AI Agent ブログ祭り(Zenn: [#awsaiagentblogfes](https://zenn.dev/topics/awsaiagentblogfes), X: [#AWS_AI_AGENT_ブログ祭り](https://x.com/hashtag/AWS_AI_AGENT_%E3%83%96%E3%83%AD%E3%82%B0%E7%A5%AD%E3%82%8A))の第 N 日目です。
+本ブログは AWS AI Agent ブログ祭り(Zenn: [#awsaiagentblogfes](https://zenn.dev/topics/awsaiagentblogfes), X: [#AWS_AI_AGENT_ブログ祭り](https://x.com/hashtag/AWS_AI_AGENT_%E3%83%96%E3%83%AD%E3%82%B0%E7%A5%AD%E3%82%8A))の第 15 日目です。
 
 :::message
-📚 **第 N-1 日目の記事はこちら！**
-- [記事タイトル](記事URL)
-- [記事タイトル](記事URL)
+📚 **第 14 日目の記事はこちら！**
+- [チャットでデータ分析！？Amazon Quick Suite Chat agents で Quick Sight のデータを扱ってみる](https://zenn.dev/aws_japan/articles/69a4d3839c0cb6)
 :::
 
 Amazon Quick Suite は 2025 年 10 月に一般提供が開始された AWS サービスです。Agentic AI プラットフォームとして多くの Agent 機能に加え、Amazon QuickSight を Quick Sight として吸収しており、BI 機能もカバーする統合的な環境として提供しています。2025 年 10 月から行われているブログリレーの中でも今日まで Amazon Quick Suite に関する記事が投稿されているので、是非チェックしてみてください。
