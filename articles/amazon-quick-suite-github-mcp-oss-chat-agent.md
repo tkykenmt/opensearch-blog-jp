@@ -81,8 +81,6 @@ Amazon Quick Suite から リモートの GitHub MCP Server へアクセスす�
 
 **Authenticate** セクションでは、以下の情報を入力して `Create and continue` ボタンを押します。
 
-Token URL および Authorization URL については 
-
 - Authentication settings: User authentication を選択
 - Client ID: コピーした GitHub Apps の Client ID
 - Client secret: コピーした GitHub Apps の Client secret 
