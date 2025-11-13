@@ -44,33 +44,33 @@ Amazon Quick Suite から リモートの GitHub MCP Server へアクセスす�
 以降の手順は記事執筆時のものです。最新の手順は GitHub のドキュメントをご確認ください。
 
 1. Developer Settings -> [GitHub Apps](https://github.com/settings/apps) にアクセスし、New GitHub App を選択します。
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_8.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_8.webp)
 2. Register new GitHub App にて、項目ごとに以下の値を入力します。その他の項目はデフォルトのままで OK です。
   - GitHub App name: Amazon Quick Suite
   - Homepage URL: https://quicksight.aws.amazon.com/
   - Identifying and authorizing users
   - Callback URL: https://us-east-1.quicksight.aws.amazon.com/sn/oauthcallback (リージョンはお使いの Amazon Quick Suite のリージョンに合わせて変更してください)
-  ![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_9.webp)
+  ![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_9.webp)
   - Webhook: Active チェックを OFF にします
-  ![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_10.webp)
+  ![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_10.webp)
   - Permissions: Repository permissions 内の **Contents**、**Issues**、**Pull requests** への Access を `read-only` にセットします
-  ![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_11.webp)
+  ![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_11.webp)
 3. 画面最下部の `Create GitHub App` ボタンを押します。
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_12.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_12.webp)
 4. 作成完了後、**Client secrets** セクションの `Generate a new client secret` ボタンを押してシークレットを生成します。
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_14.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_14.webp)
 5. アプリケーションの Client ID と Client secret を記録しておきます。Amazon Quick Suite へ登録する際に必要です。
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_13.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_13.webp)
 
 ### Amazon Quick Suite の設定
 作成した GitHub Apps の認証情報を元に、Quick Suite 側に GitHub MCP サーバーの情報を登録していきます。
 まずは Quick Suite のメニューから `Integrations` を選択します
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13.webp)
 
 一覧から `Model Context Protocol` を選択します。
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_1.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_1.webp)
 
 **Connect** セクションにて、以下の情報を入力し `Next` ボタンを押します。
 
@@ -78,7 +78,7 @@ Amazon Quick Suite から リモートの GitHub MCP Server へアクセスす�
 - Description: 任意で OK です
 - MCP server endpoint: https://api.githubcopilot.com/mcp/
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_2.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_2.webp)
 
 **Authenticate** セクションでは、以下の情報を入力して `Create and continue` ボタンを押します。
 
@@ -91,38 +91,38 @@ Token URL および Authorization URL については
 - Authorization URL: https://github.com/login/oauth/authorize
 - Redirect URL: https://us-east-1.quicksight.aws.amazon.com/sn/oauthcallback
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_15.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_15.webp)
 
 承認のためのポップアップが表示されたら、`Authorize Amazon Quick SUite` ボタンを押します。
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_16.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_16.webp)
 
 ポップアップが閉じられ Review セクションに進みます。"Retrieving actions. This might take up to a minute. You can close and return to view the list later." と表示されたら完了までしばし待ちましょう
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_17.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_17.webp)
 
 ツールの一覧が表示されたら `Next` ボタンを押します。
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_18.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_18.webp)
 
 任意のメンバーに MCP をシェアする場合はユーザーもしくはグループ名を検索して `Share` ボタンから共有が可能です。本記事では共有者の追加はせずに `Next` ボタンを押します。
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_19.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_19.webp)
 
 Integrations の Actions タブに切り替え、GitHub のステータスが **Available** になるまで待機します。ステータスが Available になったら、`GitHub` の名前部分をクリックします。
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_21.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_21.webp)
 
 左下に "Not signed in" と表示されていることを確認し、右上の `Sign in` ボタンを押します。
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_22.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_22.webp)
 
 GitHub の認証が求められた場合は認証を実施してください。**Sign in** ボタンが **Re-Connect** に変化したら準備は完了です。
 
 ### Chat agent の構築
 では、実際に Chat agent を作成していきましょう。Quick Suite の Chat agents メニューから新規のエージェント作成画面に進みます。
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_23.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_23.webp)
 
 以下のプロンプトを入力し、`Generate` ボタンを押しましょう。
 
@@ -132,7 +132,7 @@ GitHub の認証が求められた場合は認証を実施してください。*
 
 Chat agent が作成されました。ACTIONS を展開すると先ほど登録した GitHub MCP がリンクされていることが確認できます。
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_33.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_33.webp)
 
 ## Chat agent の活用
 
@@ -142,19 +142,19 @@ Chat agent が作成されました。ACTIONS を展開すると先ほど登録�
 OpenSearch 3 系列の最新バージョンは？
 ```
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_34.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_34.webp)
 
 よさそうですね。実際にこの記事を執筆している 2025 年 11 月 13 日時点では 3.3.2 が最新バージョンです。有用そうなので `Launch chat agent` からチャットエージェントをリリースします。
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_28.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_28.webp)
 
 Successfully launched chat agent と表示されました。
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_29.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_29.webp)
 
 Chat agents 一覧に戻ると、作成した "GitHub Expert Engineer" が表示されています。Action から Chat を選択してもう少し活用してみましょう。Expand を選択するとチャット画面を広くとることができます。
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_31.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_31.webp)
 
 では質問してみましょう。先ほどの OpenSearch 3.x 最新バージョンについて質問した時の回答に "Star-Tree" というものがありましたね。この機能について質問してみましょう。
 
@@ -162,7 +162,7 @@ Chat agents 一覧に戻ると、作成した "GitHub Expert Engineer" が表示
 OpenSearch の Star-Tree 機能 について解説してください。
 ```
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_35.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-13_35.webp)
 
 GitHub のツールを使用していることが分かりますね。機能の特徴や利点が正しく解説されています。
 
@@ -172,7 +172,7 @@ GitHub のツールを使用していることが分かりますね。機能の�
 OpenSearch Project で議論が盛り上がっている Open ステータスの RFC Issue の Top-10 を抽出して。
 ```
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-14.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-14.webp)
 
 活発に議論されている RFC がリストアップされました。
 
@@ -182,7 +182,7 @@ OpenSearch Project で議論が盛り上がっている Open ステータスの 
 Valkey と OpenSearch のベクトル検索の特徴について実装から比較して
 ```
 
-![](image/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-14_1.webp)
+![](/images/amazon-quick-suite-github-mcp-oss-chat-agent-2025-11-14_1.webp)
 
 
 ## まとめ
