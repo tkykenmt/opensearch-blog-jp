@@ -94,7 +94,7 @@ OpenSearch ダッシュボードの「検索結果比較」ツールを使用す
 
 エージェント型検索（左）とキーワード検索（右）の検索結果を以下の画像に示します。
 
-![](./images/introducing-agentic-search/introducing-agentic-search-2025-11-25.webp)
+![](/images/introducing-agentic-search/introducing-agentic-search-2025-11-25.webp)
 
 
 **エージェント型検索**では、「shades」がサングラスを指しており、「dad」という単語との一致ではなく購入を意図していることを正確に理解します。インデックス内の製品カテゴリ情報を活用して、適切なサングラス製品を検索結果として返します。
@@ -137,7 +137,7 @@ OpenSearch ダッシュボードの「検索結果比較」ツールを使用す
 
 エージェント型検索（左）とセマンティック検索（右）の検索結果を以下の画像に示します。
 
-![](./images/introducing-agentic-search/introducing-agentic-search-2025-11-25_1.webp)
+![](/images/introducing-agentic-search/introducing-agentic-search-2025-11-25_1.webp)
 
 **エージェント型検索**では、文脈全体とユーザーの目的をより深く理解し、贈り物に適した黒いサングラスという特定の条件に焦点を絞って検索を行います。
 
@@ -212,7 +212,7 @@ OpenSearch の異常検知機能、外部ルールエンジン、およびデー
 
 検索結果の詳細な説明を表示するには、[エージェントコンテキストプロセッサ](https://docs.opensearch.org/latest/search-plugins/search-pipelines/agentic-context-processor/)を設定してください。この説明には、エージェントが結果を生成するために実行した手順や、使用したツールに関する情報が含まれます。以下の画像にその例を示します。
 
-![](images/introducing-agentic-search/introducing-agentic-search-2025-11-25_2.webp)
+![](/images/introducing-agentic-search/introducing-agentic-search-2025-11-25_2.webp)
 
 ## OpenSearch Dashboards でエージェント型検索を使用する
 
