@@ -87,11 +87,11 @@ _text": "red racoon dog"},{"my_vector":[30000,30000,30000], "my_text": "black ra
 
 ## bool クエリでの個別スコア取得
 
-### 基本的な使い方
+bool クエリの各クエリ `_name` を付与し、`include_named_queries_score=true` で検索します。
 
-bool クエリの各 should 句に `_name` を付与し、`include_named_queries_score=true` で検索します。
+このパラメーターは Named Query と呼ばれるものです。検索結果でどのクエリにマッチしたかを `matched_queries` フィールドで確認することができます。
 
-子のパラメーターは Named Query と呼ばれるものです。検索結果でどのクエリにマッチしたかを `matched_queries` フィールドで確認することができます。`include_named_queries_score=true` パラメータを Search API に追加することで、**各 Named Query の個別スコア**を取得可能です。
+`include_named_queries_score=true` パラメータを Search API に追加することで、**各 Named Query の個別スコア**を取得可能です。
 
 ```json
 GET my-knn-index-1/_search?include_named_queries_score=true
@@ -121,8 +121,7 @@ GET my-knn-index-1/_search?include_named_queries_score=true
 }
 ```
 
-### 実行結果
-
+:::details 実行結果
 ```json
 {
  "hits": {
@@ -146,6 +145,7 @@ GET my-knn-index-1/_search?include_named_queries_score=true
  }
 }
 ```
+:::
 
 ### 結果の読み方
 
@@ -163,8 +163,6 @@ GET my-knn-index-1/_search?include_named_queries_score=true
 ## nested + k-NN クエリでの個別スコア取得
 
 Named query の適用範囲は広く、ベクトル検索にも利用可能です。以下は nested されたベクトルに対して Named query を使用した例です。
-
-### クエリ
 
 ```json
 GET my-knn-index-1/_search?include_named_queries_score=true
@@ -187,7 +185,7 @@ GET my-knn-index-1/_search?include_named_queries_score=true
 }
 ```
 
-### 実行結果（抜粋）
+:::details 実行結果(抜粋)
 
 ```json
 {
@@ -231,14 +229,14 @@ GET my-knn-index-1/_search?include_named_queries_score=true
 }
 ```
 
+:::
+
 上記のクエリでは `score_mode` に `max` を指定していますが、これは最も高いスコアの nested ドキュメントのスコアが親ドキュメントのスコアとするためです。
 
 
 ## inner hits によるドキュメントごとのスコア取得
 
 inner_hits オプションを使用することで、ネストされたドキュメントごとのスコアを確認することができます。
-
-### クエリ
 
 ```json
 GET my-knn-index-1/_search?include_named_queries_score=true
@@ -263,7 +261,7 @@ GET my-knn-index-1/_search?include_named_queries_score=true
 }
 ```
 
-### 実行結果（抜粋）
+:::details 実行結果（抜粋）
 
 ```json
 {
@@ -342,14 +340,13 @@ GET my-knn-index-1/_search?include_named_queries_score=true
 ]
 }
 ```
+:::
 
 ## hybrid クエリでの個別スコア取得
 
 OpenSearch のハイブリッド検索では、キーワード検索とベクトル検索を組み合わせて実行できます。各サブクエリに Named Queries を設定することで、正規化前の個別スコアを確認できます。
 
 inner_hits を複数個所で指定する場合は、name プロパティを付与することで各クエリごとに、ドキュメント単位のスコアを表示することが可能です。
-
-### クエリ
 
 ```json
 GET my-knn-index-1/_search?include_named_queries_score=true&phase_took
@@ -424,7 +421,7 @@ GET my-knn-index-1/_search?include_named_queries_score=true&phase_took
 }
 ```
 
-### 実行結果
+:::details 実行結果(フルバージョン。長いです)
 
 ```json
 {
@@ -1047,6 +1044,7 @@ GET my-knn-index-1/_search?include_named_queries_score=true&phase_took
   }
 }
 ```
+:::
 
 ## まとめ
 本記事では OpenSearch のハイブリッドクエリやネストクエリにおける個別スコアの取得方法について解説しました。より詳細なスコア計算過程が必要な場合は、explain も合わせて利用していきましょう。
@@ -1054,7 +1052,8 @@ GET my-knn-index-1/_search?include_named_queries_score=true&phase_took
 
 ## 参考リンク
 
-- [OpenSearch Documentation - Search API](https://docs.opensearch.org/latest/api-reference/search-apis/search/)
-- [OpenSearch Documentation - Retrieve inner hits](https://docs.opensearch.org/latest/search-plugins/searching-data/inner-hits/)
-- [OpenSearch Documentation - Using inner hits in hybrid queries](https://docs.opensearch.org/latest/vector-search/ai-search/hybrid-search/inner-hits/)
+https://docs.opensearch.org/latest/api-reference/search-apis/search/
 
+https://docs.opensearch.org/latest/search-plugins/searching-data/inner-hits/
+
+https://docs.opensearch.org/latest/vector-search/ai-search/hybrid-search/inner-hits/
