@@ -1,5 +1,5 @@
 ---
-title: "Technical Steering Committee: 最初の1年を振り返って"
+title: "[翻訳] Technical Steering Committee: 最初の1年を振り返って"
 emoji: "🎉"
 type: "tech"
 topics: ["opensearch"]
