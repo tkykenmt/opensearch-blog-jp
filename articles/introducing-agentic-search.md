@@ -101,7 +101,7 @@ OpenSearch Dashboards の「検索結果比較」ツールを使用すると、�
 }
 ```
 
-エージェント型検索 (左) とキーワード検索 (右) の検索結果を以下の画像に示します。
+エージェント型検索 (左) とキーワード検索 (右) の検索結果を以下に示します。
 
 ![](/images/introducing-agentic-search/introducing-agentic-search-2025-11-25.webp)
 
@@ -142,7 +142,7 @@ OpenSearch Dashboards の「検索結果比較」ツールを使用すると、�
 }
 ```
 
-エージェント型検索 (左) とセマンティック検索 (右) の検索結果を以下の画像に示します。
+エージェント型検索 (左) とセマンティック検索 (右) の検索結果を以下に示します。
 
 ![](/images/introducing-agentic-search/introducing-agentic-search-2025-11-25_1.webp)
 
@@ -174,7 +174,7 @@ OpenSearch Dashboards の「検索結果比較」ツールを使用すると、�
 
 行動データ、意味的シグナル、トレンドを統合した、高度にカスタマイズされた製品レコメンドを提供します。手動でクエリを作成する必要はありません。
 
-### 可観測性とインシデント相関分析
+### オブザーバビリティとインシデント相関分析
 
 **検索クエリ**
 
@@ -217,13 +217,13 @@ OpenSearch の異常検知機能、外部ルールエンジン、データエン
 
 ローカル環境でエージェント型検索を設定するには、[エージェント型検索のセットアップ手順](https://docs.opensearch.org/latest/vector-search/ai-search/agentic-search/index/)を参照してください。
 
-検索結果の詳細な説明を表示するには、[エージェントコンテキストプロセッサ](https://docs.opensearch.org/latest/search-plugins/search-pipelines/agentic-context-processor/)を設定してください。この説明には、エージェントが結果を生成するために実行した手順や、使用したツールに関する情報が含まれます。以下の画像にその例を示します。
+検索結果の詳細な説明を表示するには、[エージェントコンテキストプロセッサ](https://docs.opensearch.org/latest/search-plugins/search-pipelines/agentic-context-processor/)を設定してください。この説明には、エージェントが結果を生成するために実行した手順や、使用したツールに関する情報が含まれます。以下にその例を示します。
 
 ![](/images/introducing-agentic-search/introducing-agentic-search-2025-11-25_2.webp)
 
 ## OpenSearch Dashboards でエージェント型検索を使用する
 
-OpenSearch Dashboards でエージェント型検索を使用するには、以下の手順に従ってください。
+OpenSearch Dashboards でエージェント型検索を使用するには、以下の手順で行います。
 
 1. **OpenSearch プラグイン** > **AI 検索フロー**に移動します。
 2. **新規ワークフローの作成**を選択し、エージェント型検索を選択します。
@@ -235,12 +235,12 @@ OpenSearch Dashboards でエージェント型検索を使用するには、以�
 - **左パネル**: エージェントの設定と作成を行います。
 - **右パネル**: 検索を実行し、結果を分析します。
 
-詳細な手順については、[エージェント型検索](https://docs.opensearch.org/latest/vector-search/ai-search/building-agentic-search-flows/)のドキュメントをご覧ください。
+詳細な手順については、[エージェント型検索](https://docs.opensearch.org/latest/vector-search/ai-search/building-agentic-search-flows/)のドキュメントを参照してください。
 
-## 今後の展開
+## 今後の予定
 
 現在、エージェント型検索のさらなる性能最適化に取り組んでおり、プロンプトキャッシュ機能、マルチエージェントアーキテクチャ、エージェント追跡機能の改善などを実装中です。評価フレームワークやクエリ精度、ユーザー体験に関する詳細なブログ記事を今後公開する予定です。
 
 ご意見、ご質問、または実装を希望する追加ユースケースのアイデアがございましたら、ぜひお知らせください。[OpenSearch フォーラム](https://forum.opensearch.org/t/use-cases-and-general-feedback-for-agentic-search/27488)または [OpenSearch Slack ワークスペース](https://opensearch.org/slack/)でのディスカッションにご参加ください。
 
-現在進行中の開発状況や設計変更については、[エージェント型検索の RFC](https://github.com/opensearch-project/neural-search/issues/1525) をご覧ください。
+現在進行中の開発状況や設計変更については、[エージェント型検索の RFC](https://github.com/opensearch-project/neural-search/issues/1525) を参照してください。

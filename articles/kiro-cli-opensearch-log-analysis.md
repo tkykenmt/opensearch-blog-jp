@@ -1,11 +1,11 @@
 ---
+publication_name: "opensearch"
 title: "[翻訳] Kiro CLI 統合: ログパターンとデータ分散分析"
 emoji: "🔍"
 type: "tech"
 topics: ["opensearch"]
-published: false
+published: true
 published_at: 2025-11-20
-publication_name: "opensearch"
 ---
 
 :::message
@@ -45,27 +45,32 @@ Kiro CLI は、[MCP](https://opensearch.org/blog/introducing-mcp-in-opensearch/)
 Kiro CLI と OpenSearch MCP 統合をセットアップするには、以下の手順に従います。
 
 1. **MCP サーバーリポジトリをクローン**:
+
    ```bash
    git clone https://github.com/opensearch-project/opensearch-mcp-server-py.git
    cd opensearch-mcp-server-py
    ```
 
 2. **ツール統合コードを追加**:
+
    - MCP サーバーに Log Pattern Analysis ツール統合を実装
    - MCP サーバーに Data Distribution ツール統合を実装
    - MCP サーバーのツールレジストリに両方のツールを登録
    - 完全な実装例については、[opensearch-mcp-server-py/integrate-skill-tool](https://github.com/PauiC/opensearch-mcp-server-py/tree/integrate-skill-tool) のデモを参照してください
 
 3. **MCP サーバーを起動**:
+
    ```bash
    OPENSEARCH_URL="<your-opensearch-cluster-endpoint>" \
    OPENSEARCH_USERNAME="<your-opensearch-username>" \
    OPENSEARCH_PASSWORD="<your-opensearch-password>" \
    python -m src.mcp_server_opensearch --transport stream --host 0.0.0.0 --port 9900
    ```
+
    このコマンドは、localhost:9900 で MCP サーバーを起動します。この設定を使用する場合、設定ファイルの `url` フィールドを `"http://localhost:9900/mcp"` に設定します。
 
 4. **Kiro CLI を設定**:
+
    - Kiro CLI 設定ファイルを開く
    - [MCP サーバー設定](https://github.com/opensearch-project/project-website/diffs/1?base_sha=90e92bf9f9f487af1537e4564587f6cd856639f0&head_user=PauiC&name=logPatternAnalysis-dataDistribution&pull_number=3984&sha1=90e92bf9f9f487af1537e4564587f6cd856639f0&sha2=5f7db21d157c21c379ddb1f93acb2d8d021a2df0&short_path=8d145f9&unchanged=expanded&w=false#mcp-configuration-example)を追加
 
@@ -193,18 +198,18 @@ OpenTelemetry Demo は、決済サービスの中断や認証問題を含むさ�
                 "field": "serviceName",
                 "divergence": 0.223,
                 "topChanges": [
-                  {"value": "kafka", "selectionPercentage": 0.22},
-                  {"value": "product-catalog", "selectionPercentage": 0.18},
-                  {"value": "frontend-proxy", "selectionPercentage": 0.15},
-                  {"value": "checkout", "selectionPercentage": 0.13}
+                  { "value": "kafka", "selectionPercentage": 0.22 },
+                  { "value": "product-catalog", "selectionPercentage": 0.18 },
+                  { "value": "frontend-proxy", "selectionPercentage": 0.15 },
+                  { "value": "checkout", "selectionPercentage": 0.13 }
                 ]
               },
               {
                 "field": "severityText",
                 "divergence": 0.609,
                 "topChanges": [
-                  {"value": "INFO", "selectionPercentage": 0.61},
-                  {"value": "error", "selectionPercentage": 0.01}
+                  { "value": "INFO", "selectionPercentage": 0.61 },
+                  { "value": "error", "selectionPercentage": 0.01 }
                 ]
               }
             ]
@@ -225,11 +230,13 @@ Log Pattern Analysis ツールは、以下の方法で決済失敗の根本原�
 Log Pattern Analysis ツールは、この決済失敗調査において重要なパターン識別の役割を果たしました:
 
 1. **主要な障害パターンの特定** (63 件の発生):
+
    - 決済トークン検証失敗に関連する 3 つのパターンを自動的に特定
    - すべてのパターンが同じ根本原因を指摘: `Payment request failed. Invalid token`
    - 障害が `app.loyalty.level=gold` に関連していることを特定
 
 2. **副次的な障害パターンの特定** (19 件の発生):
+
    - 製品カタログ関連の障害パターンを 2 つ特定
    - パターン: `failed to get product #"<*>Z"`
    - 特定の製品 ID 例を提供: `OLJCESPC7Z`
@@ -250,12 +257,14 @@ Data Distribution ツールは、以下の方法で決済失敗の根本原因�
 Data Distribution ツールは、調査のための重要な統計的背景とフィールド分散分析を提供しました:
 
 1. **サービス分散分析** (divergence: 0.223):
+
    - `kafka`: 22% (最高ログボリュームサービス)
    - `product-catalog`: 18% (副次的障害ソース)
    - `frontend-proxy`: 15% (ユーザー向けエラー)
    - `checkout`: 13% (主要障害ポイント)
 
 2. **重大度レベル分析** (divergence: 0.609):
+
    - `INFO` レベル: 合計 81%
    - `error` レベル: 1% (集中的な障害)
 

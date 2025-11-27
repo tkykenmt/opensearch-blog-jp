@@ -1,5 +1,5 @@
 ---
-title: "[翻訳] OpenSearch の新しい PPL 機能でより良い可観測性とより深い洞察を"
+title: "[翻訳] OpenSearch の新しい PPL 機能でより良いオブザーバビリティとより深い洞察を"
 emoji: "📊"
 type: "tech"
 topics: ["opensearch"]
@@ -9,12 +9,12 @@ published_at: 2025-11-25
 ---
 
 :::message
-この記事は [OpenSearch Project の公式ブログ記事](https://opensearch.org/blog/better-observability-deeper-insights-opensearchs-new-piped-processing-language-capabilities/) の日本語翻訳です。
+本記事は [OpenSearch Project Blog](https://opensearch.org/blog/) に投稿された以下の記事を日本語に翻訳したものです。
 :::
 
 https://opensearch.org/blog/better-observability-deeper-insights-opensearchs-new-piped-processing-language-capabilities/
 
-[OpenSearch 3.3](https://opensearch.org/blog/explore-opensearch-3-3/) から、Piped Processing Language (PPL) には、ログ分析と可観測性ワークフローを簡素化する新しい機能と改善された機能が含まれています。これらの更新により、アプリケーションのトラブルシューティング、パフォーマンスの監視、セキュリティイベントの分析が容易になります。
+[OpenSearch 3.3](https://opensearch.org/blog/explore-opensearch-3-3/) から、Piped Processing Language (PPL) には、ログ分析とオブザーバビリティワークフローを簡素化する新しい機能と改善された機能が含まれています。これらの更新により、アプリケーションのトラブルシューティング、パフォーマンスの監視、セキュリティイベントの分析が容易になります。
 
 本記事では、一般的なログ分析のユースケースの実用的な例を通じて、新しい PPL コマンドと関数を紹介します。これらの機能強化が、複数のデータソースの結合、非構造化ログデータの処理、時系列分析の実行にどのように役立つかを学びます。また、クエリエンジンとしての Apache Calcite の統合を含む、3.3 リリースでの大幅なパフォーマンス向上についても説明します。
 
@@ -138,16 +138,16 @@ CLI は次の結果を返します。
 
 PPL のパフォーマンスを評価するために、PPL Big5 データセットを使用してベンチマークインフラストラクチャを構築しました。これらのデータセットにより、さまざまな分析シナリオとワークロードパターンにわたる標準化されたパフォーマンステストが可能になります。自動化された夜間ベンチマークにより、一貫した品質が保証され、リグレッションの検出に役立ちます。一方、公開ダッシュボードにより、ユーザーはクエリパフォーマンスを可視化できます。夜間の Big5 PPL ベンチマークは、[OpenSearch Performance Benchmarks ページ](https://opensearch.org/benchmarks/)で確認できます。
 
-Calcite により、PPL は以前のバージョンと比較して大幅なパフォーマンス向上を実現します。ほとんどの PPL コマンドと関数の実行は、OpenSearch クエリドメイン固有言語 (DSL) にプッシュダウンされ、重い後処理が削減されます。追加の改善には、複合集約、強化された日付ヒストグラムサポート、大きな結果セットのためのより良いメモリ管理、高カーディナリティフィールドの改善された処理が含まれます。例えば、Big5 PPL `date_histogram_hourly_agg` クエリは現在 160 倍高速で、2.5 秒から 15 ミリ秒に短縮されました。これらの機能強化は、ログ分析や時系列探索などの一般的な可観測性のユースケースに利益をもたらします。完全なベンチマーク結果とパフォーマンスメトリクスは、夜間の[ベンチマークダッシュボード](https://opensearch.org/benchmarks/)で入手できます。
+Calcite により、PPL は以前のバージョンと比較して大幅なパフォーマンス向上を実現します。ほとんどの PPL コマンドと関数の実行は、OpenSearch クエリドメイン固有言語 (DSL) にプッシュダウンされ、重い後処理が削減されます。追加の改善には、複合集約、強化された日付ヒストグラムサポート、大きな結果セットのためのより良いメモリ管理、高カーディナリティフィールドの改善された処理が含まれます。例えば、Big5 PPL `date_histogram_hourly_agg` クエリは現在 160 倍高速で、2.5 秒から 15 ミリ秒に短縮されました。これらの機能強化は、ログ分析や時系列探索などの一般的なオブザーバビリティのユースケースに利益をもたらします。完全なベンチマーク結果とパフォーマンスメトリクスは、夜間の[ベンチマークダッシュボード](https://opensearch.org/benchmarks/)で入手できます。
 
 ## CLI ツールを使い始める
 
 既存の OpenSearch ドメインをアップグレードすることなく、今日から新しい PPL 機能を探索できます。OpenSearch CLI を使用すると、古いバージョンのドメインでこれらの機能をテストでき、完全なドメインアップグレードを実行する前に機能を検証できます。
 
-開始方法は次のとおりです。
+開始方法は以下のとおりです。
 
-1. **CLI ツールの最新バージョンをインストールする**: 新しい PPL 機能を含む [OpenSearch SQL CLI README](https://github.com/opensearch-project/sql-cli/blob/main/README.md#installation-steps) のインストール手順に従ってください。
-2. **OpenSearch クラスターに接続する** (ローカルまたはリモートクラスターに接続できます):
+1. **CLI ツールの最新バージョンをインストールする**。新しい PPL 機能を含む [OpenSearch SQL CLI README](https://github.com/opensearch-project/sql-cli/blob/main/README.md#installation-steps) のインストール手順に従ってください。
+2. **OpenSearch クラスターに接続する** (ローカルまたはリモートクラスターに接続できます)。
 
    ```
    opensearchsql -e https://your-cluster-endpoint:your-port -u username:password
@@ -171,7 +171,7 @@ Calcite により、PPL は以前のバージョンと比較して大幅なパ�
    Format: TABLE
    ```
 
-3. **新しい PPL コマンドの探索を開始する**:
+3. **新しい PPL コマンドの探索を開始する**。
 
    ```
    PPL> source=user_activity | where duration > 200 | head 3
@@ -195,9 +195,9 @@ Calcite により、PPL は以前のバージョンと比較して大幅なパ�
 
 ## PPL に参加する
 
-PPL の将来は、コミュニティの関与とフィードバックに依存しています。CLI ツールを使用して新機能を試し、OpenSearch コミュニティと経験を共有することをお勧めします。新しいユースケースを探索している場合でも、改善の余地がある領域を特定している場合でも、皆様の意見は可観測性機能の開発を導くのに役立ちます。報告を容易にするために、[バグレポートテンプレート](https://github.com/opensearch-project/sql/issues/new?template=ppl_bug_report.md)を提供しています。
+PPL の将来は、コミュニティの関与とフィードバックに依存しています。CLI ツールを使用して新機能を試し、OpenSearch コミュニティと経験を共有することをお勧めします。新しいユースケースを探索している場合でも、改善の余地がある領域を特定している場合でも、皆様の意見はオブザーバビリティ機能の開発を導くのに役立ちます。報告を容易にするために、[バグレポートテンプレート](https://github.com/opensearch-project/sql/issues/new?template=ppl_bug_report.md)を提供しています。
 
-詳細については、次のリソースを確認してください。
+詳細については、以下のリソースを確認してください。
 
 - [OpenSearch PPL リファレンスマニュアル](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/index.rst)
 - [PPL ロードマップ](https://github.com/opensearch-project/sql/issues/4287)

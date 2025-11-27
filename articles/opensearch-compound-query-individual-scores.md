@@ -5,17 +5,22 @@ emoji: "🔍"
 type: "tech"
 topics: ["opensearch"]
 published: true
+published_at: 2025-11-26
 ---
 
 ## はじめに
 
-OpenSearch で複数のクエリを組み合わせた複合クエリ（bool クエリや hybrid クエリ）を実行する際、最終的なスコアだけでなく「どのクエリがどれだけ貢献したか」を知りたいケースがあります。
+OpenSearch で複数のクエリを組み合わせた複合クエリ(bool クエリや hybrid クエリ)を実行する際、最終的なスコアだけでなく「どのクエリがどれだけ貢献したか」を知りたいケースがあります。
 
 個別に確認したいクエリとしては、ハイブリッド検索における正規化前のキーワードとベクトルそれぞれの検索スコア、bool クエリにおける各検索条件ごとのスコア、nested query におけるネストされた各ドキュメントごとのスコアなどが挙げられます。
 
 こうした個別のスコアを確認することで、チューニングすべきクエリが見えてきます。OpenSearch にはスコアの詳細な計算過程を検索結果と合わせて返却する explain オプションが存在しますが、explain を有効化するとレイテンシに影響するため、本番での常用は望ましくありません。
 
 本記事では、explain オプションを使用せず、個々のクエリやネストされたドキュメントごとのスコアを取得する方法について解説します。
+
+:::message
+**対象バージョン**: 本記事内のクエリは OpenSearch 3.0 以降で動作を確認しています。
+:::
 
 ## テスト環境のセットアップ
 
@@ -36,13 +41,13 @@ PUT my-knn-index-1
     "properties": {
       "metadata.label": {
         "type": "text"
-       },
-       "metadata.version": {
-         "type": "short"
-       },
-       "nested_field": {
-         "type": "nested",
-         "properties": {
+      },
+      "metadata.version": {
+        "type": "short"
+      },
+      "nested_field": {
+        "type": "nested",
+        "properties": {
           "my_vector": {
             "type": "knn_vector",
             "dimension": 3,
@@ -58,57 +63,6 @@ PUT my-knn-index-1
     }
   }
 }
-
-PUT my-knn-index-1
-{
-  "settings": {
-    "index.knn": true,
-    "index.knn.memory_optimized_search" : true,
-    "number_of_replicas": 0,
-    "number_of_shards": 1
-  },
-  "mappings": {
-    "properties": {
-      "metadata.label": {
-        "type": "text"
-       },
-       "metadata.version": {
-         "type": "short"
-       },
-      "nested_field": {
-        "type": "nested",
-        "properties": {
-          "my_vector": {
-            "type": "knn_vector",
-            "dimension": 3,
-            "space_type": "l2",
-            "data_type": "float",
-            "mode": "on_disk",
-            "compression_level": "32x",
-            "method": {
-              "name": "hnsw",
-              "engine": "faiss",
-              "parameters": {
-                "encoder": {
-                  "name": "binary",
-                  "parameters": {
-                    "bits": 1,
-              		  "random_rotation": true,
-              		  "enable_adc": true
-                  }
-                }
-              }
-            }
-          },
-          "color": {
-            "type": "text",
-            "index": false
-          }
-        }
-      }
-    }
-  }
-}
 ```
 
 ### テストデータ投入
@@ -116,7 +70,7 @@ PUT my-knn-index-1
 ```json
 POST _bulk?refresh=true
 { "index": { "_index": "my-knn-index-1", "_id": "1" } }
-{"nested_field":[{"my_vector":[1,1,1], "my_text": "blue racoon"},{"my_vector":[2,2,2], "my_text": "yellow racoon"},{"my_vector":[3,3,3], "my_text": "whie racoon"}], "metadata": {"label": "racoon", "version": 2}}
+{"nested_field":[{"my_vector":[1,1,1], "my_text": "blue racoon"},{"my_vector":[2,2,2], "my_text": "yellow racoon"},{"my_vector":[3,3,3], "my_text": "white racoon"}], "metadata": {"label": "racoon", "version": 2}}
 { "index": { "_index": "my-knn-index-1", "_id": "2" } }
 {"nested_field":[{"my_vector":[10,10,10], "my_text": "red cat"},{"my_vector":[20,20,20], "my_text": "green cat"},{"my_vector":[30,30,30], "my_text": "black cat"}],"metadata": {"label": "cat", "version": 15}}
 { "index": { "_index": "my-knn-index-1", "_id": "3" } }
@@ -136,6 +90,10 @@ bool クエリの各クエリ `_name` を付与し、`include_named_queries_scor
 このパラメーターは Named Query と呼ばれるものです。検索結果でどのクエリにマッチしたかを `matched_queries` フィールドで確認することができます。
 
 `include_named_queries_score=true` パラメータを Search API に追加することで、**各 Named Query の個別スコア**を取得可能です。
+
+:::message
+**パフォーマンスへの影響**: `include_named_queries_score=true` は `explain` オプションと比較してオーバーヘッドが小さく、本番環境でも利用可能です。ただし、多数の Named Query を設定した場合はレスポンスサイズが増加するため、必要なクエリにのみ `_name` を付与することを推奨します。
+:::
 
 ```json
 GET my-knn-index-1/_search?include_named_queries_score=true
@@ -283,6 +241,10 @@ GET my-knn-index-1/_search?include_named_queries_score=true
 
 inner_hits オプションを使用することで、ネストされたドキュメントごとのスコアを確認することができます。
 
+:::message alert
+**注意**: `inner_hits` を使用すると、ネストされたドキュメントの情報がレスポンスに含まれるため、レスポンスサイズが大幅に増加する可能性があります。大量の nested ドキュメントがある場合は、`size` パラメータで返却数を制限することを推奨します(例: `"inner_hits": { "size": 3 }`)。
+:::
+
 ```json
 GET my-knn-index-1/_search?include_named_queries_score=true
 {
@@ -306,7 +268,7 @@ GET my-knn-index-1/_search?include_named_queries_score=true
 }
 ```
 
-:::details 実行結果（抜粋）
+:::details 実行結果(抜粋)
 
 ```json
 {
@@ -361,7 +323,7 @@ GET my-knn-index-1/_search?include_named_queries_score=true
                 },
                 "_score": 0.11520737,
                 "_source": {
-                  "my_text": "whie racoon",
+                  "my_text": "white racoon",
                   "my_vector": [3, 3, 3]
                 }
               }
@@ -379,6 +341,10 @@ GET my-knn-index-1/_search?include_named_queries_score=true
 ## hybrid クエリでの個別スコア取得
 
 OpenSearch のハイブリッド検索では、キーワード検索とベクトル検索を組み合わせて実行できます。各サブクエリに Named Queries を設定することで、正規化前の個別スコアを確認できます。
+
+:::message
+**重要**: `matched_queries` で返されるスコアは **正規化前の生スコア** です。最終的な `_score` は `normalization-processor` による正規化後の値となるため、`matched_queries` の値を単純に合算しても `_score` とは一致しません。
+:::
 
 inner_hits を複数個所で指定する場合は、name プロパティを付与することで各クエリごとに、ドキュメント単位のスコアを表示することが可能です。
 
@@ -498,7 +464,7 @@ GET my-knn-index-1/_search?include_named_queries_score=true&phase_took
             },
             {
               "my_vector": [3, 3, 3],
-              "my_text": "whie racoon"
+              "my_text": "white racoon"
             }
           ],
           "metadata": {
@@ -578,7 +544,7 @@ GET my-knn-index-1/_search?include_named_queries_score=true&phase_took
                   },
                   "_score": 0.11520737,
                   "_source": {
-                    "my_text": "whie racoon",
+                    "my_text": "white racoon",
                     "my_vector": [3, 3, 3]
                   }
                 }
@@ -959,7 +925,22 @@ GET my-knn-index-1/_search?include_named_queries_score=true&phase_took
 
 ## まとめと補足
 
-本記事では OpenSearch のハイブリッドクエリやネストクエリにおける個別スコアの取得方法について解説しました。より詳細なスコア計算過程が必要な場合は、explain も合わせて利用していきましょう。
+本記事では OpenSearch のハイブリッドクエリやネストクエリにおける個別スコアの取得方法について解説しました。
+
+### ポイントまとめ
+
+| 機能                     | 用途                                | パラメータ                                   |
+| ------------------------ | ----------------------------------- | -------------------------------------------- |
+| Named Query              | 各クエリの個別スコア取得            | `_name` + `include_named_queries_score=true` |
+| inner_hits               | nested ドキュメントごとのスコア取得 | `"inner_hits": {}`                           |
+| hybrid_score_explanation | hybrid query の詳細な explain       | response_processors に追加                   |
+
+### explain との使い分け
+
+- **開発・デバッグ時**: `explain=true` で詳細なスコア計算過程を確認
+- **本番環境でのモニタリング**: `include_named_queries_score=true` で軽量に個別スコアを取得
+
+より詳細なスコア計算過程が必要な場合は、explain も合わせて利用していきましょう。
 
 なお、hybrid query の explain を取得する場合は、別途 `hybrid_score_explanation` プロセッサが必要となります。
 

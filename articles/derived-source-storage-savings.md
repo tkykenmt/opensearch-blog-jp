@@ -3,9 +3,9 @@ title: "[翻訳] Derived Source でストレージを最大 2 倍節約"
 emoji: "💾"
 type: "tech"
 topics: ["opensearch"]
+publication_name: "opensearch"
 published: true
-publication_name: opensearch
-published_at: 2025-10-22
+published_at: "2025-10-22"
 ---
 
 :::message
@@ -28,7 +28,7 @@ OpenSearch がデータをさまざまな形式で保存するのは、各フィ
 
 次の画像は、約 10 億件のドキュメントを含むテストデータセットで実施した実験でのフィールド分布を示しています。
 
-## OpenSearch は _source フィールドをどのように使用するか?
+## OpenSearch は \_source フィールドをどのように使用するか?
 
 `_source` フィールドは、検索操作中のドキュメント取得だけでなく、更新、再インデックス、スクリプト化された更新、リカバリ操作などにも使用されます。`_source` を無効にすると、これらの操作が利用できなくなり、データリカバリもできなくなるため、推奨されません。
 

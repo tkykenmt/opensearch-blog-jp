@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch における AI モデルとエージェントのリ
 emoji: "🔄"
 type: "tech"
 topics: ["opensearch"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2025-11-18
 ---

@@ -19,7 +19,7 @@ AI エージェント (または単にエージェント) とは、大規模言�
 
 OpenSearch には、検索拡張生成 (RAG)、チャットボット、リサーチ、自動根本原因分析 (RCA) など、さまざまな AI タスクに対応する多様なエージェントが用意されています。
 
-本ブログでは、OpenSearch がサポートする多様なエージェントについて紹介し、各タスクに最適なエージェントを選択する際の指針を提供します。理解を明確にするため、まずは最もシンプルなエージェントから始め、徐々により複雑なエージェントへと解説を進めていきます。
+本記事では、OpenSearch がサポートする多様なエージェントについて紹介し、各タスクに最適なエージェントを選択する際の指針を提供します。理解を明確にするため、まずは最もシンプルなエージェントから始め、徐々により複雑なエージェントへと解説を進めていきます。
 
 ## フローエージェント
 
@@ -27,7 +27,7 @@ OpenSearch には、検索拡張生成 (RAG)、チャットボット、リサー
 
 フローエージェントは [RAG (Retrieval-Augmented Generation)](https://opensearch.org/blog/using-opensearch-for-retrieval-augmented-generation-rag/) の実装において特に有用です。RAG プロセスでは、エージェントはまずツールを呼び出してナレッジベースから情報を取得し、次に別のツールから LLM を呼び出します。この際、前段階で取得した知識ベースの情報を入力として渡し、さらにクエリも渡します。これは one-shot プロンプトを実装するのに最適な方法です。
 
-詳細については、[Flow agents](https://docs.opensearch.org/latest/ml-commons-plugin/agents-tools/agents/flow/) のページをご覧ください。
+詳細については、[Flow agents](https://docs.opensearch.org/latest/ml-commons-plugin/agents-tools/agents/flow/) を参照してください。
 
 ## 会話型フローエージェント
 
@@ -35,7 +35,7 @@ OpenSearch には、検索拡張生成 (RAG)、チャットボット、リサー
 
 ただし、会話型フローエージェントは、セッション中のプロンプト間で会話履歴をメモリインデックスに保存します。この履歴により、エージェントがコンテキストを活用してユーザーのフォローアップ質問に対応できるようになります。会話型フローエージェントはチャットボットに最適です。チャットボットは大部分のユーザーとのやり取りで定義済みの複数ステップにわたるプロセスを実行する必要があり、かつフォローアップ質問に対応するために会話のコンテキストを保持する必要があるためです。この機能は、few-shot プロンプトを使用することで実現されます。新しいプロンプトが送信されるたびに、過去の会話履歴がコンテキストとして活用されます。
 
-会話履歴は OpenSearch クラスタ内のインデックスに保存され、他のデータと同様に管理されます。この履歴は、エージェントや人間が監査、推論、デバッグを行う際に、クエリや検査のために容易にアクセス可能です。データへのアクセスには [Memory API](https://docs.opensearch.org/latest/ml-commons-plugin/api/memory-apis/index/) を使用します。詳細については、[Agentic Memory](https://github.com/opensearch-project/project-website/diffs/0?base_sha=15afd7078aa5e60e4c3b29778c0ee9cb7eda6d97&head_user=horovits&name=patch-1&pull_number=3961&sha1=15afd7078aa5e60e4c3b29778c0ee9cb7eda6d97&sha2=52f740a6b1c9e3c2508fedf8b977fa3d69c0f158&short_path=172dd17&unchanged=expanded&w=false#agentic-memory) のページをご覧ください。
+会話履歴は OpenSearch クラスタ内のインデックスに保存され、他のデータと同様に管理されます。この履歴は、エージェントや人間が監査、推論、デバッグを行う際に、クエリや検査のために容易にアクセス可能です。データへのアクセスには [Memory API](https://docs.opensearch.org/latest/ml-commons-plugin/api/memory-apis/index/) を使用します。詳細については、[Agentic Memory](https://github.com/opensearch-project/project-website/diffs/0?base_sha=15afd7078aa5e60e4c3b29778c0ee9cb7eda6d97&head_user=horovits&name=patch-1&pull_number=3961&sha1=15afd7078aa5e60e4c3b29778c0ee9cb7eda6d97&sha2=52f740a6b1c9e3c2508fedf8b977fa3d69c0f158&short_path=172dd17&unchanged=expanded&w=false#agentic-memory) を参照してください。
 
 ## 会話型エージェント
 
@@ -59,7 +59,7 @@ Plan-execute-reflect エージェントは OpenSearch のマルチエージェ�
 
 Plan-execute-reflect エージェントは、研究活動や根本原因分析 (Root Cause Analytics - RCA) など、反復的な推論と適応的な実行が有効な、長時間にわたる探索的プロセスに最適です。
 
-Plan-execute-reflect エージェントの詳細については、[こちらの記事](https://zenn.dev/tkykenmt/articles/92f75324721959)をご覧ください。
+Plan-execute-reflect エージェントの詳細については、[関連記事](https://zenn.dev/tkykenmt/articles/92f75324721959)を参照してください。
 
 ## エージェントツールと外部データ連携
 
@@ -92,7 +92,7 @@ OpenSearch は、[MCP コネクタ](https://docs.opensearch.org/latest/ml-common
 1. ビルトイン MCP サーバー: [ビルトイン MCP サーバー](https://docs.opensearch.org/latest/ml-commons-plugin/api/mcp-server-apis/index/)は OpenSearch 内にネイティブに統合されており、動的なツールの登録・削除が可能な Streamable HTTP 形式の MCP API を提供します。このソリューションでは、エージェントが OpenSearch の主要機能をシームレスに利用でき、リアルタイムのデータクエリや分析を行うための強力な[ツール](https://docs.opensearch.org/latest/ml-commons-plugin/agents-tools/tools/index/)を呼び出せます。このソリューションは `/_plugins/_ml/mcp` エンドポイントを通じて OpenSearch の API に直接アクセスするため、ロールベースアクセス制御 (RBAC) に標準で対応しており、安全かつ詳細なアクセス管理が可能です。
 2. スタンドアロン MCP サーバー: [スタンドアロン MCP サーバー](https://github.com/opensearch-project/opensearch-mcp-server-py/blob/main/USER_GUIDE.md)は、`opensearch-mcp-server-py` PyPI パッケージを通じて柔軟なデプロイオプションを提供します。このソリューションは `stdio`、Streamable HTTP、SSE など複数のプロトコルをサポートしており、さまざまな AI エージェントフレームワークとの互換性を備えています。高度な機能として、ツールフィルタリング機能やマルチクラスター接続機能を備えており、分散環境においても洗練されたエージェントワークフローを実現できます。
 
-どちらのソリューションも、エージェントが検索データに安全かつリアルタイムでアクセスできるようにし、OpenSearch ツールを他の MCP サーバーや外部ツールと連携させることで、高度な分析処理を可能にします。具体的な実装例や活用事例については、こちらの[記事](https://opensearch.org/blog/unlocking-agentic-ai-experiences-with-opensearch/)をご覧ください。
+どちらのソリューションも、エージェントが検索データに安全かつリアルタイムでアクセスできるようにし、OpenSearch ツールを他の MCP サーバーや外部ツールと連携させることで、高度な分析処理を可能にします。具体的な実装例や活用事例については、[関連記事](https://opensearch.org/blog/unlocking-agentic-ai-experiences-with-opensearch/)を参照してください。
 
 ## まとめ
 

@@ -9,7 +9,7 @@ published_at: 2025-07-24
 ---
 
 :::message
-この記事は [OpenSearch Project の公式ブログ記事](https://opensearch.org/blog/opensearch-approximation-framework/) の日本語翻訳です。
+本記事は [OpenSearch Project Blog](https://opensearch.org/blog/) に投稿された以下の記事を日本語に翻訳したものです。
 :::
 
 https://opensearch.org/blog/opensearch-approximation-framework/
@@ -26,7 +26,7 @@ OpenSearch ユーザーであれば、最新のログ、メトリクス、イベ
 
 OpenSearch Approximation Framework は、早期終了を伴うカスタム BKD ツリートラバーサルを実装するクエリ最適化技術です。重要なポイントは、サイズ制限のあるクエリの場合、Approximation Framework はすべての一致するドキュメントを訪問する必要がなく、十分な結果を収集するとすぐに停止できるということです。
 
-フレームワークは、次の機能を持つ標準 Lucene クエリ (`PointRangeQuery` など) のカスタムバージョンを作成します。
+フレームワークは、以下の機能を持つ標準 Lucene クエリ (`PointRangeQuery` など) のカスタムバージョンを作成します。
 
 - サイズ制限に達すると BKD ツリートラバーサルの**早期終了**
 - **正確な結果を返す**ため、返されるドキュメントは常に正しい一致
@@ -86,8 +86,8 @@ Approximation Framework は現在、特に `track_total_hits` が `true` に設�
 
 すべての一致するドキュメントを訪問する Lucene の標準ツリートラバーサルを使用する代わりに、フレームワークはソート対応トラバーサルを伴うカスタム `intersectLeft` および `intersectRight` メソッドを実装し、不必要なノードを訪問することなく正しい上位 N 件のドキュメントの収集を保証します。
 
-- **`ASC` ソート**: `intersectLeft` を使用して、最小値から最大値へトラバースします。このメソッドはデフォルトであり、プレーンな範囲クエリに使用されます。
-- **`DESC` ソート**: `intersectRight` を使用して、最大値から最小値へトラバースします。
+- **`ASC` ソート**。`intersectLeft` を使用して、最小値から最大値へトラバースします。このメソッドはデフォルトであり、プレーンな範囲クエリに使用されます。
+- **`DESC` ソート**。`intersectRight` を使用して、最大値から最小値へトラバースします。
 
 ### 例: 近似を伴うトラバーサル
 
@@ -95,7 +95,7 @@ Approximation Framework は現在、特に `track_total_hits` が `true` に設�
 
 ### intersectLeft トラバーサル
 
-次の図は、Approximation Framework が次のパラメータを持つクエリに対して BKD ツリートラバーサルを実行する方法を示しています。
+次の図は、Approximation Framework が以下のパラメータを持つクエリに対して BKD ツリートラバーサルを実行する方法を示しています。
 
 - `size` = 1100
 - `range` = 10:00 – 10:30
@@ -106,7 +106,7 @@ Approximation Framework は現在、特に `track_total_hits` が `true` に設�
 
 ### トラバーサルパス
 
-ツリーは次のようにトラバースされます。
+ツリーは以下のようにトラバースされます。
 
 ```
 Root → Left1 → Left2 → L1 → L2 → Right2 → L3 → Done
@@ -117,7 +117,7 @@ Root → Left1 → Left2 → L1 → L2 → Right2 → L3 → Done
 
 ### intersectRight トラバーサル
 
-次の図は、Approximation Framework が次のパラメータを持つクエリに対して降順ソート (`SortOrder.DESC`) トラバーサルを実行する方法を示しています。
+次の図は、Approximation Framework が以下のパラメータを持つクエリに対して降順ソート (`SortOrder.DESC`) トラバーサルを実行する方法を示しています。
 
 - `size` = 1100
 - `range` = 10:00 – 10:30
@@ -128,7 +128,7 @@ Root → Left1 → Left2 → L1 → L2 → Right2 → L3 → Done
 
 ### トラバーサルパス
 
-ツリーは次のようにトラバースされます。
+ツリーは以下のようにトラバースされます。
 
 ```
 Root → Right1 → Right3 → L8 → L7 → Left3 → L6 → Done
@@ -179,7 +179,7 @@ Root → Right1 → Right3 → L8 → L7 → Left3 → L6 → Done
 
 開発フェーズからのベンチマーク結果をキャプチャした[このコメント](https://github.com/opensearch-project/OpenSearch/pull/18439#issuecomment-2942212895)に示されているように、いくつかのクエリタイプで大幅な改善が見られました。`http_logs`: `desc_sort_size` は **80% 以上**改善し、`http_logs`: `desc_sort_timestamp` は **80% 以上**改善し、`asc_sort_timestamp` は **80.55% 以上**のパフォーマンス改善を達成しました。
 
-## 今後の展望
+## 今後の予定
 
 高レベルの [META issue](https://github.com/opensearch-project/OpenSearch/issues/18619) には、Approximation Framework に関連する次の一連の機能強化が含まれています。
 
@@ -213,7 +213,7 @@ Root → Right1 → Right3 → L8 → L7 → Left3 → L6 → Done
 
 ### 探索中の追加のクエリ形状とタイプ
 
-Approximation Framework を追加のクエリタイプに拡張するいくつかの有望な拡張を探索しています。将来のリリースでターゲットにできるクエリのタイプは次のとおりです。
+Approximation Framework を追加のクエリタイプに拡張するいくつかの有望な拡張を探索しています。将来のリリースでターゲットにできるクエリのタイプは以下のとおりです。
 
 ### Term クエリ
 
