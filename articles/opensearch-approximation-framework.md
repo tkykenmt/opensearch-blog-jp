@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch Approximation Framework"
 emoji: "⚡"
 type: "tech"
 topics: ["opensearch"]
-published: false
+published: true
 publication_name: opensearch
 published_at: 2025-07-24
 ---
@@ -224,13 +224,3 @@ Approximation Framework を追加のクエリタイプに拡張するいくつ�
 ### 数値 search_after クエリ
 
 [この issue](https://github.com/opensearch-project/OpenSearch/issues/18546) で概説されている概念実証の取り組み中に、大規模なデータセットの効率的なディープページネーション用に設計された `search_after` パラメータを使用する数値クエリで大幅な改善が観察されました。`asc_sort_with_after_timestamp` のテストでは、P90 レイテンシが **194.828 ms** から **8.459 ms** に低下し、`desc_sort_with_after_timestamp` では **188.037 ms** から **7.09 ms** に低下しました。
-
-## 著者について
-
-- **Prudhvi Godithi** は、OpenSearch Project に取り組んでいる AWS のソフトウェア開発エンジニアです。彼は検索パフォーマンスの最適化に焦点を当て、Kubernetes オペレーター、Terraform プロバイダー、Helm チャート、コミュニティ OpenSearch Metrics Project を含むいくつかの主要コンポーネントを保守しています。また、リリースプロセス、ビルドおよびテストツール、OpenSearch の再利用可能なインフラストラクチャにも焦点を当てています。
-
-- **Harsha Vamsi Kalluri** は、OpenSearch Clients チームに取り組んでいる AWS のソフトウェア開発エンジニアです。
-
-- **Saurabh** は、OpenSearch Project のコア検索、リリース、ベンチマーク領域を率いる AWS のソフトウェア開発マネージャーです。彼の情熱は、大規模分散システム内の複雑な課題の解決策を見つけることにあります。
-
-- **Sawan Srivastava** は、OpenSearch Project の Core Search チームに取り組んでいる AWS のソフトウェア開発エンジニアインターンです。

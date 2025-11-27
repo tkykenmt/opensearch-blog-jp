@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch の新しい PPL 機能でより良い可観測性�
 emoji: "📊"
 type: "tech"
 topics: ["opensearch"]
-published: false
+published: true
 publication_name: opensearch
 published_at: 2025-11-25
 ---

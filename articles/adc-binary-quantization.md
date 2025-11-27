@@ -3,7 +3,7 @@ title: "[翻訳] バイナリ量子化のための非対称距離計算"
 emoji: "🔍"
 type: "tech"
 topics: ["opensearch"]
-published: false
+published:true
 publication_name: opensearch
 published_at: 2025-11-26
 ---

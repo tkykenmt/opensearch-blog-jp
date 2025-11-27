@@ -3,7 +3,7 @@ title: "[翻訳] Derived Source でストレージを最大 2 倍節約"
 emoji: "💾"
 type: "tech"
 topics: ["opensearch"]
-published: false
+published: true
 publication_name: opensearch
 published_at: 2025-10-22
 ---
