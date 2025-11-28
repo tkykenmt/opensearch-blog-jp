@@ -411,28 +411,28 @@
       "slug": "reduce-cost-with-disk-based-vector-search",
       "url": "https://opensearch.org/blog/reduce-cost-with-disk-based-vector-search/",
       "file": "articles/opensearch-disk-based-vector-search-cost.md",
-      "status": "pending",
+      "status": "reviewed",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "introducing-reciprocal-rank-fusion-hybrid-search",
       "url": "https://opensearch.org/blog/introducing-reciprocal-rank-fusion-hybrid-search/",
       "file": "articles/opensearch-reciprocal-rank-fusion-hybrid.md",
-      "status": "pending",
+      "status": "reviewed",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "explore-opensearch-2-19",
       "url": "https://opensearch.org/blog/explore-opensearch-2-19/",
       "file": "articles/opensearch-2-19-explore-new-features.md",
-      "status": "pending",
+      "status": "reviewed",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "reducing-false-positives-through-algorithmic-improvements",
       "url": "https://opensearch.org/blog/reducing-false-positives-through-algorithmic-improvements/",
       "file": "articles/opensearch-reducing-false-positives-algo.md",
-      "status": "pending",
+      "status": "reviewed",
       "updated_at": "2025-11-28"
     }
   ]

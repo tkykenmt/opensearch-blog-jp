@@ -209,11 +209,11 @@ Amazon SQS のコストを削減するために、代わりに SQS データを�
 - `opensearch` シンクは、OTel ログとメトリクスの新しいインデックスタイプをサポートするようになりました
 - Data Prepper の式は、`/` 文字をエスケープできるようにすることで、キー内のスラッシュ (`/`) をサポートするようになりました
 
-## 今後の展望
+## 今後の予定
 
 Data Prepper の開発は継続しており、いくつかの新機能が予定されています。注目すべき機能の 1 つは、ML Commons と Amazon Bedrock の Data Prepper パイプラインへの統合です。この機能は、新しい機械学習 (ML) 推論プロセッサと Amazon Simple Storage Service (Amazon S3) ソースおよびシンクを通じて提供されます。この機能は現在開発中であり、バージョン 2.11 で実験的に利用可能です。
 
-今後の機能の詳細については、[Data Prepper プロジェクトロードマップ](https://github.com/orgs/opensearch-project/projects/221/views/1)をご覧ください。
+今後の機能の詳細については、[Data Prepper プロジェクトロードマップ](https://github.com/orgs/opensearch-project/projects/221/views/1)を参照してください。
 
 ## コントリビューターへの感謝
 

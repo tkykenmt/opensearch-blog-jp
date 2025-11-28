@@ -55,7 +55,7 @@ Apache Lucene 10 へのアップグレードの理由は、パフォーマンス
 - **スパースインデックス**: プライマリキーインデックスとも呼ばれ、スパースインデックスはデータをブロックに整理し、最小値と最大値を記録します。これにより、クエリ時に関連のないブロックをより効率的にスキップでき、CPU/ストレージの効率が向上します。これは、前述の I/O 並列処理の改善によって可能になりました。
 - **k-NN/ニューラル検索の改善**: 並列検索の改善により、Lucene 10 では k-NN およびニューラル検索の並列実行が向上しました。また、ベクトルインデックスの改善も追加されています。I/O の並列化が改善されたことで、ベクトルの保存方法の最適化が真価を発揮し、よりスケーラブルなニューラル検索エンジンが実現しました。
 
-Lucene 10 の改善点の詳細については、[変更履歴](https://lucene.apache.org/core/10_0_0/changes/Changes.html#v10.0.0)をご覧ください。
+Lucene 10 の改善点の詳細については、[変更履歴](https://lucene.apache.org/core/10_0_0/changes/Changes.html#v10.0.0)を参照してください。
 
 ### その他のパフォーマンス改善
 
@@ -90,4 +90,4 @@ SparkSQL コネクタも削除され、その統合を使用しているプロ�
 
 OpenSearch 3.0 は、セマンティックバージョニングに忠実に、アプリケーションに破壊的変更をもたらします。
 
-OpenSearch 3.0 がロールアウトされる際には、プラグインとコードを監査して、新しいバージョンでも動作することを確認する必要があります。[新しくリリースされた 3.0.0-alpha1 でテスト](https://github.com/opensearch-project/opensearch-build/issues/3747)することもできます。待っている間に OpenSearch 2.x クラスターを立ち上げたい場合は、[Instaclustr](https://www.instaclustr.com/) がホスト型 OpenSearch サービスの[無料トライアル](https://console2.instaclustr.com/signup)を提供しています。最後に、OpenSearch 3.0 の変更点についてより深く掘り下げる今後のブログ記事にご期待ください。
+OpenSearch 3.0 がロールアウトされる際には、プラグインとコードを監査して、新しいバージョンでも動作することを確認する必要があります。[新しくリリースされた 3.0.0-alpha1 でテスト](https://github.com/opensearch-project/opensearch-build/issues/3747)することもできます。待っている間に OpenSearch 2.x クラスターを立ち上げたい場合は、[Instaclustr](https://www.instaclustr.com/) がホスト型 OpenSearch サービスの[無料トライアル](https://console2.instaclustr.com/signup)を提供しています。最後に、OpenSearch 3.0 の変更点についてより深く掘り下げる今後の記事にご期待ください。

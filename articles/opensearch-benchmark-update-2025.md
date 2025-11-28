@@ -32,7 +32,7 @@ OpenSearch Benchmark は、基本的なテスト、概念実証、さらには�
 
 ### OpenSearch Benchmark の使い方
 
-OpenSearch Benchmark を始める最も簡単な方法は、[クイックスタート](https://docs.opensearch.org/docs/latest/benchmark/quickstart/)ガイドに従うことです。より深く学びたい場合は、OpenSearch Benchmark の[ユーザーガイド](https://docs.opensearch.org/docs/latest/benchmark/user-guide/index/)と[リファレンス](https://docs.opensearch.org/docs/latest/benchmark/reference/index/)セクションをご覧ください。
+OpenSearch Benchmark を始める最も簡単な方法は、[クイックスタート](https://docs.opensearch.org/docs/latest/benchmark/quickstart/)ガイドに従うことです。より深く学びたい場合は、OpenSearch Benchmark の[ユーザーガイド](https://docs.opensearch.org/docs/latest/benchmark/user-guide/index/)と[リファレンス](https://docs.opensearch.org/docs/latest/benchmark/reference/index/)セクションを参照してください。
 
 OpenSearch Benchmark のドキュメントに対するフィードバックや機能強化の提案がある場合は、[Issue を作成](https://github.com/opensearch-project/documentation-website/)してください。
 

@@ -50,7 +50,7 @@ OpenSearch Benchmark は最近、ベンチマーク実行中にクライアン�
 
 ## 仕組み
 
-以下の図は、OpenSearch Benchmark におけるアクターベースの実行フローの概要を示しています。ベンチマークタスクが複数のワーカーアクターにどのように割り当てられ、実行されるかを示しており、各ワーカーアクターはターゲットの OpenSearch クラスターにリクエストを送信するクライアントグループを管理します。
+以下の図にOpenSearch Benchmark におけるアクターベースの実行フローの概要を示します。ベンチマークタスクが複数のワーカーアクターにどのように割り当てられ、実行されるかを示しており、各ワーカーアクターはターゲットの OpenSearch クラスターにリクエストを送信するクライアントグループを管理します。
 
 ![OpenSearch Benchmark システムアーキテクチャ](/images/opensearch-benchmark-redline-testing/OSB-system-architecture.png)
 
@@ -147,7 +147,7 @@ OpenSearch Benchmark は以下のログ情報をキャプチャします。
 
 ![レッドラインテストのスループットチャート](/images/opensearch-benchmark-redline-testing/dashboards-latency-over-time-1024x670.png)
 
-## 今後の展望
+## 今後の予定
 
 レッドラインテストの今後の改善には以下が含まれる可能性があります。
 
