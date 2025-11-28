@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch 2.15 でハイブリッドクエリのパフォー�
 emoji: "🚀"
 type: "tech"
 topics: ["opensearch", "ハイブリッド検索", "パフォーマンス", "セマンティック検索"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2024-07-02
 ---

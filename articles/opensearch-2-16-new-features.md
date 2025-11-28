@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch 2.16 の紹介"
 emoji: "✨"
 type: "tech"
 topics: ["opensearch", "search", "vectorsearch", "security", "machinelearning"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2024-08-07
 ---

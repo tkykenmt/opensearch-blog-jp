@@ -3,7 +3,7 @@ title: "[翻訳] FP16 量子化で OpenSearch を最適化する"
 emoji: "⚡"
 type: "tech"
 topics: ["opensearch", "ベクトル検索", "量子化", "メモリ最適化", "knn"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2024-06-27
 ---

@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch におけるベクトル放射状検索の理解"
 emoji: "🎯"
 type: "tech"
 topics: ["opensearch", "vectorsearch", "knn", "machinelearning", "search"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2024-06-24
 ---

@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch 2.15 の新機能を探る"
 emoji: "🚀"
 type: "tech"
 topics: ["opensearch", "search", "vectorsearch", "machinelearning", "analytics"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2024-06-25
 ---

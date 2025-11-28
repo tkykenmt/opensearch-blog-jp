@@ -3,7 +3,7 @@ title: "[翻訳] match_only_text フィールドでストレージとパフォ�
 emoji: "💾"
 type: "tech"
 topics: ["opensearch", "elasticsearch", "検索", "ストレージ最適化"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2024-07-22
 ---
