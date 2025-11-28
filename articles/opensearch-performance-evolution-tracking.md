@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch パフォーマンスの進化を追跡する"
 emoji: "📊"
 type: "tech"
 topics: ["opensearch", "performance", "benchmark"]
-published: false
+published: true
 published_at: 2025-03-06
 publication_name: "opensearch"
 ---

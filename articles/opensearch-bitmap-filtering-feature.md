@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch のビットマップフィルタリングによる�
 emoji: "🗺️"
 type: "tech"
 topics: ["opensearch", "performance", "filtering", "bitmap"]
-published: false
+published: true
 published_at: 2025-02-25
 publication_name: "opensearch"
 ---

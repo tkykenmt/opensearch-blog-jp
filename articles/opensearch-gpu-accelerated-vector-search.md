@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch における GPU アクセラレーションベク�
 emoji: "🚀"
 type: "tech"
 topics: ["opensearch", "gpu", "vectorsearch", "nvidia", "performance"]
-published: false
+published: true
 published_at: 2025-03-18
 publication_name: "opensearch"
 ---

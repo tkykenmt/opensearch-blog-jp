@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch Query Insights の新機能: 高度なグルーピ�
 emoji: "🔍"
 type: "tech"
 topics: ["opensearch", "monitoring", "observability", "performance", "dashboard"]
-published: false
+published: true
 published_at: 2025-04-22
 publication_name: "opensearch"
 ---

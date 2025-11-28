@@ -3,7 +3,7 @@ title: "[翻訳] Intel AVX-512 で OpenSearch ベクトル検索のパフォー�
 emoji: "⚡"
 type: "tech"
 topics: ["opensearch", "vectorsearch", "intel", "performance", "simd"]
-published: false
+published: true
 published_at: 2025-04-08
 publication_name: "opensearch"
 ---
