@@ -371,6 +371,69 @@
       "file": "articles/opensearch-data-prepper-2-11-release.md",
       "status": "reviewed",
       "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "whats-new-in-opensearch-query-insights-advanced-grouping-dashboards-and-historical-analysis",
+      "url": "https://opensearch.org/blog/whats-new-in-opensearch-query-insights-advanced-grouping-dashboards-and-historical-analysis/",
+      "file": "articles/opensearch-query-insights-grouping-dashboards.md",
+      "status": "in_progress",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "boost-opensearch-vector-search-performance-with-intel-avx512",
+      "url": "https://opensearch.org/blog/boost-opensearch-vector-search-performance-with-intel-avx512/",
+      "file": "articles/opensearch-vector-search-intel-avx512.md",
+      "status": "in_progress",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "gpu-accelerated-vector-search-opensearch-new-frontier",
+      "url": "https://opensearch.org/blog/gpu-accelerated-vector-search-opensearch-new-frontier/",
+      "file": "articles/opensearch-gpu-accelerated-vector-search.md",
+      "status": "in_progress",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "tracking-the-evolution-of-opensearch-performance",
+      "url": "https://opensearch.org/blog/tracking-the-evolution-of-opensearch-performance/",
+      "file": "articles/opensearch-performance-evolution-tracking.md",
+      "status": "in_progress",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introduce-bitmap-filtering-feature",
+      "url": "https://opensearch.org/blog/introduce-bitmap-filtering-feature/",
+      "file": "articles/opensearch-bitmap-filtering-feature.md",
+      "status": "in_progress",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "reduce-cost-with-disk-based-vector-search",
+      "url": "https://opensearch.org/blog/reduce-cost-with-disk-based-vector-search/",
+      "file": "articles/opensearch-disk-based-vector-search-cost.md",
+      "status": "pending",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-reciprocal-rank-fusion-hybrid-search",
+      "url": "https://opensearch.org/blog/introducing-reciprocal-rank-fusion-hybrid-search/",
+      "file": "articles/opensearch-reciprocal-rank-fusion-hybrid.md",
+      "status": "pending",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "explore-opensearch-2-19",
+      "url": "https://opensearch.org/blog/explore-opensearch-2-19/",
+      "file": "articles/opensearch-2-19-explore-new-features.md",
+      "status": "pending",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "reducing-false-positives-through-algorithmic-improvements",
+      "url": "https://opensearch.org/blog/reducing-false-positives-through-algorithmic-improvements/",
+      "file": "articles/opensearch-reducing-false-positives-algo.md",
+      "status": "pending",
+      "updated_at": "2025-11-28"
     }
   ]
 }
