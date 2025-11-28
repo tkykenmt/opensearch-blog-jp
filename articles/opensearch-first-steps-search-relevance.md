@@ -3,10 +3,6 @@ title: "[翻訳] 検索関連性向上への第一歩"
 emoji: "🔍"
 type: "tech"
 topics: ["opensearch", "relevance", "search"]
-  - "opensearch"
-  - "関連性"
-  - "検索精度"
-  - "検索エンジン"
 published: true
 publication_name: "opensearch"
 published_at: 2025-08-13

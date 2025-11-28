@@ -4,7 +4,6 @@ title: "[翻訳] OpenSearch におけるエージェント型検索の導入：�
 emoji: "🤖"
 type: "tech"
 topics: ["opensearch", "ai", "agent", "search"]
-  - "opensearch"
 published: true
 published_at: 2025-11-24
 ---

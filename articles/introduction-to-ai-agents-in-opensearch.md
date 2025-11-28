@@ -4,7 +4,6 @@ title: "[翻訳] OpenSearch AI エージェント入門：シンプルなフロ�
 emoji: "✨"
 type: "tech"
 topics: ["opensearch", "ai", "agent"]
-  - "opensearch"
 published: true
 published_at: 2025-11-03
 ---
