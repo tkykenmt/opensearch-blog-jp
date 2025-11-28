@@ -483,6 +483,27 @@
       "file": "articles/opensearch-binary-vectors-cost-reduction.md",
       "status": "published",
       "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "get-started-with-opensearch-2-18",
+      "url": "https://opensearch.org/blog/get-started-with-opensearch-2-18/",
+      "file": "articles/opensearch-2-18-new-features-overview.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "boosting-k-nn-exact-search",
+      "url": "https://opensearch.org/blog/boosting-k-nn-exact-search/",
+      "file": "articles/opensearch-knn-exact-search-performance.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-the-nightly-playgrounds",
+      "url": "https://opensearch.org/blog/introducing-the-nightly-playgrounds/",
+      "file": "articles/opensearch-nightly-playgrounds-intro.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
     }
   ]
 }
