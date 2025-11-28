@@ -602,6 +602,13 @@
       "file": "articles/opensearch-2-16-new-features.md",
       "status": "published",
       "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "how-to-start-contributing-to-opensearch-a-beginners-guide-based-on-my-journey",
+      "url": "https://opensearch.org/blog/how-to-start-contributing-to-opensearch-a-beginners-guide-based-on-my-journey/",
+      "file": "articles/opensearch-beginners-contribution-guide.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
     }
   ]
 }
