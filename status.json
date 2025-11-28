@@ -455,6 +455,34 @@
       "file": "articles/opensearch-application-based-templates.md",
       "status": "published",
       "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "enable-pluggable-storage-in-opensearch-vectordb",
+      "url": "https://opensearch.org/blog/enable-pluggable-storage-in-opensearch-vectordb/",
+      "file": "articles/opensearch-pluggable-storage-vectordb.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "opensearch-performance-2-17",
+      "url": "https://opensearch.org/blog/opensearch-performance-2-17/",
+      "file": "articles/opensearch-performance-2-17-improvements.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "faiss-byte-vector",
+      "url": "https://opensearch.org/blog/faiss-byte-vector/",
+      "file": "articles/opensearch-faiss-byte-vector-memory.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "lower-your-cost-on-opensearch-using-binary-vectors",
+      "url": "https://opensearch.org/blog/lower-your-cost-on-opensearch-using-binary-vectors/",
+      "file": "articles/opensearch-binary-vectors-cost-reduction.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
     }
   ]
 }
