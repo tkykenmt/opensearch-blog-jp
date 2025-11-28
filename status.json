@@ -2,6 +2,13 @@
   "_comment": "Status codes: 'pending' (未着手), 'in_progress' (作業中), 'reviewed' (レビュー完了), 'published' (公開済). Use only these values.",
   "articles": [
     {
+      "slug": "a-time-machine-for-your-data-opensearch-searchable-snapshots",
+      "url": "https://opensearch.org/blog/a-time-machine-for-your-data-opensearch-searchable-snapshots/",
+      "file": "articles/opensearch-searchable-snapshots-time-machine.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
       "slug": "a-practical-guide-to-selecting-hnsw-hyperparameters",
       "url": "https://opensearch.org/blog/a-practical-guide-to-selecting-hnsw-hyperparameters/",
       "file": "articles/opensearch-hnsw-hyperparameters-guide.md",
