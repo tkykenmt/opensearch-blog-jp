@@ -553,6 +553,48 @@
       "file": "articles/opensearch-concurrent-segment-search-followup.md",
       "status": "published",
       "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "optimize-storage-and-performance-using-matchonlytext-field",
+      "url": "https://opensearch.org/blog/optimize-storage-and-performance-using-matchonlytext-field/",
+      "file": "articles/opensearch-matchonlytext-storage-performance.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "performance-improvment-hybrid-query-215",
+      "url": "https://opensearch.org/blog/performance-improvment-hybrid-query-215/",
+      "file": "articles/opensearch-hybrid-query-performance-215.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "optimizing-opensearch-with-fp16-quantization",
+      "url": "https://opensearch.org/blog/optimizing-opensearch-with-fp16-quantization/",
+      "file": "articles/opensearch-fp16-quantization-optimization.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "vector-radial-search",
+      "url": "https://opensearch.org/blog/vector-radial-search/",
+      "file": "articles/opensearch-vector-radial-search-guide.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "diving-into-opensearch-2-15",
+      "url": "https://opensearch.org/blog/diving-into-opensearch-2-15/",
+      "file": "articles/opensearch-2-15-new-features.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-opensearch-2-16",
+      "url": "https://opensearch.org/blog/introducing-opensearch-2-16/",
+      "file": "articles/opensearch-2-16-new-features.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
     }
   ]
 }
