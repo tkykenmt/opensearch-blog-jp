@@ -343,6 +343,34 @@
       "file": "articles/opensearch-live-queries-monitoring.md",
       "status": "reviewed",
       "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "opensearch-benchmark-an-update",
+      "url": "https://opensearch.org/blog/opensearch-benchmark-an-update/",
+      "file": "articles/opensearch-benchmark-update-2025.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "redline-testing-now-available-in-opensearch-benchmark",
+      "url": "https://opensearch.org/blog/redline-testing-now-available-in-opensearch-benchmark/",
+      "file": "articles/opensearch-benchmark-redline-testing.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "opensearch-3-0-what-to-expect",
+      "url": "https://opensearch.org/blog/opensearch-3-0-what-to-expect/",
+      "file": "articles/opensearch-3-0-what-to-expect.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "announcing-opensearch-data-prepper-2-11",
+      "url": "https://opensearch.org/blog/announcing-opensearch-data-prepper-2-11/",
+      "file": "articles/opensearch-data-prepper-2-11-release.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
     }
   ]
 }
