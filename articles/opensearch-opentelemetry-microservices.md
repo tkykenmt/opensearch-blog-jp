@@ -81,7 +81,7 @@ OpenSearch Dashboards の AI 機能の詳細については、[OpenSearch Assist
 
 問題のあるサービスを素早く特定するには、エラー率でソートして最も高い障害率のサービスを特定します。または、以下の画像に示すように、**Errors** タブを選択したサービスマップを表示して、どのサービスが問題を経験しているか、それらがどのように相互接続されているかを可視化できます。
 
-![サービスマップのエラー表示](/images/opensearch-opentelemetry-microservices/ad-service-correlated-traces-scaled.png)
+![サービスマップのエラー表示](/images/opensearch-opentelemetry-microservices/correlated-traces-ad-service-4.gif)
 
 ### ステップ 2: 問題のあるサービスに移動
 
@@ -93,7 +93,7 @@ Ad サービスのエラー率が高いことを特定した後、それを選�
 
 Ad サービスページでは、以下の画像に示すように、高レベルのパフォーマンス指標、時間経過に伴うエラー率の傾向、サービスの健全性パターン、主要なパフォーマンスメトリクスなど、包括的な概要メトリクスを確認できます。トレンドセクションは、これが最近の問題なのか継続的な問題なのかを理解するのに役立ちます。
 
-![Ad サービスの詳細](/images/opensearch-opentelemetry-microservices/highlighted-ad-service-scaled.png)
+![Ad サービスの詳細](/images/opensearch-opentelemetry-microservices/ad-service-details.gif)
 
 ### ステップ 4: 個々のトレースを調査
 
