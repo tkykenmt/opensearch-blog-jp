@@ -2,8 +2,8 @@
 title: "[翻訳] OpenSearch 3.3 におけるセマンティックハイライトのバッチ処理"
 emoji: "🔍"
 type: "tech"
-topics: ["opensearch"]
-published: false
+topics: ["opensearch", "semantic", "highlighting", "ai"]
+published: true
 published_at: 2025-10-28
 publication_name: opensearch
 ---

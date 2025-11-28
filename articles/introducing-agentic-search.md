@@ -3,7 +3,7 @@ publication_name: "opensearch"
 title: "[翻訳] OpenSearch におけるエージェント型検索の導入：自然言語によるデータ操作の変革"
 emoji: "🤖"
 type: "tech"
-topics:
+topics: ["opensearch", "ai", "agent", "search"]
   - "opensearch"
 published: true
 published_at: 2025-11-24

@@ -3,7 +3,7 @@ publication_name: "opensearch"
 title: "[翻訳] Kiro CLI 統合: ログパターンとデータ分散分析"
 emoji: "🔍"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "logging", "analytics", "cli"]
 published: true
 published_at: 2025-11-20
 ---

@@ -2,7 +2,7 @@
 title: "[翻訳] OpenSearch Approximation Framework"
 emoji: "⚡"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "approximation", "search"]
 published: true
 publication_name: opensearch
 published_at: 2025-07-24

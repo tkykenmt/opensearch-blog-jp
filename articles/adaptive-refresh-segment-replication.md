@@ -2,7 +2,7 @@
 title: "[翻訳] レジリエントなセグメントレプリケーションのための適応的リフレッシュ"
 emoji: "🔄"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "replication", "performance"]
 published: true
 publication_name: "opensearch"
 published_at: "2025-11-21"

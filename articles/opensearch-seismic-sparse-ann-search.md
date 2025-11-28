@@ -2,7 +2,7 @@
 title: "[翻訳] 近似検索によるニューラルスパース検索の数十億ベクトル規模へのスケーリング"
 emoji: "🔍"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "sparsesearch", "vectorsearch", "ann"]
 published: true
 publication_name: "opensearch"
 published_at: 2025-10-23

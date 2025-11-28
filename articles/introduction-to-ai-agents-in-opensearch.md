@@ -3,7 +3,7 @@ publication_name: "opensearch"
 title: "[翻訳] OpenSearch AI エージェント入門：シンプルなフローエージェントから高度な ReAct マルチエージェントシステムまで"
 emoji: "✨"
 type: "tech"
-topics:
+topics: ["opensearch", "ai", "agent"]
   - "opensearch"
 published: true
 published_at: 2025-11-03

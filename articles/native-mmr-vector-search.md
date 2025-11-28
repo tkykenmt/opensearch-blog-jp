@@ -2,7 +2,7 @@
 title: "[翻訳] ネイティブ MMR によるベクトル検索の多様性向上"
 emoji: "🔍"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "vectorsearch", "mmr"]
 published: true
 publication_name: opensearch
 published_at: 2025-11-17

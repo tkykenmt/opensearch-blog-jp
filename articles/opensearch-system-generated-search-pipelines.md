@@ -2,8 +2,8 @@
 title: "[翻訳] system-generated search pipeline で検索をよりスマートに"
 emoji: "🔍"
 type: "tech"
-topics: ["opensearch"]
-published: false
+topics: ["opensearch", "pipeline", "search", "ai"]
+published: true
 published_at: 2025-11-06
 publication_name: "opensearch"
 ---

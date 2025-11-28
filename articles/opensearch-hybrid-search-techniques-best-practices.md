@@ -2,7 +2,7 @@
 title: "[翻訳] OpenSearch で効果的なハイブリッド検索を構築する: テクニックとベストプラクティス"
 emoji: "🔍"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "hybridsearch", "search"]
 published: true
 publication_name: "opensearch"
 published_at: 2025-04-17

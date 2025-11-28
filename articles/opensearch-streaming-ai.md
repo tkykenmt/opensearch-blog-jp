@@ -2,7 +2,7 @@
 title: "[翻訳] OpenSearch における AI モデルとエージェントのリアルタイムストリーミング機能の紹介"
 emoji: "🔄"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "ai", "streaming", "agent"]
 published: true
 publication_name: "opensearch"
 published_at: 2025-11-18

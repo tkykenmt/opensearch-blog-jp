@@ -2,7 +2,7 @@
 title: "[翻訳] OpenSearch のセマンティックハイライト機能の紹介"
 emoji: "🔍"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "semantic", "highlighting", "search"]
 published: true
 published_at: 2025-07-17
 publication_name: "opensearch"

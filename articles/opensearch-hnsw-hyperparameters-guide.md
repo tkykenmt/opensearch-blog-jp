@@ -2,7 +2,7 @@
 title: "[翻訳] HNSW ハイパーパラメータ選択の実践ガイド"
 emoji: "🔍"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "vectorsearch", "hnsw", "machinelearning"]
 published: true
 published_at: 2025-04-10
 publication_name: "opensearch"

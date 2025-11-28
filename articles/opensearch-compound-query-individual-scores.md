@@ -3,7 +3,7 @@ publication_name: "opensearch"
 title: "OpenSearch の複雑なクエリにおいて、各クエリごとの個別スコアを取得する方法"
 emoji: "🔍"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "query", "scoring", "search"]
 published: true
 published_at: 2025-11-26
 ---

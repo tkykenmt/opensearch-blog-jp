@@ -2,7 +2,7 @@
 title: "[翻訳] Technical Steering Committee: 最初の 1 年を振り返って"
 emoji: "🎉"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "community", "opensource"]
 published: true
 publication_name: opensearch
 published_at: 2025-10-17

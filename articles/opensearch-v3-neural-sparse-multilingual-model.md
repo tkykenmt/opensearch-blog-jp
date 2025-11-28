@@ -2,7 +2,7 @@
 title: "[翻訳] OpenSearch v3 ニューラルスパースモデルと多言語検索モデルによる検索の進化"
 emoji: "🔍"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "neuralsearch", "multilingual", "ai"]
 published: true
 published_at: 2025-09-25
 publication_name: opensearch

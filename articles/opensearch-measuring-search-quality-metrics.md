@@ -2,7 +2,7 @@
 title: "[翻訳] 検索品質メトリクスの測定と改善"
 emoji: "📊"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "search", "metrics", "relevance"]
 published: true
 publication_name: "opensearch"
 published_at: 2025-09-17

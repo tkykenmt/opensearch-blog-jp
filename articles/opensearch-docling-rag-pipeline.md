@@ -2,7 +2,7 @@
 title: "[翻訳] Docling と OpenSearch で強力な RAG パイプラインを構築する"
 emoji: "🔍"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "rag", "ai", "pipeline"]
 published: true
 published_at: 2025-11-11
 publication_name: "opensearch"

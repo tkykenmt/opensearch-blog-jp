@@ -2,7 +2,7 @@
 title: "[翻訳] OpenSearch の新しい PPL 機能でより良いオブザーバビリティとより深い洞察を"
 emoji: "📊"
 type: "tech"
-topics: ["opensearch"]
+topics: ["opensearch", "ppl", "observability", "analytics"]
 published: true
 publication_name: opensearch
 published_at: 2025-11-25
