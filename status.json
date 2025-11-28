@@ -532,6 +532,27 @@
       "file": "articles/opensearch-2-17-release-overview.md",
       "status": "published",
       "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "boost-vector-search-with-css",
+      "url": "https://opensearch.org/blog/boost-vector-search-with-css/",
+      "file": "articles/opensearch-vector-search-css-boost.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-a-neural-sparse-two-phase-algorithm",
+      "url": "https://opensearch.org/blog/introducing-a-neural-sparse-two-phase-algorithm/",
+      "file": "articles/opensearch-neural-sparse-two-phase.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "concurrent-search-follow-up",
+      "url": "https://opensearch.org/blog/concurrent-search-follow-up/",
+      "file": "articles/opensearch-concurrent-segment-search-followup.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
     }
   ]
 }
