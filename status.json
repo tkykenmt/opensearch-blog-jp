@@ -376,35 +376,35 @@
       "slug": "whats-new-in-opensearch-query-insights-advanced-grouping-dashboards-and-historical-analysis",
       "url": "https://opensearch.org/blog/whats-new-in-opensearch-query-insights-advanced-grouping-dashboards-and-historical-analysis/",
       "file": "articles/opensearch-query-insights-grouping-dashboards.md",
-      "status": "in_progress",
+      "status": "reviewed",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "boost-opensearch-vector-search-performance-with-intel-avx512",
       "url": "https://opensearch.org/blog/boost-opensearch-vector-search-performance-with-intel-avx512/",
       "file": "articles/opensearch-vector-search-intel-avx512.md",
-      "status": "in_progress",
+      "status": "reviewed",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "gpu-accelerated-vector-search-opensearch-new-frontier",
       "url": "https://opensearch.org/blog/gpu-accelerated-vector-search-opensearch-new-frontier/",
       "file": "articles/opensearch-gpu-accelerated-vector-search.md",
-      "status": "in_progress",
+      "status": "reviewed",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "tracking-the-evolution-of-opensearch-performance",
       "url": "https://opensearch.org/blog/tracking-the-evolution-of-opensearch-performance/",
       "file": "articles/opensearch-performance-evolution-tracking.md",
-      "status": "in_progress",
+      "status": "reviewed",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "introduce-bitmap-filtering-feature",
       "url": "https://opensearch.org/blog/introduce-bitmap-filtering-feature/",
       "file": "articles/opensearch-bitmap-filtering-feature.md",
-      "status": "in_progress",
+      "status": "reviewed",
       "updated_at": "2025-11-28"
     },
     {
