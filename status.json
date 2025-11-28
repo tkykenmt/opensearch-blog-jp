@@ -616,6 +616,13 @@
       "file": "articles/opensearch-efficient-filters-in-knn.md",
       "status": "published",
       "updated_at": "2025-11-29"
+    },
+    {
+      "slug": "concurrent_segment_search",
+      "url": "https://opensearch.org/blog/concurrent_segment_search/",
+      "file": "articles/opensearch-concurrent-segment-search-intro.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-29"
     }
   ]
 }
