@@ -1,54 +1,348 @@
 {
   "_comment": "Status codes: 'pending' (未着手), 'in_progress' (作業中), 'reviewed' (レビュー完了), 'published' (公開済). Use only these values.",
   "articles": [
-    { "slug": "a-practical-guide-to-selecting-hnsw-hyperparameters", "url": "https://opensearch.org/blog/a-practical-guide-to-selecting-hnsw-hyperparameters/", "file": "articles/opensearch-hnsw-hyperparameters-guide.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "adaptive-refresh-for-resilient-segment-replication", "url": "https://opensearch.org/blog/adaptive-refresh-for-resilient-segment-replication/", "file": "articles/adaptive-refresh-segment-replication.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "advancing-search-with-opensearch-v3-neural-sparse-models-and-a-multilingual-retrieval-model", "url": "https://opensearch.org/blog/advancing-search-with-opensearch-v3-neural-sparse-models-and-a-multilingual-retrieval-model/", "file": "articles/opensearch-v3-neural-sparse-multilingual-model.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "amazon-q-cli-integration-log-pattern-and-data-distribution-analysis", "url": "https://opensearch.org/blog/amazon-q-cli-integration-log-pattern-and-data-distribution-analysis/", "file": "articles/kiro-cli-opensearch-log-analysis.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "asymmetric-distance-computation-for-binary-quantization", "url": "https://opensearch.org/blog/asymmetric-distance-computation-for-binary-quantization/", "file": "articles/adc-binary-quantization.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "batch-processing-semantic-highlighting-in-opensearch-3-3", "url": "https://opensearch.org/blog/batch-processing-semantic-highlighting-in-opensearch-3-3/", "file": "articles/opensearch-batch-semantic-highlighting-3-3.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "better-observability-deeper-insights-opensearchs-new-piped-processing-language-capabilities", "url": "https://opensearch.org/blog/better-observability-deeper-insights-opensearchs-new-piped-processing-language-capabilities/", "file": "articles/opensearch-ppl-new-capabilities.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "breaking-the-single-thread-bottleneck-concurrent-vector-graph-construction-in-opensearch", "url": "https://opensearch.org/blog/breaking-the-single-thread-bottleneck-concurrent-vector-graph-construction-in-opensearch/", "file": "articles/opensearch-concurrent-vector-graph-construction.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "building-effective-hybrid-search-in-opensearch-techniques-and-best-practices", "url": "https://opensearch.org/blog/building-effective-hybrid-search-in-opensearch-techniques-and-best-practices/", "file": "articles/opensearch-hybrid-search-techniques-best-practices.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "building-powerful-rag-pipelines-with-docling-and-opensearch", "url": "https://opensearch.org/blog/building-powerful-rag-pipelines-with-docling-and-opensearch/", "file": "articles/opensearch-docling-rag-pipeline.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "do-more-with-less-save-up-to-3x-on-storage-with-derived-vector-source", "url": "https://opensearch.org/blog/do-more-with-less-save-up-to-3x-on-storage-with-derived-vector-source/", "file": "articles/7ef7d7f4148522.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "get-started-with-opensearch-3-1", "url": "https://opensearch.org/blog/get-started-with-opensearch-3-1/", "file": "articles/71b35673338eef.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "hosting-opensearch-mcp-server-with-amazon-bedrock-agentcore", "url": "https://opensearch.org/blog/hosting-opensearch-mcp-server-with-amazon-bedrock-agentcore/", "file": "articles/opensearch-mcp-server-bedrock-agentcore.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "improve-opensearch-cluster-performance-by-separating-search-and-indexing-workloads", "url": "https://opensearch.org/blog/improve-opensearch-cluster-performance-by-separating-search-and-indexing-workloads/", "file": "articles/14d9cb3e865685.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "improving-vector-search-diversity-through-native-mmr", "url": "https://opensearch.org/blog/improving-vector-search-diversity-through-native-mmr/", "file": "articles/native-mmr-vector-search.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "intelligent-troubleshooting-using-opensearch-3-0s-plan-execute-reflect-agent", "url": "https://opensearch.org/blog/intelligent-troubleshooting-using-opensearch-3-0s-plan-execute-reflect-agent/", "file": "articles/92f75324721959.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "introducing-agentic-search-in-opensearch-transforming-data-interaction-through-natural-language", "url": "https://opensearch.org/blog/introducing-agentic-search-in-opensearch-transforming-data-interaction-through-natural-language/", "file": "articles/introducing-agentic-search.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "introducing-mcp-in-opensearch", "url": "https://opensearch.org/blog/introducing-mcp-in-opensearch/", "file": "articles/37f063bd458c1b.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "introducing-opensearch-3-2-next-generation-search-and-anayltics-with-enchanced-ai-capabilities", "url": "https://opensearch.org/blog/introducing-opensearch-3-2-next-generation-search-and-anayltics-with-enchanced-ai-capabilities/", "file": "articles/opensearch-3-2-next-gen-search-ai.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "introducing-opensearch-benchmark-2-0", "url": "https://opensearch.org/blog/introducing-opensearch-benchmark-2-0/", "file": "articles/opensearch-benchmark-2-0-release.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "introducing-real-time-streaming-for-ai-models-and-agents-in-opensearch", "url": "https://opensearch.org/blog/introducing-real-time-streaming-for-ai-models-and-agents-in-opensearch/", "file": "articles/opensearch-streaming-ai.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "introducing-semantic-highlighting-in-opensearch", "url": "https://opensearch.org/blog/introducing-semantic-highlighting-in-opensearch/", "file": "articles/opensearch-semantic-highlighting-intro.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "introducing-the-z-score-normalization-technique-for-hybrid-search", "url": "https://opensearch.org/blog/introducing-the-z-score-normalization-technique-for-hybrid-search/", "file": "articles/7d933d1fc45995.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "introduction-to-ai-agents-in-opensearch-from-simple-flow-agents-to-advanced-react-multi-agent-systems", "url": "https://opensearch.org/blog/introduction-to-ai-agents-in-opensearch-from-simple-flow-agents-to-advanced-react-multi-agent-systems/", "file": "articles/introduction-to-ai-agents-in-opensearch.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "lucene-on-faiss-powering-opensearchs-high-performance-memory-efficient-vector-search", "url": "https://opensearch.org/blog/lucene-on-faiss-powering-opensearchs-high-performance-memory-efficient-vector-search/", "file": "articles/opensearch-lucene-on-faiss-vector-search.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "making-search-smarter-with-system-generated-search-pipelines", "url": "https://opensearch.org/blog/making-search-smarter-with-system-generated-search-pipelines/", "file": "articles/opensearch-system-generated-search-pipelines.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "measuring-and-improving-search-quality-metrics", "url": "https://opensearch.org/blog/measuring-and-improving-search-quality-metrics/", "file": "articles/opensearch-measuring-search-quality-metrics.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "navigating-pagination-in-hybrid-queries-with-the-pagination_depth-parameter", "url": "https://opensearch.org/blog/navigating-pagination-in-hybrid-queries-with-the-pagination_depth-parameter/", "file": "articles/ad5fcd74b0371b.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "opensearch-approximation-framework", "url": "https://opensearch.org/blog/opensearch-approximation-framework/", "file": "articles/opensearch-approximation-framework.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "opensearch-project-update-performance-progress-in-opensearch-3-0", "url": "https://opensearch.org/blog/opensearch-project-update-performance-progress-in-opensearch-3-0/", "file": "articles/dff57c91c524b0.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "optimizing-inference-processors-for-cost-efficiency-and-performance", "url": "https://opensearch.org/blog/optimizing-inference-processors-for-cost-efficiency-and-performance/", "file": "articles/2ec58d160fc0e5.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "save-up-to-2x-on-storage-with-derived-source", "url": "https://opensearch.org/blog/save-up-to-2x-on-storage-with-derived-source/", "file": "articles/derived-source-storage-savings.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "scaling-neural-sparse-search-to-billions-of-vectors-with-approximate-search", "url": "https://opensearch.org/blog/scaling-neural-sparse-search-to-billions-of-vectors-with-approximate-search/", "file": "articles/opensearch-seismic-sparse-ann-search.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "scaling-vector-generation-batch-ml-inference-with-opensearch-ingestion-and-ml-commons", "url": "https://opensearch.org/blog/scaling-vector-generation-batch-ml-inference-with-opensearch-ingestion-and-ml-commons/", "file": "articles/opensearch-scaling-vector-batch-ml-inference.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "taking-your-first-steps-towards-search-relevance", "url": "https://opensearch.org/blog/taking-your-first-steps-towards-search-relevance/", "file": "articles/opensearch-first-steps-search-relevance.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "technical-steering-committee-reflecting-on-our-first-year", "url": "https://opensearch.org/blog/technical-steering-committee-reflecting-on-our-first-year/", "file": "articles/tsc-first-year-reflection.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "the-power-of-star-tree-indexes-supercharging-opensearch-aggregations", "url": "https://opensearch.org/blog/the-power-of-star-tree-indexes-supercharging-opensearch-aggregations/", "file": "articles/6f03320b761056.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "tiered-cache", "url": "https://opensearch.org/blog/tiered-cache/", "file": "articles/b1124994e7a8c6.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "transforming-bucket-aggregations-our-journey-to-100x-performance-improvement", "url": "https://opensearch.org/blog/transforming-bucket-aggregations-our-journey-to-100x-performance-improvement/", "file": "articles/opensearch-bucket-aggregations-100x-perf.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "understanding-index-request-cache", "url": "https://opensearch.org/blog/understanding-index-request-cache/", "file": "articles/2cccc0e545183f.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "unlocking-agentic-ai-experiences-with-opensearch", "url": "https://opensearch.org/blog/unlocking-agentic-ai-experiences-with-opensearch/", "file": "articles/02343f8e92d621.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "unveiling-opensearch-3-0", "url": "https://opensearch.org/blog/unveiling-opensearch-3-0/", "file": "articles/cb0e8055adf1d8.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "performance-optimizations-for-the-opensearch-security-layer", "url": "https://opensearch.org/blog/performance-optimizations-for-the-opensearch-security-layer/", "file": "articles/opensearch-security-layer-perf-opt.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "open-search-project-lf-anniversary", "url": "https://opensearch.org/blog/open-search-project-lf-anniversary/", "file": "articles/opensearch-lf-anniversary-one-year.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "advanced-usage-of-the-semantic-field-in-opensearch", "url": "https://opensearch.org/blog/advanced-usage-of-the-semantic-field-in-opensearch/", "file": "articles/opensearch-advanced-semantic-field-usage.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "introduction-to-ml-inference-processors-in-opensearch-review-summarization-and-semantic-search", "url": "https://opensearch.org/blog/introduction-to-ml-inference-processors-in-opensearch-review-summarization-and-semantic-search/", "file": "articles/opensearch-ml-inference-processors-intro.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "diving-deep-into-distributed-microservices-with-opensearch-and-opentelemetry", "url": "https://opensearch.org/blog/diving-deep-into-distributed-microservices-with-opensearch-and-opentelemetry/", "file": "articles/opensearch-opentelemetry-microservices.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "the-new-semantic-field-simplifying-semantic-search-in-opensearch", "url": "https://opensearch.org/blog/the-new-semantic-field-simplifying-semantic-search-in-opensearch/", "file": "articles/opensearch-semantic-field-intro.md", "status": "published", "updated_at": "2025-11-28" },
-    { "slug": "real-time-query-monitoring-with-live-queries-in-opensearch-3-0", "url": "https://opensearch.org/blog/real-time-query-monitoring-with-live-queries-in-opensearch-3-0/", "file": "articles/opensearch-live-queries-monitoring.md", "status": "reviewed", "updated_at": "2025-11-28" }
+    {
+      "slug": "a-practical-guide-to-selecting-hnsw-hyperparameters",
+      "url": "https://opensearch.org/blog/a-practical-guide-to-selecting-hnsw-hyperparameters/",
+      "file": "articles/opensearch-hnsw-hyperparameters-guide.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "adaptive-refresh-for-resilient-segment-replication",
+      "url": "https://opensearch.org/blog/adaptive-refresh-for-resilient-segment-replication/",
+      "file": "articles/adaptive-refresh-segment-replication.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "advancing-search-with-opensearch-v3-neural-sparse-models-and-a-multilingual-retrieval-model",
+      "url": "https://opensearch.org/blog/advancing-search-with-opensearch-v3-neural-sparse-models-and-a-multilingual-retrieval-model/",
+      "file": "articles/opensearch-v3-neural-sparse-multilingual-model.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "amazon-q-cli-integration-log-pattern-and-data-distribution-analysis",
+      "url": "https://opensearch.org/blog/amazon-q-cli-integration-log-pattern-and-data-distribution-analysis/",
+      "file": "articles/kiro-cli-opensearch-log-analysis.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "asymmetric-distance-computation-for-binary-quantization",
+      "url": "https://opensearch.org/blog/asymmetric-distance-computation-for-binary-quantization/",
+      "file": "articles/adc-binary-quantization.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "batch-processing-semantic-highlighting-in-opensearch-3-3",
+      "url": "https://opensearch.org/blog/batch-processing-semantic-highlighting-in-opensearch-3-3/",
+      "file": "articles/opensearch-batch-semantic-highlighting-3-3.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "better-observability-deeper-insights-opensearchs-new-piped-processing-language-capabilities",
+      "url": "https://opensearch.org/blog/better-observability-deeper-insights-opensearchs-new-piped-processing-language-capabilities/",
+      "file": "articles/opensearch-ppl-new-capabilities.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "breaking-the-single-thread-bottleneck-concurrent-vector-graph-construction-in-opensearch",
+      "url": "https://opensearch.org/blog/breaking-the-single-thread-bottleneck-concurrent-vector-graph-construction-in-opensearch/",
+      "file": "articles/opensearch-concurrent-vector-graph-construction.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "building-effective-hybrid-search-in-opensearch-techniques-and-best-practices",
+      "url": "https://opensearch.org/blog/building-effective-hybrid-search-in-opensearch-techniques-and-best-practices/",
+      "file": "articles/opensearch-hybrid-search-techniques-best-practices.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "building-powerful-rag-pipelines-with-docling-and-opensearch",
+      "url": "https://opensearch.org/blog/building-powerful-rag-pipelines-with-docling-and-opensearch/",
+      "file": "articles/opensearch-docling-rag-pipeline.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "do-more-with-less-save-up-to-3x-on-storage-with-derived-vector-source",
+      "url": "https://opensearch.org/blog/do-more-with-less-save-up-to-3x-on-storage-with-derived-vector-source/",
+      "file": "articles/7ef7d7f4148522.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "get-started-with-opensearch-3-1",
+      "url": "https://opensearch.org/blog/get-started-with-opensearch-3-1/",
+      "file": "articles/71b35673338eef.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "hosting-opensearch-mcp-server-with-amazon-bedrock-agentcore",
+      "url": "https://opensearch.org/blog/hosting-opensearch-mcp-server-with-amazon-bedrock-agentcore/",
+      "file": "articles/opensearch-mcp-server-bedrock-agentcore.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "improve-opensearch-cluster-performance-by-separating-search-and-indexing-workloads",
+      "url": "https://opensearch.org/blog/improve-opensearch-cluster-performance-by-separating-search-and-indexing-workloads/",
+      "file": "articles/14d9cb3e865685.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "improving-vector-search-diversity-through-native-mmr",
+      "url": "https://opensearch.org/blog/improving-vector-search-diversity-through-native-mmr/",
+      "file": "articles/native-mmr-vector-search.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "intelligent-troubleshooting-using-opensearch-3-0s-plan-execute-reflect-agent",
+      "url": "https://opensearch.org/blog/intelligent-troubleshooting-using-opensearch-3-0s-plan-execute-reflect-agent/",
+      "file": "articles/92f75324721959.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-agentic-search-in-opensearch-transforming-data-interaction-through-natural-language",
+      "url": "https://opensearch.org/blog/introducing-agentic-search-in-opensearch-transforming-data-interaction-through-natural-language/",
+      "file": "articles/introducing-agentic-search.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-mcp-in-opensearch",
+      "url": "https://opensearch.org/blog/introducing-mcp-in-opensearch/",
+      "file": "articles/37f063bd458c1b.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-opensearch-3-2-next-generation-search-and-anayltics-with-enchanced-ai-capabilities",
+      "url": "https://opensearch.org/blog/introducing-opensearch-3-2-next-generation-search-and-anayltics-with-enchanced-ai-capabilities/",
+      "file": "articles/opensearch-3-2-next-gen-search-ai.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-opensearch-benchmark-2-0",
+      "url": "https://opensearch.org/blog/introducing-opensearch-benchmark-2-0/",
+      "file": "articles/opensearch-benchmark-2-0-release.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-real-time-streaming-for-ai-models-and-agents-in-opensearch",
+      "url": "https://opensearch.org/blog/introducing-real-time-streaming-for-ai-models-and-agents-in-opensearch/",
+      "file": "articles/opensearch-streaming-ai.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-semantic-highlighting-in-opensearch",
+      "url": "https://opensearch.org/blog/introducing-semantic-highlighting-in-opensearch/",
+      "file": "articles/opensearch-semantic-highlighting-intro.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-the-z-score-normalization-technique-for-hybrid-search",
+      "url": "https://opensearch.org/blog/introducing-the-z-score-normalization-technique-for-hybrid-search/",
+      "file": "articles/7d933d1fc45995.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introduction-to-ai-agents-in-opensearch-from-simple-flow-agents-to-advanced-react-multi-agent-systems",
+      "url": "https://opensearch.org/blog/introduction-to-ai-agents-in-opensearch-from-simple-flow-agents-to-advanced-react-multi-agent-systems/",
+      "file": "articles/introduction-to-ai-agents-in-opensearch.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "lucene-on-faiss-powering-opensearchs-high-performance-memory-efficient-vector-search",
+      "url": "https://opensearch.org/blog/lucene-on-faiss-powering-opensearchs-high-performance-memory-efficient-vector-search/",
+      "file": "articles/opensearch-lucene-on-faiss-vector-search.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "making-search-smarter-with-system-generated-search-pipelines",
+      "url": "https://opensearch.org/blog/making-search-smarter-with-system-generated-search-pipelines/",
+      "file": "articles/opensearch-system-generated-search-pipelines.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "measuring-and-improving-search-quality-metrics",
+      "url": "https://opensearch.org/blog/measuring-and-improving-search-quality-metrics/",
+      "file": "articles/opensearch-measuring-search-quality-metrics.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "navigating-pagination-in-hybrid-queries-with-the-pagination_depth-parameter",
+      "url": "https://opensearch.org/blog/navigating-pagination-in-hybrid-queries-with-the-pagination_depth-parameter/",
+      "file": "articles/ad5fcd74b0371b.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "opensearch-approximation-framework",
+      "url": "https://opensearch.org/blog/opensearch-approximation-framework/",
+      "file": "articles/opensearch-approximation-framework.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "opensearch-project-update-performance-progress-in-opensearch-3-0",
+      "url": "https://opensearch.org/blog/opensearch-project-update-performance-progress-in-opensearch-3-0/",
+      "file": "articles/dff57c91c524b0.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "optimizing-inference-processors-for-cost-efficiency-and-performance",
+      "url": "https://opensearch.org/blog/optimizing-inference-processors-for-cost-efficiency-and-performance/",
+      "file": "articles/2ec58d160fc0e5.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "save-up-to-2x-on-storage-with-derived-source",
+      "url": "https://opensearch.org/blog/save-up-to-2x-on-storage-with-derived-source/",
+      "file": "articles/derived-source-storage-savings.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "scaling-neural-sparse-search-to-billions-of-vectors-with-approximate-search",
+      "url": "https://opensearch.org/blog/scaling-neural-sparse-search-to-billions-of-vectors-with-approximate-search/",
+      "file": "articles/opensearch-seismic-sparse-ann-search.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "scaling-vector-generation-batch-ml-inference-with-opensearch-ingestion-and-ml-commons",
+      "url": "https://opensearch.org/blog/scaling-vector-generation-batch-ml-inference-with-opensearch-ingestion-and-ml-commons/",
+      "file": "articles/opensearch-scaling-vector-batch-ml-inference.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "taking-your-first-steps-towards-search-relevance",
+      "url": "https://opensearch.org/blog/taking-your-first-steps-towards-search-relevance/",
+      "file": "articles/opensearch-first-steps-search-relevance.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "technical-steering-committee-reflecting-on-our-first-year",
+      "url": "https://opensearch.org/blog/technical-steering-committee-reflecting-on-our-first-year/",
+      "file": "articles/tsc-first-year-reflection.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "the-power-of-star-tree-indexes-supercharging-opensearch-aggregations",
+      "url": "https://opensearch.org/blog/the-power-of-star-tree-indexes-supercharging-opensearch-aggregations/",
+      "file": "articles/6f03320b761056.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "tiered-cache",
+      "url": "https://opensearch.org/blog/tiered-cache/",
+      "file": "articles/b1124994e7a8c6.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "transforming-bucket-aggregations-our-journey-to-100x-performance-improvement",
+      "url": "https://opensearch.org/blog/transforming-bucket-aggregations-our-journey-to-100x-performance-improvement/",
+      "file": "articles/opensearch-bucket-aggregations-100x-perf.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "understanding-index-request-cache",
+      "url": "https://opensearch.org/blog/understanding-index-request-cache/",
+      "file": "articles/2cccc0e545183f.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "unlocking-agentic-ai-experiences-with-opensearch",
+      "url": "https://opensearch.org/blog/unlocking-agentic-ai-experiences-with-opensearch/",
+      "file": "articles/02343f8e92d621.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "unveiling-opensearch-3-0",
+      "url": "https://opensearch.org/blog/unveiling-opensearch-3-0/",
+      "file": "articles/cb0e8055adf1d8.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "performance-optimizations-for-the-opensearch-security-layer",
+      "url": "https://opensearch.org/blog/performance-optimizations-for-the-opensearch-security-layer/",
+      "file": "articles/opensearch-security-layer-perf-opt.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "open-search-project-lf-anniversary",
+      "url": "https://opensearch.org/blog/open-search-project-lf-anniversary/",
+      "file": "articles/opensearch-lf-anniversary-one-year.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "advanced-usage-of-the-semantic-field-in-opensearch",
+      "url": "https://opensearch.org/blog/advanced-usage-of-the-semantic-field-in-opensearch/",
+      "file": "articles/opensearch-advanced-semantic-field-usage.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introduction-to-ml-inference-processors-in-opensearch-review-summarization-and-semantic-search",
+      "url": "https://opensearch.org/blog/introduction-to-ml-inference-processors-in-opensearch-review-summarization-and-semantic-search/",
+      "file": "articles/opensearch-ml-inference-processors-intro.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "diving-deep-into-distributed-microservices-with-opensearch-and-opentelemetry",
+      "url": "https://opensearch.org/blog/diving-deep-into-distributed-microservices-with-opensearch-and-opentelemetry/",
+      "file": "articles/opensearch-opentelemetry-microservices.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "the-new-semantic-field-simplifying-semantic-search-in-opensearch",
+      "url": "https://opensearch.org/blog/the-new-semantic-field-simplifying-semantic-search-in-opensearch/",
+      "file": "articles/opensearch-semantic-field-intro.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "real-time-query-monitoring-with-live-queries-in-opensearch-3-0",
+      "url": "https://opensearch.org/blog/real-time-query-monitoring-with-live-queries-in-opensearch-3-0/",
+      "file": "articles/opensearch-live-queries-monitoring.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-28"
+    }
   ]
 }
