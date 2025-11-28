@@ -341,98 +341,119 @@
       "slug": "real-time-query-monitoring-with-live-queries-in-opensearch-3-0",
       "url": "https://opensearch.org/blog/real-time-query-monitoring-with-live-queries-in-opensearch-3-0/",
       "file": "articles/opensearch-live-queries-monitoring.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "opensearch-benchmark-an-update",
       "url": "https://opensearch.org/blog/opensearch-benchmark-an-update/",
       "file": "articles/opensearch-benchmark-update-2025.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "redline-testing-now-available-in-opensearch-benchmark",
       "url": "https://opensearch.org/blog/redline-testing-now-available-in-opensearch-benchmark/",
       "file": "articles/opensearch-benchmark-redline-testing.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "opensearch-3-0-what-to-expect",
       "url": "https://opensearch.org/blog/opensearch-3-0-what-to-expect/",
       "file": "articles/opensearch-3-0-what-to-expect.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "announcing-opensearch-data-prepper-2-11",
       "url": "https://opensearch.org/blog/announcing-opensearch-data-prepper-2-11/",
       "file": "articles/opensearch-data-prepper-2-11-release.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "whats-new-in-opensearch-query-insights-advanced-grouping-dashboards-and-historical-analysis",
       "url": "https://opensearch.org/blog/whats-new-in-opensearch-query-insights-advanced-grouping-dashboards-and-historical-analysis/",
       "file": "articles/opensearch-query-insights-grouping-dashboards.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "boost-opensearch-vector-search-performance-with-intel-avx512",
       "url": "https://opensearch.org/blog/boost-opensearch-vector-search-performance-with-intel-avx512/",
       "file": "articles/opensearch-vector-search-intel-avx512.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "gpu-accelerated-vector-search-opensearch-new-frontier",
       "url": "https://opensearch.org/blog/gpu-accelerated-vector-search-opensearch-new-frontier/",
       "file": "articles/opensearch-gpu-accelerated-vector-search.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "tracking-the-evolution-of-opensearch-performance",
       "url": "https://opensearch.org/blog/tracking-the-evolution-of-opensearch-performance/",
       "file": "articles/opensearch-performance-evolution-tracking.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "introduce-bitmap-filtering-feature",
       "url": "https://opensearch.org/blog/introduce-bitmap-filtering-feature/",
       "file": "articles/opensearch-bitmap-filtering-feature.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "reduce-cost-with-disk-based-vector-search",
       "url": "https://opensearch.org/blog/reduce-cost-with-disk-based-vector-search/",
       "file": "articles/opensearch-disk-based-vector-search-cost.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "introducing-reciprocal-rank-fusion-hybrid-search",
       "url": "https://opensearch.org/blog/introducing-reciprocal-rank-fusion-hybrid-search/",
       "file": "articles/opensearch-reciprocal-rank-fusion-hybrid.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "explore-opensearch-2-19",
       "url": "https://opensearch.org/blog/explore-opensearch-2-19/",
       "file": "articles/opensearch-2-19-explore-new-features.md",
-      "status": "reviewed",
+      "status": "published",
       "updated_at": "2025-11-28"
     },
     {
       "slug": "reducing-false-positives-through-algorithmic-improvements",
       "url": "https://opensearch.org/blog/reducing-false-positives-through-algorithmic-improvements/",
       "file": "articles/opensearch-reducing-false-positives-algo.md",
-      "status": "reviewed",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "cold-start-search",
+      "url": "https://opensearch.org/blog/cold-start-search/",
+      "file": "articles/opensearch-cold-start-search-problem.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "hybrid-search-optimization",
+      "url": "https://opensearch.org/blog/hybrid-search-optimization/",
+      "file": "articles/opensearch-hybrid-search-optimization.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "opensearch-simplified-the-power-of-application-based-templates",
+      "url": "https://opensearch.org/blog/opensearch-simplified-the-power-of-application-based-templates/",
+      "file": "articles/opensearch-application-based-templates.md",
+      "status": "published",
       "updated_at": "2025-11-28"
     }
   ]

@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch 3.0: 何が変わるのか"
 emoji: "🚀"
 type: "tech"
 topics: ["opensearch", "lucene", "java", "elasticsearch", "検索エンジン"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2025-04-25
 ---

@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch Data Prepper 2.11 のリリースを発表"
 emoji: "📊"
 type: "tech"
 topics: ["opensearch", "dataprepper", "opentelemetry", "aws", "データ取り込み"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2025-04-24
 ---

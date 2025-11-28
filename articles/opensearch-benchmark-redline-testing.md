@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch Benchmark でレッドラインテストが利用可
 emoji: "🚀"
 type: "tech"
 topics: ["opensearch", "benchmark", "performance", "loadtesting"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2025-06-23
 ---

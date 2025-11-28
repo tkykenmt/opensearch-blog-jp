@@ -3,7 +3,7 @@ title: "[翻訳] ハイブリッド検索における Reciprocal Rank Fusion の
 emoji: "🔀"
 type: "tech"
 topics: ["opensearch", "hybridsearch", "search", "machinelearning", "relevance"]
-published: false
+published: true
 published_at: 2025-02-12
 publication_name: "opensearch"
 ---

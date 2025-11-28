@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch Benchmark: 最新アップデート"
 emoji: "📊"
 type: "tech"
 topics: ["opensearch", "benchmark", "performance", "testing"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2025-05-12
 ---

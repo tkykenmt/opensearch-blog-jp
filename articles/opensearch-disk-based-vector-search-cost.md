@@ -3,7 +3,7 @@ title: "[翻訳] ディスクベースのベクトル検索でコストを削減
 emoji: "💾"
 type: "tech"
 topics: ["opensearch", "vectorsearch", "machinelearning", "quantization", "search"]
-published: false
+published: true
 published_at: 2025-02-19
 publication_name: "opensearch"
 ---

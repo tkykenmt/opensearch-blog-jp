@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch 2.19 の新機能を探る"
 emoji: "🚀"
 type: "tech"
 topics: ["opensearch", "search", "vectorsearch", "observability", "ai"]
-published: false
+published: true
 published_at: 2025-02-11
 publication_name: "opensearch"
 ---
