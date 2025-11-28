@@ -504,6 +504,34 @@
       "file": "articles/opensearch-nightly-playgrounds-intro.md",
       "status": "published",
       "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "internal-functioning-of-sorting-in-hybrid-query",
+      "url": "https://opensearch.org/blog/internal-functioning-of-sorting-in-hybrid-query/",
+      "file": "articles/opensearch-hybrid-query-sorting-internal.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "using-search-latency-monitoring",
+      "url": "https://opensearch.org/blog/using-search-latency-monitoring/",
+      "file": "articles/opensearch-search-latency-monitoring.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "how-does-the-rank-normalization-work-in-hybrid-search",
+      "url": "https://opensearch.org/blog/how-does-the-rank-normalization-work-in-hybrid-search/",
+      "file": "articles/opensearch-hybrid-search-rank-normalization.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
+    },
+    {
+      "slug": "introducing-opensearch-2-17",
+      "url": "https://opensearch.org/blog/introducing-opensearch-2-17/",
+      "file": "articles/opensearch-2-17-release-overview.md",
+      "status": "published",
+      "updated_at": "2025-11-28"
     }
   ]
 }
