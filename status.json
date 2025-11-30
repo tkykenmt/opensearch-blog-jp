@@ -630,6 +630,13 @@
       "file": "articles/opensearch-enhanced-multi-vector-knn-support.md",
       "status": "published",
       "updated_at": "2025-11-29"
+    },
+    {
+      "slug": "introducing-opensearch-ambassador-program",
+      "url": "https://opensearch.org/blog/introducing-opensearch-ambassador-program/",
+      "file": "articles/opensearch-ambassador-program-intro.md",
+      "status": "reviewed",
+      "updated_at": "2025-11-30"
     }
   ]
 }
