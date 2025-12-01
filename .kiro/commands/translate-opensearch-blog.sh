@@ -1,34 +1,19 @@
 #!/bin/bash
-# Usage: .kiro/commands/translate-opensearch-blog.sh <URL1> [URL2] [URL3] ...
-
-if [ $# -eq 0 ]; then
-  echo "Usage: .kiro/commands/translate-opensearch-blog.sh <URL1> [URL2] [URL3] ..."
-  exit 1
-fi
-
-VALID_URLS=""
-for arg in "$@"; do
-  if [[ "$arg" =~ ^https?:// ]]; then
-    VALID_URLS="$VALID_URLS $arg"
-  else
-    echo "Skipping invalid URL: $arg"
-  fi
-done
-
-if [ -z "$VALID_URLS" ]; then
-  echo "Error: No valid URLs provided"
-  exit 1
-fi
+set -euo pipefail
 
 PROMPT_FILE=".kiro/prompts/translate-opensearch-blog.md"
 
-if [ ! -f "$PROMPT_FILE" ]; then
-  echo "Error: Prompt file not found: $PROMPT_FILE"
-  exit 1
-fi
+[[ $# -eq 0 ]] && { echo "Usage: $0 <URL1> [URL2] ..." >&2; exit 1; }
+[[ ! -f "$PROMPT_FILE" ]] && { echo "Error: $PROMPT_FILE not found" >&2; exit 1; }
 
-PROMPT=$(cat "$PROMPT_FILE")
+URLS=()
+for arg in "$@"; do
+  [[ "$arg" =~ ^https?:// ]] && URLS+=("$arg") || echo "Skipping: $arg" >&2
+done
 
-kiro-cli chat --agent opensearch-blog-translator --model claude-opus-4.5 --trust-all-tools --no-interactive "$PROMPT
+[[ ${#URLS[@]} -eq 0 ]] && { echo "Error: No valid URLs" >&2; exit 1; }
 
-URLs:$VALID_URLS"
+kiro-cli chat --agent opensearch-blog-translator --model claude-opus-4.5 \
+  --trust-all-tools --no-interactive "$(cat "$PROMPT_FILE")
+
+URLs: ${URLS[*]}"

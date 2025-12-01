@@ -1,42 +1,108 @@
 # OpenSearch Blog 翻訳タスク
 
-指定した URL の blog を翻訳して zenn に公開したい。
+指定した URL の blog を翻訳して Zenn に公開する。Fetch MCP および GitHub MCP を使用して作業を進めること。
 
-## ワークフロー
-
-1. **Issue 作成**: GitHub MCP ツールで Translation Request Issue を作成 (owner: tkykenmt, repo: opensearch-blog-jp)
-2. **翻訳作業**: 翻訳ファイルを作成し、レビュー依頼
-3. **Pull Request 作成**: レビュー完了後、GitHub MCP ツールで PR 作成
-4. **セルフチェック**: PR 内容を確認
-5. **Merge**: 問題なければ GitHub MCP ツールで PR をマージ
+**重要**: `git` コマンド (`git fetch`, `git branch`, `git push` 等) は一切使用禁止。すべて GitHub MCP ツールを使用すること。
 
 ## 事前確認
 
-- GitHub Issues で既存の翻訳リクエストを確認
-- 未対応の場合のみ作業を実施
+1. GitHub MCP の `list_issues` で既存の翻訳リクエスト Issue を確認
+2. GitHub MCP の `get_file_contents` でリポジトリのブランチ一覧を取得し、対応中のブランチがあるか確認
+3. 対応中のリクエストは途中から作業を再開
+4. 未対応の場合のみ最初から作業を実施
 
-## 翻訳ファイル作成
+## ワークフロー
 
-1. `npx zenn new:article --slug　<slug>` コマンドでファイルを作成。<slug> は `opensearch-` を prefix とし、12〜50 文字の範囲で指定。
+### 1. Issue 作成
+
+GitHub MCP の `create_issue` で Issue を作成。テンプレート `.github/ISSUE_TEMPLATE/translation.yml` の形式に準拠:
+
+- Title: `[Translation] <記事タイトル>`
+- Labels: `["translation"]`
+- Body:
+  ```
+  ### Original URL
+
+  <元記事の URL>
+  ```
+
+### 2. slug 決定
+
+記事内容に基づき slug を決定:
+
+- prefix: `opensearch-`
+- 12〜50 文字
+- 英数字とハイフンのみ
+
+### 3. ブランチ作成
+
+GitHub MCP ツールでブランチ作成:
+
+- ブランチ名: `translate/<slug>`
+- from: main
+
+### 4. 翻訳ファイル作成
+
+1. `npx zenn new:article --slug <slug>` でファイル作成
 2. 翻訳内容を追加
+3. 画像をダウンロードして配置
 
-### Front Matter 設定
+### 5. セルフレビュー
 
-- **title**: 先頭に `[翻訳]` を付与
-- **emoji**: 適切な絵文字を選択(例: 🔍)
-- **publication_name**: `opensearch`
-- **topics**: リスト型で最大 5 つまで適切なものを付与（`opensearch` は必須）
-- **type**: `tech`
-- **published_at**: HTML の HEAD 要素内の meta タグ `property="article:published_time"` の content 属性から curl と grep で取得し、YYYY-MM-DD 形式で記載
+翻訳内容をチェックし、問題があれば修正。
+
+### 6. プッシュ
+
+GitHub MCP の `push_files` でファイルをプッシュ:
+- branch: `translate/<slug>`
+- message: Conventional Commits 形式、Issue 番号を含める
+- files: 作成した記事ファイルと画像ファイル
+
+### 7. PR 作成
+
+1. `published: true` に設定
+2. GitHub MCP の `push_files` で更新をプッシュ
+3. GitHub MCP の `create_pull_request` で PR 作成:
+   - Title: `[Translation] <記事タイトル>`
+   - Body: `#<Issue番号>`
+   - Base: main, Head: translate/<slug>
+
+### 8. PR 確認・マージ
+
+PR 内容を確認し、問題なければ GitHub MCP ツールでマージ。
+
+### 9. 公開確認・Issue クローズ
+
+1. `https://zenn.dev/opensearch/articles/<slug>` に fetch でアクセス
+2. HTTP 200 が返るまで 30 秒間隔でリトライ（最大 5 分）
+3. 公開確認後、GitHub MCP ツールで Issue を close
+
+## 翻訳ルール
+
+### ファイル作成
+
+- slug: `opensearch-` を prefix とし、12〜50 文字
+
+### Front Matter
+
+| 項目             | 値                                                           |
+| ---------------- | ------------------------------------------------------------ |
+| title            | 先頭に `[翻訳]` を付与                                       |
+| emoji            | 適切な絵文字 (例: 🔍)                                        |
+| publication_name | `opensearch`                                                 |
+| topics           | 最大 5 つ (`opensearch` 必須)                                |
+| type             | `tech`                                                       |
+| published_at     | meta タグ `article:published_time` から取得、YYYY-MM-DD 形式 |
 
 ### 画像処理
 
-- 元記事の画像ファイルをダウンロードして `images/<slug-id>/` 配下に格納
-- md ファイル内の画像リンクパスは `/images/<slug-id>/<filename>` とする（先頭の `/` は必須）
+- `images/<slug>/` 配下に格納
+- パスは `/images/<slug>/<filename>` (先頭 `/` 必須)
+- 3 MB 超の場合はリサイズ・圧縮
 
 ### 文章構成
 
-文章の冒頭に以下のブロックを配置:
+冒頭に以下を配置:
 
 ```
 :::message
@@ -48,74 +114,22 @@
 <本文>
 ```
 
-## 翻訳ルール
+### 表記ルール
 
-### 基本方針
-
-- 翻訳の正確性より、技術的な正確さと日本語の文章としての読みやすさを重視
-- 全角と半角文字の間は半角スペースで分ける
-- カッコ `()` やブラケット `[]` は半角を使用
-- 原文の文末のコロン `:` は日本語訳では句点 `。` に置き換え
+- 技術的正確さと読みやすさを重視
+- 全角・半角間は半角スペースで分ける
+- カッコ `()` `[]` は半角
+- 原文の文末コロン `:` → 句点 `。`
 
 ### 用語統一
 
-- 「今後の展望」→「今後の予定」
-- 「ご覧ください」→「参照してください」
-- 「本ブログ」「このブログ記事」「ブログ記事」→「本記事」または「記事」
-- 「可観測性」→「オブザーバビリティ」
-- 「字句検索」→「テキスト検索」
-- 「以下の図は〜を示しています」→「以下の図に〜を示します」
-- 「以下の手順に従ってください」→「以下の手順で行います」
-- 「開示:」→「**注意事項:**」
-
-## セルフチェック
-
-ファイル生成後、上記ルールに従って自然な日本語表現であるかをセルフチェックし、修正する。
-
-## ステップ 1: Issue 作成
-
-GitHub MCP ツールで Issue を作成:
-
-- Title: `[Translation] <記事タイトル>`
-- Body: Original URL を記載
-- Labels: `translation`
-
-## ステップ 2: 翻訳作業
-
-### ブランチ作成
-
-- ブランチ名: `translate/<slug-id>`
-- GitHub MCP ツールでブランチ作成 (from: main)
-
-### 翻訳ファイル作成
-
-1. `npx zenn new:article` コマンドでファイルを作成
-2. 翻訳内容を追加
-3. セルフチェックして修正
-4. `git add -A && git commit` (コミットメッセージは Conventional Commits 形式、Issue 番号を含める)
-5. GitHub MCP ツールで push
-
-### レビュー依頼
-
-翻訳完了後、ユーザーにレビューを依頼し、フィードバックを待つ。
-
-## ステップ 3: Pull Request 作成
-
-レビュー完了後:
-
-1. `published: true` に設定
-2. `git add -A && git commit`
-3. GitHub MCP ツールで push
-4. GitHub MCP ツールで PR 作成:
-   - Title: `[Translation] <記事タイトル>`
-   - Body: `Closes #<Issue番号>` を含める
-   - Base: main
-   - Head: translate/<slug-id>
-
-## ステップ 4: セルフチェック
-
-PR 内容を確認し、問題があれば修正。
-
-## ステップ 5: Merge
-
-問題なければ GitHub MCP ツールで PR をマージ。
+| 原文/元表記                        | 訳語                   |
+| ---------------------------------- | ---------------------- |
+| 今後の展望                         | 今後の予定             |
+| ご覧ください                       | 参照してください       |
+| 本ブログ/このブログ記事/ブログ記事 | 本記事/記事            |
+| 可観測性                           | オブザーバビリティ     |
+| 字句検索                           | テキスト検索           |
+| 以下の図は〜を示しています         | 以下の図に〜を示します |
+| 以下の手順に従ってください         | 以下の手順で行います   |
+| 開示:                              | **注意事項:**          |
