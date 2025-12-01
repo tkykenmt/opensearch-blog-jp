@@ -93,6 +93,13 @@ PR 内容を確認し、問題なければ GitHub MCP ツールでマージ。
 2. HTTP 200 が返るまで 30 秒間隔でリトライ（最大 5 分）
 3. 公開確認後、GitHub MCP ツールで Issue を close
 
+### 10. ブランチを main に戻す
+
+```bash
+git stash
+git checkout main
+```
+
 ## 翻訳ルール
 
 ### ファイル作成
