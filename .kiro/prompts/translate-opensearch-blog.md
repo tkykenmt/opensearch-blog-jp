@@ -26,7 +26,7 @@ Git コマンドは `git pull`、`git push`、`git fetch` およびローカル�
 ## 事前確認
 
 1. `git branch --show-current` で現在のブランチを確認し、main 以外なら `git stash && git checkout main` を実行
-2. GitHub MCP の `list_issues` で既存の翻訳リクエスト Issue を確認
+2. GitHub MCP の `list_issues` で既存の翻訳リクエスト Issue を確認。Issue が存在する場合はエラーなどの指摘が無いか内容をチェックする
 3. GitHub MCP の `get_file_contents` でリポジトリのブランチ一覧を取得し、対応中のブランチがあるか確認
 4. 対応中のリクエストは途中から作業を再開
 5. 未対応の場合のみ最初から作業を実施
@@ -49,11 +49,7 @@ GitHub MCP の `create_issue` で Issue を作成。テンプレート `.github/
 
 ### 2. slug 決定
 
-記事内容に基づき slug を決定:
-
-- prefix: `opensearch-`
-- 12〜50 文字
-- 英数字とハイフンのみ
+記事内容に基づき slug を決定。prefix は `opensearch-`、文字数は 12 文字以上 50 文字以内。利用可能な文字は英数字とハイフンのみ
 
 ### 3. ブランチ作成・チェックアウト
 
@@ -106,13 +102,10 @@ PR 内容を確認し、問題なければ GitHub MCP ツールでマージ。
 ```bash
 git stash
 git checkout main
+git pull
 ```
 
 ## 翻訳ルール
-
-### ファイル作成
-
-- slug: `opensearch-` を prefix とし、12〜50 文字
 
 ### Front Matter
 
