@@ -3,7 +3,7 @@ title: "[翻訳] OpenSearch ユーザーグループの現状: グローバル�
 emoji: "🌍"
 type: "tech"
 topics: ["opensearch", "community", "usergroup", "opensource"]
-published: false
+published: true
 publication_name: "opensearch"
 published_at: 2025-07-30
 ---
