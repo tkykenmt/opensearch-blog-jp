@@ -1,0 +1,33 @@
+name: Translation Request
+description: Request translation of an OpenSearch blog post
+title: "[Translation] "
+labels: ["translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Translation Target
+  - type: input
+    id: original_url
+    attributes:
+      label: Original URL
+      description: URL of the original blog post
+      placeholder: https://opensearch.org/blog/...
+    validations:
+      required: true
+  - type: input
+    id: translation_file
+    attributes:
+      label: Translation File
+      description: Path to the translation file in this repository
+      placeholder: articles/...
+    validations:
+      required: true
+  - type: input
+    id: last_updated
+    attributes:
+      label: Last Updated
+      description: Date when the original post was last updated
+      placeholder: YYYY-MM-DD
+    validations:
+      required: false
