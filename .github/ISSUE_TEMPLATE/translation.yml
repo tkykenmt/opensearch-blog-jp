@@ -15,11 +15,3 @@ body:
       placeholder: https://opensearch.org/blog/...
     validations:
       required: true
-  - type: input
-    id: translation_file
-    attributes:
-      label: Translation File
-      description: Path to the translation file in this repository
-      placeholder: articles/...
-    validations:
-      required: true
