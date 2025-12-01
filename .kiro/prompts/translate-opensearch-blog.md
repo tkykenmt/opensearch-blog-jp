@@ -2,6 +2,14 @@
 
 指定した URL の blog を翻訳して zenn に公開したい。
 
+## ワークフロー
+
+1. **Issue 作成**: GitHub MCP ツールで Translation Request Issue を作成 (owner: tkykenmt, repo: opensearch-blog-jp)
+2. **翻訳作業**: 翻訳ファイルを作成し、レビュー依頼
+3. **Pull Request 作成**: レビュー完了後、GitHub MCP ツールで PR 作成
+4. **セルフチェック**: PR 内容を確認
+5. **Merge**: 問題なければ GitHub MCP ツールで PR をマージ
+
 ## 事前確認
 
 - 翻訳済みであるかを status.json を元に確認
@@ -67,12 +75,56 @@
 
 ## 進捗管理
 
-作業の各工程で随時 status.json を更新。
+- 作業の各工程で随時 status.json を更新
+- Issue 番号を status.json に記録
 
-## 最終チェック完了後
+## ステップ 1: Issue 作成
 
-1. reviewed ステータスの記事を最終確認
-2. 問題なければ `published: true` に設定
-3. `git add -A && git commit` (コミットメッセージは Conventional Commits 形式で)
-4. GitHub MCP ツールを使用して変更を push (owner: tkykenmt, repo: opensearch-blog-jp, branch: main)
-5. status.json の status を published に更新して再度 commit & push
+GitHub MCP ツールで Issue を作成:
+- Title: `[Translation] <記事タイトル>`
+- Body: Original URL を記載
+- Labels: `translation`
+
+## ステップ 2: 翻訳作業
+
+### ブランチ作成
+
+- ブランチ名: `translate/<slug-id>`
+- GitHub MCP ツールでブランチ作成 (from: main)
+
+### 翻訳ファイル作成
+
+1. `npx zenn new:article` コマンドでファイルを作成
+2. 翻訳内容を追加
+3. セルフチェックして修正
+4. `git add -A && git commit` (コミットメッセージは Conventional Commits 形式、Issue 番号を含める)
+5. GitHub MCP ツールで push
+
+### レビュー依頼
+
+翻訳完了後、ユーザーにレビューを依頼し、フィードバックを待つ。
+
+## ステップ 3: Pull Request 作成
+
+レビュー完了後:
+1. `published: true` に設定
+2. `git add -A && git commit`
+3. GitHub MCP ツールで push
+4. GitHub MCP ツールで PR 作成:
+   - Title: `[Translation] <記事タイトル>`
+   - Body: `Closes #<Issue番号>` を含める
+   - Base: main
+   - Head: translate/<slug-id>
+
+## ステップ 4: セルフチェック
+
+PR 内容を確認し、問題があれば修正。
+
+## ステップ 5: Merge
+
+問題なければ:
+1. GitHub MCP ツールで PR をマージ
+2. status.json の status を published に更新
+3. `git checkout main && git pull`
+4. `git add status.json && git commit`
+5. GitHub MCP ツールで push
