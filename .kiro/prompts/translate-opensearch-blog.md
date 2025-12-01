@@ -12,7 +12,7 @@
 
 ## 事前確認
 
-- 翻訳済みであるかを status.json を元に確認
+- GitHub Issues で既存の翻訳リクエストを確認
 - 未対応の場合のみ作業を実施
 
 ## 翻訳ファイル作成
@@ -73,11 +73,6 @@
 
 ファイル生成後、上記ルールに従って自然な日本語表現であるかをセルフチェックし、修正する。
 
-## 進捗管理
-
-- 作業の各工程で随時 status.json を更新
-- Issue 番号を status.json に記録
-
 ## ステップ 1: Issue 作成
 
 GitHub MCP ツールで Issue を作成:
@@ -122,9 +117,4 @@ PR 内容を確認し、問題があれば修正。
 
 ## ステップ 5: Merge
 
-問題なければ:
-1. GitHub MCP ツールで PR をマージ
-2. status.json の status を published に更新
-3. `git checkout main && git pull`
-4. `git add status.json && git commit`
-5. GitHub MCP ツールで push
+問題なければ GitHub MCP ツールで PR をマージ。
