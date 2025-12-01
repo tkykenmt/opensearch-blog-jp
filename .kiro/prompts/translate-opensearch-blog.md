@@ -1,6 +1,6 @@
 # OpenSearch Blog 翻訳タスク
 
-指定した URL の blog を翻訳して Zenn に公開する。Fetch MCP および GitHub MCP を使用して作業を進めること。
+指定した URL の blog を翻訳して Zenn に公開する。コンテンツ取得には `web_fetch` ツールを使用すること。GitHub 操作はローカル git コマンドと GitHub MCP を適切に使い分けること。
 
 ## リポジトリ情報の取得
 
@@ -20,7 +20,8 @@ https://${GITHUB_TOKEN}@github.com/<owner>/<repo>.git
 
 ## 事前確認
 
-1. GitHub MCP の `list_issues` で既存の翻訳リクエスト Issue を確認
+1. `git branch --show-current` で現在のブランチを確認し、main 以外なら `git stash && git checkout main` を実行
+2. GitHub MCP の `list_issues` で既存の翻訳リクエスト Issue を確認
 2. GitHub MCP の `get_file_contents` でリポジトリのブランチ一覧を取得し、対応中のブランチがあるか確認
 3. 対応中のリクエストは途中から作業を再開
 4. 未対応の場合のみ最初から作業を実施
@@ -116,10 +117,11 @@ git checkout main
 | topics           | 最大 5 つ (`opensearch` 必須)                                |
 | type             | `tech`                                                       |
 | published        | `true`                                                       |
-| published_at     | meta タグ `article:published_time` から取得、YYYY-MM-DD 形式 |
+| published_at     | `curl -s <URL> \| grep -oP 'article:published_time.*?content="\K[^"]+' \| cut -d'T' -f1` で取得 |
 
 ### 画像処理
 
+- `curl -sL <image_url> -o images/<slug>/<filename>` で取得
 - `images/<slug>/` 配下に格納
 - パスは `/images/<slug>/<filename>` (先頭 `/` 必須)
 - 3 MB 超の場合はリサイズ・圧縮
