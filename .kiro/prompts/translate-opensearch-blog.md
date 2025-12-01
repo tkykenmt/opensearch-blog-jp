@@ -17,16 +17,15 @@
 
 ## 翻訳ファイル作成
 
-1. `npx zenn new:article` コマンドでファイルを作成
+1. `npx zenn new:article --slug　<slug>` コマンドでファイルを作成。<slug> は `opensearch-` を prefix とし、12〜50 文字の範囲で指定。
 2. 翻訳内容を追加
 
 ### Front Matter 設定
 
-- **slug**: `opensearch-` を prefix とし、12〜50 文字の範囲で作成
 - **title**: 先頭に `[翻訳]` を付与
+- **emoji**: 適切な絵文字を選択(例: 🔍)
 - **publication_name**: `opensearch`
 - **topics**: リスト型で最大 5 つまで適切なものを付与（`opensearch` は必須）
-  - 適切なトピックが無い場合は新規トピック追加を提案
 - **type**: `tech`
 - **published_at**: HTML の HEAD 要素内の meta タグ `property="article:published_time"` の content 属性から curl と grep で取得し、YYYY-MM-DD 形式で記載
 
@@ -76,6 +75,7 @@
 ## ステップ 1: Issue 作成
 
 GitHub MCP ツールで Issue を作成:
+
 - Title: `[Translation] <記事タイトル>`
 - Body: Original URL を記載
 - Labels: `translation`
@@ -102,6 +102,7 @@ GitHub MCP ツールで Issue を作成:
 ## ステップ 3: Pull Request 作成
 
 レビュー完了後:
+
 1. `published: true` に設定
 2. `git add -A && git commit`
 3. GitHub MCP ツールで push
