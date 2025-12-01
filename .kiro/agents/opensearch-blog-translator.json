@@ -1,0 +1,40 @@
+{
+  "name": "opensearch-blog-translator",
+  "description": "",
+  "prompt": null,
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "read-from-env"
+      }
+    },
+    "fetch": {
+      "command": "uvx",
+      "args": ["mcp-server-fetch"]
+    }
+  },
+  "tools": [
+    "@builtin",
+    "@fetch",
+    "@github"
+  ],
+  "toolAliases": {},
+  "allowedTools": [
+    "@builtin",
+    "@fetch",
+    "@github"
+  ],
+  "resources": [
+    "file://AGENTS.md",
+    "file://README.md"
+  ],
+  "hooks": {},
+  "toolsSettings": {},
+  "useLegacyMcpJson": true,
+  "model": null
+}
