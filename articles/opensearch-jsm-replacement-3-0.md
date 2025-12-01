@@ -4,7 +4,7 @@ emoji: "🔐"
 type: "tech"
 topics: ["opensearch", "java", "security"]
 publication_name: "opensearch"
-published: false
+published: true
 published_at: 2025-06-03
 ---
 
