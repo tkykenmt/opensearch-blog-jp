@@ -23,11 +23,3 @@ body:
       placeholder: articles/...
     validations:
       required: true
-  - type: input
-    id: last_updated
-    attributes:
-      label: Last Updated
-      description: Date when the original post was last updated
-      placeholder: YYYY-MM-DD
-    validations:
-      required: false
