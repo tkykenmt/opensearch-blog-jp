@@ -33,7 +33,11 @@ Git コマンドは `git pull`、`git push`、`git fetch` およびローカル�
 
 ## ワークフロー
 
-### 1. Issue 作成
+### 1. slug 決定
+
+記事内容に基づき slug を決定。prefix は `opensearch-`、文字数は 12 文字以上 50 文字以内。利用可能な文字は英数字とハイフンのみ
+
+### 2. Issue 作成
 
 GitHub MCP の `create_issue` で Issue を作成。テンプレート `.github/ISSUE_TEMPLATE/translation.yml` の形式に準拠:
 
@@ -42,14 +46,9 @@ GitHub MCP の `create_issue` で Issue を作成。テンプレート `.github/
 - Body:
 
   ```
-  ### Original URL
-
-  <元記事の URL>
+  Original URL： <元記事の URL>
+  slug: <slug>
   ```
-
-### 2. slug 決定
-
-記事内容に基づき slug を決定。prefix は `opensearch-`、文字数は 12 文字以上 50 文字以内。利用可能な文字は英数字とハイフンのみ
 
 ### 3. ブランチ作成・チェックアウト
 
@@ -95,7 +94,7 @@ PR 内容を確認し、問題なければ GitHub MCP ツールでマージ。
 
 1. `https://zenn.dev/opensearch/articles/<slug>` に fetch でアクセス
 2. HTTP 200 が返るまで 30 秒間隔でリトライ（最大 5 分）
-3. 公開確認後、GitHub MCP ツールで Issue を close
+3. 公開確認後、GitHub MCP ツールで Issue を close。Close 時に zenn の URL: https://zenn.dev/opensearch/articles/<slug> が公開済みであることが確認できた旨を英語で追記する。
 
 ### 10. ブランチを main に戻す
 
