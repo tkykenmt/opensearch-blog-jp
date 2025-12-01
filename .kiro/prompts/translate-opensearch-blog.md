@@ -2,15 +2,21 @@
 
 指定した URL の blog を翻訳して Zenn に公開する。Fetch MCP および GitHub MCP を使用して作業を進めること。
 
-**重要**: `git` コマンド (`git fetch`, `git branch`, `git push` 等) は一切使用禁止。すべて GitHub MCP ツールを使用すること。
-
 ## リポジトリ情報の取得
 
 最初にローカルの `.git/config` を読み取り、以下の情報を取得:
+
 - `owner`: リモート URL から抽出 (例: `github.com/owner/repo` の `owner`)
 - `repo`: リモート URL から抽出 (例: `github.com/owner/repo` の `repo`)
 
 この情報を以降の GitHub MCP 操作で使用する。
+
+## Git 認証
+
+環境変数 `GITHUB_TOKEN` を使用して認証付き URL を構築:
+```
+https://${GITHUB_TOKEN}@github.com/<owner>/<repo>.git
+```
 
 ## 事前確認
 
@@ -42,12 +48,11 @@ GitHub MCP の `create_issue` で Issue を作成。テンプレート `.github/
 - 12〜50 文字
 - 英数字とハイフンのみ
 
-### 3. ブランチ作成
+### 3. ブランチ作成・チェックアウト
 
-GitHub MCP ツールでブランチ作成:
-
-- ブランチ名: `translate/<slug>`
-- from: main
+```bash
+git checkout -b translate/<slug>
+```
 
 ### 4. 翻訳ファイル作成
 
@@ -59,22 +64,20 @@ GitHub MCP ツールでブランチ作成:
 
 翻訳内容をチェックし、問題があれば修正。
 
-### 6. プッシュ
+### 6. コミット・プッシュ
 
-GitHub MCP の `push_files` でファイルをプッシュ:
-
-- branch: `translate/<slug>`
-- message: Conventional Commits 形式、Issue 番号を含める
-- files: 作成した記事ファイルと画像ファイル
+```bash
+git add -A
+git commit -m "feat: add translation for <記事タイトル> (#<Issue番号>)"
+git push https://${GITHUB_TOKEN}@github.com/<owner>/<repo>.git translate/<slug>
+```
 
 ### 7. PR 作成
 
-1. `published: true` に設定
-2. GitHub MCP の `push_files` で更新をプッシュ
-3. GitHub MCP の `create_pull_request` で PR 作成:
-   - Title: `[Translation] <記事タイトル>`
-   - Body: `#<Issue番号>`
-   - Base: main, Head: translate/<slug>
+GitHub MCP の `create_pull_request` で PR 作成:
+- Title: `[Translation] <記事タイトル>`
+- Body: `#<Issue番号>`
+- Base: main, Head: translate/<slug>
 
 ### 8. PR 確認・マージ
 
@@ -103,6 +106,7 @@ PR 内容を確認し、問題なければ GitHub MCP ツールでマージ。
 | publication_name | `opensearch`                                                 |
 | topics           | 最大 5 つ (`opensearch` 必須)                                |
 | type             | `tech`                                                       |
+| published        | `true`                                                       |
 | published_at     | meta タグ `article:published_time` から取得、YYYY-MM-DD 形式 |
 
 ### 画像処理
