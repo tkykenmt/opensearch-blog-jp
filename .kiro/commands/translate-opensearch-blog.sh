@@ -1,19 +1,44 @@
 #!/bin/bash
 set -euo pipefail
 
-PROMPT_FILE=".kiro/prompts/translate-opensearch-blog.md"
+PROMPTS_DIR=".kiro/prompts"
+BASE_PROMPT="$PROMPTS_DIR/translate-opensearch-blog.md"
 
-[[ $# -eq 0 ]] && { echo "Usage: $0 <URL1> [URL2] ..." >&2; exit 1; }
-[[ ! -f "$PROMPT_FILE" ]] && { echo "Error: $PROMPT_FILE not found" >&2; exit 1; }
+usage() {
+  echo "Usage: $0 --urls <URL1> [URL2] ..." >&2
+  echo "       $0 --from-issues" >&2
+  exit 1
+}
 
-URLS=()
-for arg in "$@"; do
-  [[ "$arg" =~ ^https?:// ]] && URLS+=("$arg") || echo "Skipping: $arg" >&2
-done
+[[ $# -eq 0 ]] && usage
+[[ ! -f "$BASE_PROMPT" ]] && { echo "Error: $BASE_PROMPT not found" >&2; exit 1; }
 
-[[ ${#URLS[@]} -eq 0 ]] && { echo "Error: No valid URLs" >&2; exit 1; }
+case "$1" in
+  --from-issues)
+    MODE_PROMPT="$PROMPTS_DIR/translate-from-issues.md"
+    [[ ! -f "$MODE_PROMPT" ]] && { echo "Error: $MODE_PROMPT not found" >&2; exit 1; }
+    PROMPT="$(cat "$BASE_PROMPT")
+
+$(cat "$MODE_PROMPT")"
+    ;;
+  --urls)
+    shift
+    [[ $# -eq 0 ]] && { echo "Error: No URLs provided" >&2; exit 1; }
+    URLS=()
+    for arg in "$@"; do
+      [[ "$arg" =~ ^https?:// ]] && URLS+=("$arg") || echo "Skipping: $arg" >&2
+    done
+    [[ ${#URLS[@]} -eq 0 ]] && { echo "Error: No valid URLs" >&2; exit 1; }
+    MODE_PROMPT="$PROMPTS_DIR/translate-from-urls.md"
+    [[ ! -f "$MODE_PROMPT" ]] && { echo "Error: $MODE_PROMPT not found" >&2; exit 1; }
+    PROMPT="$(cat "$BASE_PROMPT")
+
+$(sed "s|{{URLS}}|${URLS[*]}|" "$MODE_PROMPT")"
+    ;;
+  *)
+    usage
+    ;;
+esac
 
 kiro-cli chat --agent opensearch-blog-translator --model claude-opus-4.5 \
-  --trust-all-tools --no-interactive "$(cat "$PROMPT_FILE")
-
-URLs: ${URLS[*]}"
+  --trust-all-tools --no-interactive "$PROMPT"

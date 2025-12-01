@@ -16,6 +16,7 @@
 Git コマンドラインでは必ず HTTPS 形式でトークンを含めた URL を使用すること（SSH 形式は使用禁止）。
 
 環境変数 `GITHUB_TOKEN` を使用して認証付き URL を構築:
+
 ```
 https://${GITHUB_TOKEN}@github.com/<owner>/<repo>.git
 ```
@@ -26,9 +27,9 @@ Git コマンドは `git pull`、`git push`、`git fetch` およびローカル�
 
 1. `git branch --show-current` で現在のブランチを確認し、main 以外なら `git stash && git checkout main` を実行
 2. GitHub MCP の `list_issues` で既存の翻訳リクエスト Issue を確認
-2. GitHub MCP の `get_file_contents` でリポジトリのブランチ一覧を取得し、対応中のブランチがあるか確認
-3. 対応中のリクエストは途中から作業を再開
-4. 未対応の場合のみ最初から作業を実施
+3. GitHub MCP の `get_file_contents` でリポジトリのブランチ一覧を取得し、対応中のブランチがあるか確認
+4. 対応中のリクエストは途中から作業を再開
+5. 未対応の場合のみ最初から作業を実施
 
 ## ワークフロー
 
@@ -39,6 +40,7 @@ GitHub MCP の `create_issue` で Issue を作成。テンプレート `.github/
 - Title: `[Translation] <記事タイトル>`
 - Labels: `["translation"]`
 - Body:
+
   ```
   ### Original URL
 
@@ -82,6 +84,7 @@ git push https://${GITHUB_TOKEN}@github.com/<owner>/<repo>.git translate/<slug>
 ### 7. PR 作成
 
 GitHub MCP の `create_pull_request` で PR 作成:
+
 - Title: `[Translation] <記事タイトル>`
 - Body: `#<Issue番号>`
 - Base: main, Head: translate/<slug>
@@ -113,14 +116,14 @@ git checkout main
 
 ### Front Matter
 
-| 項目             | 値                                                           |
-| ---------------- | ------------------------------------------------------------ |
-| title            | 先頭に `[翻訳]` を付与                                       |
-| emoji            | 適切な絵文字 (例: 🔍)                                        |
-| publication_name | `opensearch`                                                 |
-| topics           | 最大 5 つ (`opensearch` 必須)                                |
-| type             | `tech`                                                       |
-| published        | `true`                                                       |
+| 項目             | 値                                                                                              |
+| ---------------- | ----------------------------------------------------------------------------------------------- |
+| title            | 先頭に `[翻訳]` を付与                                                                          |
+| emoji            | 適切な絵文字 (例: 🔍)                                                                           |
+| publication_name | `opensearch`                                                                                    |
+| topics           | 最大 5 つ (`opensearch` 必須)                                                                   |
+| type             | `tech`                                                                                          |
+| published        | `true`                                                                                          |
 | published_at     | `curl -s <URL> \| grep -oP 'article:published_time.*?content="\K[^"]+' \| cut -d'T' -f1` で取得 |
 
 ### 画像処理
