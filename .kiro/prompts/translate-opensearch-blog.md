@@ -13,10 +13,14 @@
 
 ## Git 認証
 
+Git コマンドラインでは必ず HTTPS 形式でトークンを含めた URL を使用すること（SSH 形式は使用禁止）。
+
 環境変数 `GITHUB_TOKEN` を使用して認証付き URL を構築:
 ```
 https://${GITHUB_TOKEN}@github.com/<owner>/<repo>.git
 ```
+
+Git コマンドは `git pull`、`git push`、`git fetch` およびローカル操作（`git checkout`、`git add`、`git commit` 等）に限定する。リモートリポジトリの参照（ブランチ一覧取得等）は GitHub MCP を使用すること。
 
 ## 事前確認
 
