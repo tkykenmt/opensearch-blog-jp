@@ -51,6 +51,8 @@ GitHub MCP の `create_issue` で Issue を作成。テンプレート `.github/
 ### 3. ブランチ作成・チェックアウト
 
 ```bash
+git checkout main
+git pull https://${GITHUB_TOKEN}@github.com/<owner>/<repo>.git main
 git checkout -b translate/<slug>
 ```
 
