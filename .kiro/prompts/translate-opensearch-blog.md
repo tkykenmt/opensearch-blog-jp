@@ -4,6 +4,14 @@
 
 **重要**: `git` コマンド (`git fetch`, `git branch`, `git push` 等) は一切使用禁止。すべて GitHub MCP ツールを使用すること。
 
+## リポジトリ情報の取得
+
+最初にローカルの `.git/config` を読み取り、以下の情報を取得:
+- `owner`: リモート URL から抽出 (例: `github.com/owner/repo` の `owner`)
+- `repo`: リモート URL から抽出 (例: `github.com/owner/repo` の `repo`)
+
+この情報を以降の GitHub MCP 操作で使用する。
+
 ## 事前確認
 
 1. GitHub MCP の `list_issues` で既存の翻訳リクエスト Issue を確認
@@ -54,6 +62,7 @@ GitHub MCP ツールでブランチ作成:
 ### 6. プッシュ
 
 GitHub MCP の `push_files` でファイルをプッシュ:
+
 - branch: `translate/<slug>`
 - message: Conventional Commits 形式、Issue 番号を含める
 - files: 作成した記事ファイルと画像ファイル
