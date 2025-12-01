@@ -43,7 +43,7 @@ POST /my-old-index/_shrink/my-new-index?wait_for_completion=false
 
 長時間実行オペレーションの通知をサポートするために、タスクと通知チャネルを統合しました。タスクが完了または失敗したときに通知を受け取るには、以下の画像に示すように通知設定を構成できます。
 
-![通知設定](/images/opensearch-long-running-operation-component-template/notify-tasks.png)
+![通知設定](/images/opensearch-long-running-ops-component-template/notify-tasks.png)
 
 通知の設定に関する詳細な手順については、[Notification settings](https://opensearch.org/docs/latest/dashboards/im-dashboards/notifications/) を参照してください。
 
@@ -51,7 +51,7 @@ POST /my-old-index/_shrink/my-new-index?wait_for_completion=false
 
 本番インデックスの再インデックス化など、特定のオペレーションのステータスを追加のユーザーに通知したい場合があります。インデックス管理では、以下の画像に示すように、個々のオペレーションに対してデフォルトの通知に追加の通知を付加する機能を提供しています。
 
-![アドホック通知設定](/images/opensearch-long-running-operation-component-template/adhoc-notification.png)
+![アドホック通知設定](/images/opensearch-long-running-ops-component-template/adhoc-notification.png)
 
 詳細については、[Configuring notification settings for an individual operation](https://opensearch.org/docs/latest/dashboards/im-dashboards/notifications/#configuring-notification-settings-for-an-individual-operation) を参照してください。
 
@@ -89,7 +89,7 @@ POST /_plugins/_im/lron
 
 ユーザーが通知設定を表示する権限を持っていない場合、以下の画像に示すように権限をリクエストするよう促されます。
 
-![セキュリティ有効時](/images/opensearch-long-running-operation-component-template/security-enabled.png)
+![セキュリティ有効時](/images/opensearch-long-running-ops-component-template/security-enabled.png)
 
 ## コンポーネントテンプレート
 
@@ -99,7 +99,7 @@ POST /_plugins/_im/lron
 
 API を通じてインデックステンプレートを作成する場合、関連するすべてのコンポーネントテンプレートとその設定をマージした後のインデックステンプレートがどのようになるかを判断するのが難しい場合があります。UI を通じてインデックステンプレートを作成または更新する際に、以下の画像に示すように OpenSearch Dashboards でテンプレートをプレビューできるようになりました。
 
-![コンポーネントテンプレート作成](/images/opensearch-long-running-operation-component-template/component-template.png)
+![コンポーネントテンプレート作成](/images/opensearch-long-running-ops-component-template/component-template.png)
 
 コンポーネントテンプレートの作成に関する詳細な手順については、[Component templates](https://opensearch.org/docs/latest/dashboards/im-dashboards/component-templates/) を参照してください。
 
@@ -107,7 +107,7 @@ API を通じてインデックステンプレートを作成する場合、関�
 
 API を使用する場合、単一のコンポーネントテンプレートを使用しているインデックステンプレートの数を判断するのが難しい場合があります。OpenSearch Dashboards では、特定のコンポーネントテンプレートに関連付けられたすべてのインデックステンプレートの集約ビューを提供し、以下の画像に示すように簡単に管理できるようになりました。
 
-![集約ビュー](/images/opensearch-long-running-operation-component-template/aggregated-view.png)
+![集約ビュー](/images/opensearch-long-running-ops-component-template/aggregated-view.png)
 
 ## 今後の予定
 
