@@ -44,6 +44,8 @@ Bi-encoder モデルは、現在最も一般的なアプローチであり、ク
 
 このアプローチは、ベクトル検索システムにおける高速な第一段階の検索に特に適しています。`amazon.titan-embed-text-v2:0` のようなモデルがこの方法論を例示しています。以下の図は、Bi-encoder アーキテクチャとその独立した処理アプローチを示しています。
 
+![Bi-encoder アーキテクチャ](/images/opensearch-late-interaction-models/bi-encoders.png)
+
 ### Cross-encoder モデル (Early/Full Interaction)
 
 Cross-encoder モデルはスペクトルの反対側に位置し、包括的なクエリ-ドキュメント間の Interaction を通じて最高の精度を達成します。
@@ -63,6 +65,8 @@ Cross-encoder モデルはスペクトルの反対側に位置し、包括的な
 
 Cross-encoder モデルは、事前に選択された小さな結果のサブセットを並べ替えて最も関連性の高いマッチを最適化する、第二段階のリランキングシナリオで優れています。Cross-encoder が処理する結果セットのサイズは通常、コスト、レイテンシ、精度に関するシステム要件に依存しますが、これらのモデルは一般的に最初のページの結果のみに適用されます。OpenSearch は、検索パイプラインを通じて Cross-encoder リランキングのネイティブサポートを提供しています。以下の図は、包括的なクエリ-ドキュメント Interaction メカニズムを持つ Cross-encoder アーキテクチャを示しています。
 
+![Cross-encoder アーキテクチャ](/images/opensearch-late-interaction-models/cross-encoders.png)
+
 ### Late Interaction モデル (バランスの取れたアプローチ)
 
 ColBERT (Contextualized Late Interaction over BERT) に代表される Late Interaction モデルは、前述の 2 つのアプローチ間の最適なバランスを達成します。これらのモデルは Bi-encoder と同様にクエリとドキュメントを独立して処理しますが、単一のベクトルではなく複数のコンテキスト化された埋め込みを生成します。
@@ -70,6 +74,8 @@ ColBERT (Contextualized Late Interaction over BERT) に代表される Late Inte
 このアーキテクチャでは、「シアトル近郊の最高のハイキングコース」のようなクエリは、各トークン (「best」「hiking」「trails」「near」「Seattle」) に対して個別の埋め込みを生成します。重要なのは、各埋め込みが Transformer の Attention メカニズムを通じて周囲の単語によってコンテキスト化されることです。ドキュメントも同様の処理を受け、トークンレベルのマルチベクトル表現が生成されます。
 
 Late Interaction モデルの根本的な革新は、そのタイミングにあります。クエリ-ドキュメント間の Interaction は、独立したエンコーディングの *後* に、詳細なトークンレベルの類似度計算を通じて行われます。このアプローチは、独立したエンコーディングの効率性の利点を維持しながら、単一ベクトル比較よりも洗練されたマッチングを可能にします。以下の図は、Late Interaction モデルがそのユニークなアーキテクチャを通じて効率性と精度のバランスをどのように取っているかを示しています。
+
+![Late Interaction モデルアーキテクチャ](/images/opensearch-late-interaction-models/late-interactions.png)
 
 ColBERT は、そのスコアリングメカニズムを通じてこのアプローチを例示しています。クエリとドキュメントの両方に対してコンテキスト化されたトークン埋め込みを生成した後、モデルは各クエリトークン埋め込みとすべてのドキュメントトークン埋め込み間の最大類似度を計算します。これらの最大類似度は集約されて最終的な関連性スコアが生成されます。
 
@@ -143,6 +149,8 @@ Late Interaction モデルの検索パフォーマンスを示すために、[ML
 * **右パネル**: Titan 埋め込みモデルを使用する `titan_embedding_search` 検索パイプライン
 
 ターゲット結果は 7 ページ目に表示され、テクスチャの方向性は方向のヒストグラムによって特徴付けられるという関連する回答が含まれています。ColPali モデルはこのページをトップ結果としてランク付けしますが (左パネル)、Titan 埋め込みモデルは検索結果にまったく含めていません (右パネル)。以下のスクリーンショットは、2 つのアプローチ間の検索パフォーマンスのこの大きな違いを示しています。
+
+![検索パフォーマンスの比較](/images/opensearch-late-interaction-models/playground-search-comparison.png)
 
 ColPali を使用した RAG アプリケーションについては、Hugging Face で利用可能な [OpenSearch AI デモアプリ](https://huggingface.co/spaces/opensearch-project/OpenSearch-AI) を参照してください。
 
