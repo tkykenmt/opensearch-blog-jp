@@ -1,27 +1,27 @@
-# OpenSearch Blog 日本語翻訳
+# OpenSearch Blog Japanese Translation
 
-[OpenSearch Project Blog](https://opensearch.org/blog/) の記事を日本語に翻訳し、[Zenn](https://zenn.dev/opensearch) で公開しています。
+This project translates articles from the [OpenSearch Project Blog](https://opensearch.org/blog/) into Japanese and publishes them on [Zenn](https://zenn.dev/opensearch).
 
-## 公開先
+## Publication
 
 https://zenn.dev/opensearch
 
-## ローカル環境
+## Local Development
 
 ```bash
 npm install
 npx zenn preview
 ```
 
-## セットアップ
+## Setup
 
-### 事前要件
+### Prerequisites
 
-- [Kiro CLI](https://kiro.dev/) がインストールされていること
+- [Kiro CLI](https://kiro.dev/) installed
 - Node.js (npm)
 - git, curl
 
-### Kiro CLI のインストール
+### Installing Kiro CLI
 
 macOS:
 ```bash
@@ -34,32 +34,32 @@ wget https://desktop-release.q.us-east-1.amazonaws.com/latest/kiro-cli.deb
 sudo dpkg -i kiro-cli.deb
 ```
 
-その他の Linux は [公式ドキュメント](https://kiro.dev/docs/cli/installation/) を参照してください。
+For other Linux distributions, see the [official documentation](https://kiro.dev/docs/cli/installation/).
 
-### 環境変数
+### Environment Variables
 
-翻訳タスクの実行には以下の環境変数が必要です。
+The following environment variables are required to run translation tasks.
 
-| 変数名 | 説明 |
+| Variable | Description |
 | --- | --- |
-| `GITHUB_TOKEN` | GitHub API 認証用トークン |
+| `GITHUB_TOKEN` | GitHub API authentication token |
 
-### リポジトリ設定
+### Repository Settings
 
-Settings > General > Pull Requests で「Automatically delete head branches」を ON にすることを推奨します。
+It is recommended to enable "Automatically delete head branches" in Settings > General > Pull Requests.
 
-## 翻訳の実行
+## Running Translations
 
 ```bash
-.kiro/commands/translate-opensearch-blog.sh <記事URL>
+.kiro/commands/translate-opensearch-blog.sh <article-url>
 ```
 
-複数の記事を一度に翻訳する場合:
+To translate multiple articles at once:
 
 ```bash
 .kiro/commands/translate-opensearch-blog.sh <URL1> <URL2> ...
 ```
 
-## 貢献
+## Contributing
 
-翻訳リクエストは [Issue](../../issues) からお願いします。
+Please submit translation requests via [Issues](../../issues).
