@@ -24,13 +24,16 @@ Chronosphere の Eric Schabell が KubeCon の OpenSearch ブースに [OpenSear
 
 次に起こったことは、オープンソースの精神を示すものでした。OpenSearch チームは Eric と協力して、リアルタイムで問題をトラブルシューティングしました。Eric のラップトップをメインスクリーンに接続し、サポートチケットも待ち時間もなく、ライブデバッグセッションを開始しました。
 
-**図 1: OpenSearch ブースで問題をデバッグする OpenSearch エンジニアたち。(左から右へ) Sumukh Hanumantha Swamy、Jiaxiang (Peter) Zhu、Adam Tackett、Ritvi Bhatt**
+![図 1](/images/opensearch-realtime-problem-solving-booth/image10.png)
+![図 1](/images/opensearch-realtime-problem-solving-booth/image8.png)
+*図 1: OpenSearch ブースで問題をデバッグする OpenSearch エンジニアたち。(左から右へ) Sumukh Hanumantha Swamy、Jiaxiang (Peter) Zhu、Adam Tackett、Ritvi Bhatt*
 
 Eric はバックエンドと OpenSearch Dashboards コンポーネントの両方について OpenSearch コミュニティのクイックスタートドキュメントに従い、両方のコンポーネントを連携させることができました。問題はテレメトリデータを統合するために OpenSearch バックエンドにアクセスしようとしたときに始まりました。
 
 しかし、Fluent Bit は OpenSearch クラスターにログデータを取り込むことができず、OpenSearch ダッシュボードは送信されているログテレメトリの新しいインデックスを登録していませんでした。
 
-**図 2: 空のインデックスリスト — 何かがおかしい！**
+![図 2](/images/opensearch-realtime-problem-solving-booth/image7.png)
+*図 2: 空のインデックスリスト — 何かがおかしい！*
 
 ## 突破口
 
@@ -136,19 +139,23 @@ $ fluent-bit –config fluent-bit.yaml
 
 OpenSearch チームはそこで止まりませんでした。統合が動作するようになると、Eric に OpenSearch インターフェースを案内し、出力ログの可視化を作成する手助けをしました。
 
-**図 3: Fluent Bit 設定で定義されたとおり、受信ログテレメトリデータを保存するために「fb-index」が作成されていることに注目してください。**
+![図 3](/images/opensearch-realtime-problem-solving-booth/image4.png)
+*図 3: Fluent Bit 設定で定義されたとおり、受信ログテレメトリデータを保存するために「fb-index」が作成されていることに注目してください。*
 
 このテレメトリデータを表示するには、まず `fb-index` で新しいインデックスパターンを作成する必要がありました。
 
-**図 4: `fb-index` を検索します。**
+![図 4](/images/opensearch-realtime-problem-solving-booth/image5.png)
+*図 4: `fb-index` を検索します。*
 
 次に、プライマリ時間フィールドを選択しました。
 
-**図 5: `@timestamp` フィールドを選択します。**
+![図 5](/images/opensearch-realtime-problem-solving-booth/image3.png)
+*図 5: `@timestamp` フィールドを選択します。*
 
 最後に、OpenSearch Dashboards => Discover を開いて Fluent Bit のログテレメトリデータを表示しました。
 
-**図 6: Discover での Fluent Bit ログテレメトリデータ。**
+![図 6](/images/opensearch-realtime-problem-solving-booth/image1.png)
+*図 6: Discover での Fluent Bit ログテレメトリデータ。*
 
 デバッグセッションとして始まったものが、即興のチュートリアルになりました。チームは OpenSearch Dashboards の新しいオブザーバビリティ機能を紹介しました。これには、強化されたログパターン検出、改善されたトレース分析、合理化されたメトリック可視化機能が含まれます。また、カスタムダッシュボードの構築方法、ログパターンに基づくアラートの設定方法、プラットフォームの完全なオブザーバビリティスタックの活用方法も実演しました。これらの洞察は Eric の将来のデモンストレーションを強化することになるでしょう。
 
