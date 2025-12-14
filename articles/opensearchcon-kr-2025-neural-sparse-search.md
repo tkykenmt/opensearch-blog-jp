@@ -11,6 +11,8 @@ published: false
 本記事は [OpenSearch Project YouTube チャンネル](https://www.youtube.com/@OpenSearchProject) で公開されているセッション動画の内容を日本語で書き起こしたものです。
 :::
 
+**イベント**: [OpenSearchCon Korea 2025](https://www.youtube.com/playlist?list=PLzgr9zSpws16DPeI08ZXYQI2zz-EuJfyA)
+
 https://www.youtube.com/watch?v=kx71KFf-Nv0
 
 ※ 本記事は動画の自動字幕を基に作成しています。誤字脱字や誤った内容が含まれる可能性があります。
