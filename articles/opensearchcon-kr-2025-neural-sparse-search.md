@@ -30,13 +30,15 @@ https://www.youtube.com/watch?v=kx71KFf-Nv0
 - GPU アクセラレーションの推奨事項
 - ベンチマークとベストプラクティス
 
-## 語彙ミスマッチ問題
+## 本編
+
+### 語彙ミスマッチ問題
 
 [![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/intro.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=30)
 
 検索における根本的な課題として「語彙ミスマッチ問題」があります。例えば、オンラインショップで「ソファ」を検索しても、販売者が「カウチ」「ラブシート」「ソファベッド」などの別名で登録していると、商品が見つかりません。
 
-### 従来の解決策
+#### 従来の解決策
 
 [![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/vocabulary-mismatch.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=180)
 
@@ -48,13 +50,13 @@ https://www.youtube.com/watch?v=kx71KFf-Nv0
 - 辞書の作成は網羅的にならず、完成することがない
 - 静的な辞書では文脈を考慮できない
 
-## SPLADE モデルの登場
+### SPLADE モデルの登場
 
 [![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/splade.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=360)
 
 2021年中頃に登場した SPLADE (Sparse Lexical and Expansion) モデルは、この問題を解決します。
 
-### 学習可能な用語展開
+#### 学習可能な用語展開
 
 SPLADE は文脈に基づいて用語を展開します。例えば「Apple」という単語を含む2つの文書があるとします:
 
@@ -63,15 +65,15 @@ SPLADE は文脈に基づいて用語を展開します。例えば「Apple」�
 
 静的なシノニム辞書とは異なり、文脈に応じて適切な用語に展開されます。
 
-### 重み付け
+#### 重み付け
 
 展開された各用語には重みが付与されます。すべての展開が同じ重要度ではないため、この重みによって関連性を判断できます。
 
-### スコアリング
+#### スコアリング
 
 検索時のスコアリングは、ドキュメントとクエリの展開された用語の内積の合計で計算されます。デンスベクトルの数値表現とは異なり、どの用語がマッチしたかが明確にわかるため、解釈性が高いのが特徴です。
 
-## 事前学習済みモデル
+### 事前学習済みモデル
 
 OpenSearch では複数の事前学習済みモデルが利用可能です:
 
@@ -82,11 +84,11 @@ OpenSearch では複数の事前学習済みモデルが利用可能です:
 
 Bi-encoder は検索時にオンライン推論が必要となり、レイテンシに影響します。Doc-only encoder を使用し、検索時にはトークナイザーを使用することで、より効率的な検索が可能です。
 
-## デモ: Neural Sparse Search の実装
+### デモ: Neural Sparse Search の実装
 
 [![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/demo.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=600)
 
-### 1. モデルのデプロイ
+#### 1. モデルのデプロイ
 
 まず、OpenSearch のドキュメントページから事前学習済みモデルの設定 URL を取得し、モデルをデプロイします。
 
@@ -95,14 +97,14 @@ Bi-encoder は検索時にオンライン推論が必要となり、レイテン
 Amazon SageMaker や Amazon Bedrock などの外部サービスでホストする
 ```
 
-### 2. Ingest Pipeline の作成
+#### 2. Ingest Pipeline の作成
 
 Sparse encoding processor を含むパイプラインを作成します。必要な設定は3つ:
 - **model_id**: 使用するモデルの ID
 - **field_map**: 展開対象のテキストフィールド
 - **output_field**: 展開結果を格納するフィールド
 
-### 3. インデックスの作成
+#### 3. インデックスの作成
 
 ```json
 {
@@ -120,7 +122,7 @@ Sparse encoding processor を含むパイプラインを作成します。必要
 
 `rank_features` フィールドタイプは、スパースベクトルドキュメントのスコアリングをブーストまたはブロックできます。
 
-### 4. Neural Sparse Search の実行
+#### 4. Neural Sparse Search の実行
 
 ```json
 {
@@ -135,7 +137,7 @@ Sparse encoding processor を含むパイプラインを作成します。必要
 }
 ```
 
-## スコアリングの仕組み
+### スコアリングの仕組み
 
 [![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/scoring.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=1200)
 
@@ -148,7 +150,7 @@ Sparse encoding processor を含むパイプラインを作成します。必要
 
 最終スコアは、マッチしたすべてのトークンの内積の合計です。
 
-## Lexical Search との比較
+### Lexical Search との比較
 
 [![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/comparison.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=1500)
 
@@ -164,15 +166,15 @@ OpenSearch の Search Relevancy タブを使用して、Lexical Search と Neura
 
 クエリに「stock」という単語がなくても、Neural Sparse Search は文脈を理解して関連する結果を返します。
 
-### ハイブリッド検索
+#### ハイブリッド検索
 
 完全一致検索（ダブルクォート検索）など、Neural Sparse Search が苦手なケースもあります。そのような場合は、Lexical Search と Neural Sparse Search を組み合わせたハイブリッド検索が有効です。
 
-## プルーニングによる最適化
+### プルーニングによる最適化
 
 プルーニングは、重みの低い展開用語を削除することで、ストレージとインデックスサイズを削減し、検索速度を向上させる技術です。
 
-### インデックス時のプルーニング
+#### インデックス時のプルーニング
 
 ```json
 {
@@ -183,14 +185,14 @@ OpenSearch の Search Relevancy タブを使用して、Lexical Search と Neura
 
 重みが 0.48 未満のトークンを削除します。`max_ratio` を使用して上位 40% のみを保持することも可能です。
 
-### 検索時のプルーニング (Two-phase processor)
+#### 検索時のプルーニング (Two-phase processor)
 
 1. 最初に上位 40% のトークンで検索を実行し、候補を絞り込む
 2. 絞り込まれた候補に対して、すべてのトークンを使用してリランキング
 
 これにより、検索レイテンシを大幅に改善できます。
 
-## 新しい Semantic フィールドタイプ
+### 新しい Semantic フィールドタイプ
 
 最新バージョンの OpenSearch では、`semantic` フィールドタイプを使用することで、より簡単に Neural Sparse Search を実装できます:
 
@@ -210,16 +212,16 @@ OpenSearch の Search Relevancy タブを使用して、Lexical Search と Neura
 
 従来の複雑な設定が、わずか3ステップで完了します。
 
-## なぜ「予算に優しい」のか
+### なぜ「予算に優しい」のか
 
-### デンスベクトルのコスト問題
+#### デンスベクトルのコスト問題
 
 KNN 検索でデンスベクトルを使用する場合:
 - 500万ベクトルで 16GB のメモリが必要
 - 64GB メモリのインスタンスタイプが必要
 - 1000万、10億ベクトルになると、コストが急激に増加
 
-### スパースベクトルの利点
+#### スパースベクトルの利点
 
 - ネイティブの Lucene インデックスに統合されている（別途 KNN インデックスが不要）
 - インデックスサイズが小さい
@@ -227,11 +229,11 @@ KNN 検索でデンスベクトルを使用する場合:
 - ゼロショット性能が良好（新しいドメインへの適用が容易）
 - ファインチューニングがデンスベクトルより軽量
 
-## スケーラビリティの向上
+### スケーラビリティの向上
 
 従来、スパースベクトルは 1000万ドキュメントまでが推奨でしたが、OpenSearch 3.3 で ANN (Approximate Nearest Neighbor) サポートが追加され、1億ベクトルまでスケール可能になりました。
 
-## ベストプラクティス
+### ベストプラクティス
 
 1. **Doc-only encoder を使用する** - より効率的
 2. **Deep Learning tokenizer を活用** - 最新バージョンではトークナイザーのデプロイが不要に
