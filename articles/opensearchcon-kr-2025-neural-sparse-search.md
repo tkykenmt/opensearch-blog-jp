@@ -12,6 +12,7 @@ published: false
 :::
 
 **イベント**: [OpenSearchCon Korea 2025](https://www.youtube.com/playlist?list=PLzgr9zSpws16DPeI08ZXYQI2zz-EuJfyA)
+**プレゼンター**: Aswath Srinivasan, OpenSearch @ AWS
 
 https://www.youtube.com/watch?v=kx71KFf-Nv0
 
