@@ -30,13 +30,13 @@ https://www.youtube.com/watch?v=kx71KFf-Nv0
 
 ## 語彙ミスマッチ問題
 
-[![Thumbnail](/images/opensearchcon-eu-2024-neural-sparse/intro.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=30)
+[![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/intro.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=30)
 
 検索における根本的な課題として「語彙ミスマッチ問題」があります。例えば、オンラインショップで「ソファ」を検索しても、販売者が「カウチ」「ラブシート」「ソファベッド」などの別名で登録していると、商品が見つかりません。
 
 ### 従来の解決策
 
-[![Thumbnail](/images/opensearchcon-eu-2024-neural-sparse/vocabulary-mismatch.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=180)
+[![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/vocabulary-mismatch.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=180)
 
 1. **SEO 的アプローチ**: 商品タイトルに「ソファ/カウチ/ダイベッド」のように複数の名称を詰め込む方法
 2. **シノニム辞書**: 検索エンジンに同義語辞書を設定し、インデックス時や検索時に用語を展開する方法
@@ -48,7 +48,7 @@ https://www.youtube.com/watch?v=kx71KFf-Nv0
 
 ## SPLADE モデルの登場
 
-[![Thumbnail](/images/opensearchcon-eu-2024-neural-sparse/splade.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=360)
+[![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/splade.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=360)
 
 2021年中頃に登場した SPLADE (Sparse Lexical and Expansion) モデルは、この問題を解決します。
 
@@ -82,7 +82,7 @@ Bi-encoder は検索時にオンライン推論が必要となり、レイテン
 
 ## デモ: Neural Sparse Search の実装
 
-[![Thumbnail](/images/opensearchcon-eu-2024-neural-sparse/demo.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=600)
+[![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/demo.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=600)
 
 ### 1. モデルのデプロイ
 
@@ -135,7 +135,7 @@ Sparse encoding processor を含むパイプラインを作成します。必要
 
 ## スコアリングの仕組み
 
-[![Thumbnail](/images/opensearchcon-eu-2024-neural-sparse/scoring.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=1200)
+[![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/scoring.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=1200)
 
 `explain: true` を設定すると、スコアリングの詳細が確認できます。
 
@@ -148,7 +148,7 @@ Sparse encoding processor を含むパイプラインを作成します。必要
 
 ## Lexical Search との比較
 
-[![Thumbnail](/images/opensearchcon-eu-2024-neural-sparse/comparison.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=1500)
+[![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/comparison.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=1500)
 
 OpenSearch の Search Relevancy タブを使用して、Lexical Search と Neural Sparse Search を比較できます。
 

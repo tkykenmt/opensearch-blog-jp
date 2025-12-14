@@ -1,0 +1,34 @@
+{
+  "name": "opensearchcon-session-writer",
+  "description": "OpenSearchCon セッション動画の文字起こしによる解説記事を作成",
+  "prompt": null,
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "read-from-env"
+      }
+    }
+  },
+  "tools": [
+    "@builtin",
+    "@github"
+  ],
+  "toolAliases": {},
+  "allowedTools": [
+    "@builtin",
+    "@github"
+  ],
+  "resources": [
+    "file://AGENTS.md",
+    "file://README.md"
+  ],
+  "hooks": {},
+  "toolsSettings": {},
+  "useLegacyMcpJson": true,
+  "model": null
+}
