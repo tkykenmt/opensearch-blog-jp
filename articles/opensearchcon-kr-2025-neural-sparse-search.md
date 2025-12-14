@@ -3,7 +3,6 @@ title: "OpenSearchCon Korea 2025: 低コストでセマンティック検索を�
 emoji: "🔍"
 type: "tech"
 topics: ["opensearch", "検索", "機械学習", "セマンティック検索", "NLP"]
-publication_name: "opensearch"
 published: false
 ---
 
