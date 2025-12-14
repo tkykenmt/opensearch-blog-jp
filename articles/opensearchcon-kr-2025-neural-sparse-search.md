@@ -1,5 +1,5 @@
 ---
-title: "低コストでセマンティック検索を実現する Neural Sparse Search"
+title: "OpenSearchCon Korea 2025: 低コストでセマンティック検索を実現する Neural Sparse Search"
 emoji: "🔍"
 type: "tech"
 topics: ["opensearch", "検索", "機械学習", "セマンティック検索", "NLP"]
