@@ -84,23 +84,19 @@ git checkout -b session/<slug>
 
 ### 6. サムネイル抽出
 
-#### ストリームから直接フレーム抽出
+#### 動画ダウンロードとフレーム抽出
 
-動画全体をダウンロードせず、ストリーム URL から直接フレームを抽出:
-
-```bash
-# ストリーム URL を取得
-STREAM_URL=$(yt-dlp -f "best[height<=720]" -g "<YouTube URL>" 2>/dev/null)
-
-# 指定時刻のフレームを抽出
-ffmpeg -ss <seconds> -i "$STREAM_URL" -vframes 1 -q:v 2 "images/<slug>/<name>.jpg"
-```
-
-例: 70 秒時点のサムネイル
+動画を一度ダウンロードし、複数のタイムスタンプからフレームを抽出:
 
 ```bash
-STREAM_URL=$(yt-dlp -f "best[height<=720]" -g "<YouTube URL>" 2>/dev/null)
-ffmpeg -ss 70 -i "$STREAM_URL" -vframes 1 -q:v 2 "images/<slug>/intro.jpg"
+# 動画をダウンロード
+yt-dlp -f "best[height<=720]" -o "video.mp4" "<YouTube URL>"
+
+# 各タイムスタンプからフレームを抽出
+ffmpeg -ss <seconds> -i video.mp4 -vframes 1 -q:v 2 "images/<slug>/<name>.jpg"
+
+# 完了後に動画を削除
+rm -f video.mp4
 ```
 
 #### 画像の最適化
@@ -108,7 +104,7 @@ ffmpeg -ss 70 -i "$STREAM_URL" -vframes 1 -q:v 2 "images/<slug>/intro.jpg"
 3 MB を超える場合はリサイズ:
 
 ```bash
-ffmpeg -ss <seconds> -i "$STREAM_URL" -vframes 1 -vf "scale=1280:-1" -q:v 3 "images/<slug>/<name>.jpg"
+ffmpeg -ss <seconds> -i video.mp4 -vframes 1 -vf "scale=1280:-1" -q:v 3 "images/<slug>/<name>.jpg"
 ```
 
 ### 7. 記事ファイル作成
