@@ -104,26 +104,6 @@ ffmpeg -ss <seconds> -i video.mp4 -vframes 1 -q:v 2 "images/<slug>/thumbnail_<se
 ffmpeg -ss 70 -i video.mp4 -vframes 1 -q:v 2 "images/<slug>/thumbnail_70.jpg"
 ```
 
-#### スライド部分の切り出し
-
-抽出したサムネイル画像を確認し、プレゼンターとスライドが並んでいる場合はスライド部分のみを切り出す:
-
-1. 画像を読み込んで確認（`fs_read` の Image モード）
-2. スライド領域の位置を特定（通常は画面の右側または左側）
-3. `ffmpeg` の `crop` フィルターで切り出し
-
-```bash
-# 切り出し例: 右側 60% を抽出（x=画像幅の40%から開始、幅=60%）
-ffmpeg -i "thumbnail_<seconds>.jpg" -vf "crop=iw*0.6:ih:iw*0.4:0" "thumbnail_<seconds>.jpg"
-
-# 切り出し例: 左側 60% を抽出
-ffmpeg -i "thumbnail_<seconds>.jpg" -vf "crop=iw*0.6:ih:0:0" "thumbnail_<seconds>.jpg"
-```
-
-**注意**: 
-- 全画面スライドの場合は切り出し不要
-- レイアウトは動画ごとに異なる可能性があるため、最初のフレームで確認してから処理
-
 #### 画像の最適化
 
 3 MB を超える場合はリサイズ:
