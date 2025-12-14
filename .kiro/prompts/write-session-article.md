@@ -82,26 +82,25 @@ git pull https://${GITHUB_TOKEN}@github.com/<owner>/<repo>.git main
 git checkout -b session/<slug>
 ```
 
-### 6. 動画ダウンロードとサムネイル抽出
+### 6. サムネイル抽出
 
-#### 動画のダウンロード
+#### ストリームから直接フレーム抽出
 
-```bash
-yt-dlp -f "best[height<=720]" -o "video.mp4" "<YouTube URL>"
-```
-
-#### タイムスタンプごとのサムネイル抽出
-
-各セクションの開始時刻（秒）に対応するフレームを抽出:
+動画全体をダウンロードせず、ストリーム URL から直接フレームを抽出:
 
 ```bash
-ffmpeg -ss <seconds> -i video.mp4 -vframes 1 -q:v 2 "images/<slug>/thumbnail_<seconds>.jpg"
+# ストリーム URL を取得
+STREAM_URL=$(yt-dlp -f "best[height<=720]" -g "<YouTube URL>" 2>/dev/null)
+
+# 指定時刻のフレームを抽出
+ffmpeg -ss <seconds> -i "$STREAM_URL" -vframes 1 -q:v 2 "images/<slug>/<name>.jpg"
 ```
 
 例: 70 秒時点のサムネイル
 
 ```bash
-ffmpeg -ss 70 -i video.mp4 -vframes 1 -q:v 2 "images/<slug>/thumbnail_70.jpg"
+STREAM_URL=$(yt-dlp -f "best[height<=720]" -g "<YouTube URL>" 2>/dev/null)
+ffmpeg -ss 70 -i "$STREAM_URL" -vframes 1 -q:v 2 "images/<slug>/intro.jpg"
 ```
 
 #### 画像の最適化
@@ -109,15 +108,7 @@ ffmpeg -ss 70 -i video.mp4 -vframes 1 -q:v 2 "images/<slug>/thumbnail_70.jpg"
 3 MB を超える場合はリサイズ:
 
 ```bash
-ffmpeg -ss <seconds> -i video.mp4 -vframes 1 -vf "scale=1280:-1" -q:v 3 "images/<slug>/thumbnail_<seconds>.jpg"
-```
-
-#### クリーンアップ
-
-記事作成完了後、ダウンロードした動画ファイルを削除:
-
-```bash
-rm -f video.mp4
+ffmpeg -ss <seconds> -i "$STREAM_URL" -vframes 1 -vf "scale=1280:-1" -q:v 3 "images/<slug>/<name>.jpg"
 ```
 
 ### 7. 記事ファイル作成
