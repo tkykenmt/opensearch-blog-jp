@@ -75,6 +75,8 @@ SPLADE は文脈に基づいて用語を展開します。例えば「Apple」�
 
 ### 事前学習済みモデル
 
+[![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/pretrained-models.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=480)
+
 OpenSearch では複数の事前学習済みモデルが利用可能です:
 
 | モデルタイプ | 説明 |
@@ -172,6 +174,8 @@ OpenSearch の Search Relevancy タブを使用して、Lexical Search と Neura
 
 ### プルーニングによる最適化
 
+[![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/pruning.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=900)
+
 プルーニングは、重みの低い展開用語を削除することで、ストレージとインデックスサイズを削減し、検索速度を向上させる技術です。
 
 #### インデックス時のプルーニング
@@ -194,6 +198,8 @@ OpenSearch の Search Relevancy タブを使用して、Lexical Search と Neura
 
 ### 新しい Semantic フィールドタイプ
 
+[![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/semantic-field.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=1020)
+
 最新バージョンの OpenSearch では、`semantic` フィールドタイプを使用することで、より簡単に Neural Sparse Search を実装できます:
 
 ```json
@@ -213,6 +219,8 @@ OpenSearch の Search Relevancy タブを使用して、Lexical Search と Neura
 従来の複雑な設定が、わずか3ステップで完了します。
 
 ### なぜ「予算に優しい」のか
+
+[![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/budget-friendly.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=1140)
 
 #### デンスベクトルのコスト問題
 
@@ -234,6 +242,8 @@ KNN 検索でデンスベクトルを使用する場合:
 従来、スパースベクトルは 1000万ドキュメントまでが推奨でしたが、OpenSearch 3.3 で ANN (Approximate Nearest Neighbor) サポートが追加され、1億ベクトルまでスケール可能になりました。
 
 ### ベストプラクティス
+
+[![Thumbnail](/images/opensearchcon-kr-2025-neural-sparse-search/best-practices.jpg)](https://www.youtube.com/watch?v=kx71KFf-Nv0&t=1320)
 
 1. **Doc-only encoder を使用する** - より効率的
 2. **Deep Learning tokenizer を活用** - 最新バージョンではトークナイザーのデプロイが不要に
