@@ -120,10 +120,16 @@ git pull
 
 ### 画像処理
 
-- `curl -sL <image_url> -o images/<slug>/<filename>` で取得
-- `images/<slug>/` 配下に格納
-- パスは `/images/<slug>/<filename>` (先頭 `/` 必須)
-- 3 MB 超の場合はリサイズ・圧縮
+1. 元記事から本文中の画像を抽出:
+   ```bash
+   curl -s <URL> | grep -oP '<figure[^>]*>.*?</figure>' | grep -oP 'src="[^"]+"'
+   ```
+2. ナビゲーション/アイコン画像を除外し、記事本文の画像のみ取得
+3. `mkdir -p images/<slug>` でフォルダ作成
+4. `curl -sL <image_url> -o images/<slug>/<filename>` で取得
+5. パスは `/images/<slug>/<filename>` (先頭 `/` 必須)
+6. 3 MB 超の場合はリサイズ・圧縮
+7. 翻訳記事内の適切な位置に `![alt](/images/<slug>/<filename>)` を挿入
 
 ### 文章構成
 
