@@ -88,15 +88,27 @@ GitHub MCP の `create_pull_request` で PR 作成:
 
 PR 内容を確認し、問題なければ GitHub MCP ツールでマージ。
 
-### 9. 公開確認・Issue クローズ
+### 9. 公開確認
 
 **注意**: `published_at` が未来日付でも必ず公開確認を実施すること。スキップ禁止。
 
 1. `https://zenn.dev/opensearch/articles/<slug>` に fetch でアクセス
 2. HTTP 200 が返るまで 30 秒間隔でリトライ（最大 5 分）
-3. 公開確認後、GitHub MCP ツールで Issue を close。Close 時に zenn の URL: https://zenn.dev/opensearch/articles/<slug> が公開済みであることが確認できた旨を英語で追記する。
 
-### 10. ブランチを main に戻す
+### 10. 公開記事レビュー
+
+`.kiro/prompts/review-published.md` の内容に従い、公開された記事をレビューする。
+
+- Zenn URL: `https://zenn.dev/opensearch/articles/<slug>`
+- ローカルファイル: `articles/<slug>.md`
+
+修正が発生した場合は、コミット・プッシュまで実施する。
+
+### 11. Issue クローズ
+
+GitHub MCP ツールで Issue を close。Close 時に zenn の URL: https://zenn.dev/opensearch/articles/<slug> が公開済みであることが確認できた旨を英語で追記する。
+
+### 12. ブランチを main に戻す
 
 ```bash
 git stash

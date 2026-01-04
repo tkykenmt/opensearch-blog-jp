@@ -1,0 +1,20 @@
+{
+  "name": "blog-reviewer",
+  "description": "翻訳記事レビュー専用",
+  "prompt": null,
+  "mcpServers": {},
+  "tools": [
+    "@builtin"
+  ],
+  "allowedTools": [
+    "@builtin"
+  ],
+  "resources": [
+    "file://AGENTS.md",
+    "file://README.md"
+  ],
+  "hooks": {},
+  "toolsSettings": {},
+  "useLegacyMcpJson": true,
+  "model": null
+}
