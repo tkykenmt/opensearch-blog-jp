@@ -1,5 +1,5 @@
 ---
-title: "[翻訳] OpenSearch 3.4 の OpenSearch Dashboards におけるエージェント検索: ハンズオンユースケースと実例"
+title: "[翻訳] OpenSearch 3.4 Dashboards のエージェント検索: ハンズオンユースケースと実例"
 emoji: "🤖"
 type: "tech"
 topics: ["opensearch", "ai", "search", "dashboards", "agent"]
