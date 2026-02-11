@@ -1,0 +1,17 @@
+{
+  "name": "session-writer",
+  "description": "OpenSearchCon セッション記事作成エージェント",
+  "model": "claude-opus-4.6-1m",
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {"GITHUB_PERSONAL_ACCESS_TOKEN": "read-from-env"}
+    }
+  },
+  "allowedTools": ["@builtin", "@github"],
+  "resources": [
+    "file://.kiro/skills/writing-sessions/SKILL.md",
+    "file://.kiro/skills/zenn-writing/SKILL.md"
+  ]
+}

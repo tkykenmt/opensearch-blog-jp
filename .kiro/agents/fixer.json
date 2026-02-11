@@ -1,0 +1,12 @@
+{
+  "name": "fixer",
+  "description": "レビュー指摘に基づいて翻訳記事を修正するエージェント",
+  "model": "claude-opus-4.6-1m",
+  "prompt": "あなたは翻訳記事の修正エージェントです。\nレビュー指摘 (review_checks.json と review.md) を読み、translated.md を修正してください。\n修正は translated.md ファイルを直接編集して行います。\nSKILL.md の翻訳ルール・用語統一・表記ルールに厳密に従ってください。\n修正内容を簡潔に報告してください。",
+  "tools": ["@builtin"],
+  "allowedTools": ["@builtin"],
+  "resources": [
+    "skill://skills/translating-blogs/SKILL.md",
+    "skill://skills/zenn-writing/SKILL.md"
+  ]
+}
