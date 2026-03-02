@@ -5,13 +5,13 @@ OpenSearchCon セッション動画から解説記事を作成して Zenn に公
 ## ワークフロー
 
 ```
-session.py → Kiro 記事作成 → review.py → publish.py
+session.py → session-writer → scripts/check.py → reviewer → scripts/publish.py
 ```
 
 1. `python session.py --urls <URL1> <URL2> ...` で文字起こし・サムネイル取得
-2. Kiro で `work/{slug}/` の素材から記事を作成
-3. `python review.py --slug <slug>` で自動チェック
-4. `python publish.py --slug <slug>` で Git PR 作成・マージ
+2. session-writer エージェントで記事作成
+3. `python scripts/check.py --slug <slug>` で自動チェック
+4. `python scripts/publish.py --slug <slug>` で commit・push
 
 ## 記事作成タスク
 
@@ -100,7 +100,8 @@ session.py が `work/{slug}/` に以下を生成:
 
 ## 公開後
 
-publish.py 実行後:
+scripts/publish.py 実行後:
 - `articles/{slug}.md` に記事がコピーされる
 - `images/{slug}/` に画像がコピーされる
-- Git ブランチ `article/{slug}` で PR 作成
+- Git ブランチ `article/{slug}` で commit・push
+- GitHub MCP で PR 作成

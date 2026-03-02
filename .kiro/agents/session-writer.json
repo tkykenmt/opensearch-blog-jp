@@ -4,14 +4,14 @@
   "model": "claude-opus-4.6-1m",
   "mcpServers": {
     "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {"GITHUB_PERSONAL_ACCESS_TOKEN": "read-from-env"}
+      "command": "bash",
+      "args": ["-c", "GITHUB_PERSONAL_ACCESS_TOKEN=$(gh auth token) npx -y @modelcontextprotocol/server-github"]
     }
   },
-  "allowedTools": ["@builtin", "@github"],
+  "tools": ["read", "write", "shell", "@github"],
+  "allowedTools": ["read", "write", "shell", "@github"],
   "resources": [
-    "file://.kiro/skills/writing-sessions/SKILL.md",
-    "file://.kiro/skills/zenn-writing/SKILL.md"
+    "skill://.kiro/skills/writing-sessions/SKILL.md",
+    "skill://.kiro/skills/zenn-writing/SKILL.md"
   ]
 }

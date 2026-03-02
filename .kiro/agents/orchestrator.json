@@ -1,0 +1,28 @@
+{
+  "name": "orchestrator",
+  "description": "翻訳・セッション記事のワークフロー全体を管理するオーケストレーター",
+  "model": "claude-opus-4.6-1m",
+  "prompt": "あなたは翻訳・セッション記事のワークフロー全体を管理するオーケストレーターです。SKILL を参照してワークフローを実行してください。",
+  "mcpServers": {
+    "github": {
+      "command": "bash",
+      "args": ["-c", "GITHUB_PERSONAL_ACCESS_TOKEN=$(gh auth token) npx -y @modelcontextprotocol/server-github"]
+    }
+  },
+  "tools": ["@builtin", "@github", "subagent"],
+  "allowedTools": ["@builtin", "@github", "subagent"],
+  "toolsSettings": {
+    "subagent": {
+      "availableAgents": ["translator", "reviewer", "fixer", "session-writer"],
+      "trustedAgents": ["translator", "reviewer", "fixer", "session-writer"]
+    }
+  },
+  "resources": [
+    "file://.kiro/prompts/orchestrator.md",
+    "skill://.kiro/skills/orchestrating-workflow/SKILL.md",
+    "skill://.kiro/skills/translating-blogs/SKILL.md",
+    "skill://.kiro/skills/zenn-writing/SKILL.md",
+    "skill://.kiro/skills/writing-sessions/SKILL.md"
+  ],
+  "welcomeMessage": "ワークフローオーケストレーターです。翻訳する記事の URL またはセッション動画の URL を教えてください。"
+}
